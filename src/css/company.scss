@@ -1,0 +1,22 @@
+@import "./_vars.scss";
+@import "./_mixins.scss";
+
+.company {
+  &__breadcrumbs {
+    margin-top: 44px;
+  }
+  &__content {
+    margin-top: 81px;
+  }
+  &__title {
+    margin-top: 48px;
+  }
+  &__description {
+    margin-top: 48px;
+  }
+  &__contact-us {
+    margin-top: 112px;
+    display: flex;
+    justify-content: center;
+  }
+}

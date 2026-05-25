@@ -1,0 +1,105 @@
+@import "./_vars.scss";
+@import "./_mixins.scss";
+
+.catalog {
+  &__title {
+    margin-top: 96px;
+    max-width: 1064px;
+  }
+  &__filters {
+    margin-top: 64px;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 8px;
+    @media (max-width: $tablet) {
+      flex-flow: column nowrap;
+    }
+  }
+  &__list {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+  &__item {
+  }
+}
+
+.catalog-item {
+  display: block;
+  height: 100%;
+  padding: 40px;
+  padding: clampHelper(32px, 40px, $tablet, $desktop);
+  border-radius: 40px;
+  background: var(--white);
+  display: flex;
+  flex-flow: column nowrap;
+  transition: transform 0.2s linear;
+  @media (max-width: $tablet) {
+    padding: 32px;
+    padding: clampHelper(24px, 32px, $mobile, $tablet);
+  }
+  @media (max-width: $mobile) {
+    padding: 24px;
+  }
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+  }
+  &__title {
+    color: var(--black);
+    font-size: 32px;
+    font-size: clampHelper(24px, 32px, $tablet, $desktop);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.25;
+    line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    @media (max-width: $tablet) {
+      font-size: 24px;
+    }
+  }
+  &__description {
+    margin-top: 12px;
+    flex: 1;
+    color: var(--black);
+    font-size: 20px;
+    font-size: clampHelper(16px, 20px, $tablet, $desktop);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4;
+    line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    @media (max-width: $tablet) {
+      font-size: 16px;
+    }
+  }
+  &__image {
+    position: relative;
+    width: 100%;
+    padding-bottom: 33.7%;
+    margin-top: 32px;
+    margin-top: clampHelper(24px, 32px, $tablet, $desktop);
+    border-radius: 32px;
+    overflow: hidden;
+    @media (max-width: $tablet) {
+      margin-top: 24px;
+    }
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

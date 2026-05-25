@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" type="text/css" href="src/css/main.scss" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ai</title>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <!--BG START-->
+      <div class="gradient-bg">
+        <svg xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="goo">
+              <feGaussianBlur
+                in="SourceGraphic"
+                stdDeviation="10"
+                result="blur"
+              />
+              <feColorMatrix
+                in="blur"
+                mode="matrix"
+                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
+                result="goo"
+              />
+              <feBlend in="SourceGraphic" in2="goo" />
+            </filter>
+            <filter id="distortion">
+              <feTurbulence
+                type="turbulence"
+                baseFrequency="0.07 0.01"
+                numOctaves="5"
+                seed="2"
+                stitchTiles="stitch"
+                x="0%"
+                y="0%"
+                width="100%"
+                height="100%"
+                result="noise"
+              />
+              <feDisplacementMap
+                in="SourceGraphic"
+                in2="noise"
+                scale="0"
+                xChannelSelector="R"
+                yChannelSelector="B"
+                x="0%"
+                y="0%"
+                width="100%"
+                height="100%"
+                filterUnits="userSpaceOnUse"
+              />
+            </filter>
+          </defs>
+        </svg>
+        <div class="gradient-bg__container">
+          <div class="gradient-bg__g1"></div>
+          <div class="gradient-bg__g2"></div>
+          <div class="gradient-bg__g3"></div>
+          <div class="gradient-bg__g4"></div>
+          <div class="gradient-bg__g5"></div>
+          <div class="gradient-bg__interactive js-gradient-interactive"></div>
+        </div>
+      </div>
+      <!--BG END-->
+      <div class="inner">
+        <!--HEADER START-->
+        <header class="header">
+          <a href="/"
+            ><img src="src/assets/logo.svg" class="header__logo logo"
+          /></a>
+          <ul class="header-menu">
+            <li class="header-menu__item">
+              <a href="/catalog" class="header-menu__link">Решения</a>
+            </li>
+            <li class="header-menu__item">
+              <a href="/companies" class="header-menu__link">Компании</a>
+            </li>
+          </ul>
+          <div class="header__action">
+            <button aria-haspopup="dialog" class="btn js-contact-us-button">
+              Связаться с нами
+            </button>
+          </div>
+          <button
+            aria-haspopup="dialog"
+            class="header__mobile-menu-trigger js-mobile-menu-trigger"
+          >
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16 3.55499V16H28.445C30.4067 16 32 14.405 32 12.445V3.55499C32 1.5933 30.405 0 28.445 0H19.5567C17.595 0 16 1.59501 16 3.55499ZM3.55499 16H16V28.445C16 30.4067 14.405 32 12.445 32H3.55669C1.59501 32 0.00170517 30.405 0.00170517 28.445V19.5567C3.8147e-05 17.595 1.59501 16 3.55499 16ZM32 23.1117V28.445C32 30.4067 30.405 32 28.445 32H23.1117C21.15 32 19.5567 30.405 19.5567 28.445V19.5567L28.445 19.555C30.405 19.555 32 21.15 32 23.1117ZM3.55499 0H8.88832C10.85 0 12.4433 1.59501 12.4433 3.55499V12.4433H3.55499C1.5933 12.4433 0 10.8483 0 8.88832V3.55499C0 1.59497 1.59501 0 3.55499 0Z"
+                fill="white"
+              />
+            </svg>
+          </button>
+          <div class="header-mobile-menu" role="dialog" aria-modal="true">
+            <button
+              class="header-mobile-menu__close-btn js-header-mobile-menu-close"
+              aria-label="Закрыть меню"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M7.00502 7.99497L0 0.989949L0.989949 0L7.99497 7.00502L15 0L15.9899 0.989949L8.98492 7.99497L15.9899 15L15 15.9899L7.99497 8.98492L0.989949 15.9899L0 15L7.00502 7.99497Z"
+                  fill="white"
+                />
+              </svg>
+            </button>
+            <ul class="header-mobile-menu__list">
+              <li class="header-mobile-menu__item">
+                <a href="#" class="header-mobile-menu__link">Решения</a>
+              </li>
+              <li class="header-mobile-menu__item">
+                <a href="#" class="header-mobile-menu__link">Компании</a>
+              </li>
+            </ul>
+            <button
+              aria-haspopup="dialog"
+              class="header-mobile-menu__contact-us-btn js-contact-us-button btn"
+            >
+              Связаться с нами
+            </button>
+            <div class="header-mobile-menu__info">
+              <ul class="header-mobile-menu__docs">
+                <li class="header-mobile-menu__doc">
+                  <a
+                    href="#"
+                    target="_blank"
+                    class="header-mobile-menu__doc-link"
+                    >Политика конфиденциальности</a
+                  >
+                </li>
+                <li class="header-mobile-menu__doc">
+                  <a
+                    href="#"
+                    target="_blank"
+                    class="header-mobile-menu__doc-link"
+                  >
+                    Условия обработки персональных данных</a
+                  >
+                </li>
+              </ul>
+              <div class="header-mobile-menu__copy">
+                © 2026 ИИ-Карта. Все права защищены.
+              </div>
+            </div>
+          </div>
+        </header>
+        <!--HEADER END-->
+
+        <div class="main">
+          <!--HERO START-->
+          <div class="hero">
+            <h1 class="hero__title">ИИ-КАРТА</h1>
+            <h1 class="hero__subTitle">
+              Каталог ИИ-решений различного технологического профиля от
+              отечественных разработчиков
+            </h1>
+            <a href="/catalog" class="hero__btn btn btn--accent btn--large"
+              >Смотреть ИИ-решения</a
+            >
+          </div>
+          <!--HERO END-->
+
+          <!--INDUSTRY START-->
+          <section class="section section--industry">
+            <h2 class="section__title">Отраслевые направления</h2>
+            <ul class="industry">
+              <!--INDUSTRY ITEM START-->
+              <li class="industry__item">
+                <a href="/catalog" class="industry__link">
+                  <div
+                    style="
+                      background-image: url(/src/assets/mockSvgs/indystry1.svg);
+                    "
+                    class="industry__svg"
+                  ></div>
+                  <div class="industry__text" title="Торговля">Торговля</div>
+                </a>
+              </li>
+              <!--INDUSTRY ITEM END-->
+              <!--INDUSTRY ITEM START-->
+              <li class="industry__item">
+                <a href="/catalog" class="industry__link">
+                  <div
+                    style="
+                      background-image: url(/src/assets/mockSvgs/indystry2.svg);
+                    "
+                    class="industry__svg"
+                  ></div>
+                  <div class="industry__text" title="Финансы">Финансы</div>
+                </a>
+              </li>
+              <!--INDUSTRY ITEM END-->
+              <!--INDUSTRY ITEM START-->
+              <li class="industry__item">
+                <a href="/catalog" class="industry__link">
+                  <div
+                    style="
+                      background-image: url(/src/assets/mockSvgs/indystry3.svg);
+                    "
+                    class="industry__svg"
+                  ></div>
+                  <div class="industry__text" title="Здравоохранение">
+                    Здравоохранение
+                  </div>
+                </a>
+              </li>
+              <!--INDUSTRY ITEM END-->
+              <!--INDUSTRY ITEM START-->
+              <li class="industry__item">
+                <a href="/catalog" class="industry__link">
+                  <div
+                    style="
+                      background-image: url(/src/assets/mockSvgs/indystry1.svg);
+                    "
+                    class="industry__svg"
+                  ></div>
+                  <div class="industry__text" title="Торговля">Торговля</div>
+                </a>
+              </li>
+              <!--INDUSTRY ITEM END-->
+              <!--INDUSTRY ITEM START-->
+              <li class="industry__item">
+                <a href="/catalog" class="industry__link">
+                  <div
+                    style="
+                      background-image: url(/src/assets/mockSvgs/indystry2.svg);
+                    "
+                    class="industry__svg"
+                  ></div>
+                  <div class="industry__text" title="Финансы">Финансы</div>
+                </a>
+              </li>
+              <!--INDUSTRY ITEM END-->
+              <!--INDUSTRY ITEM START-->
+              <li class="industry__item">
+                <a href="/catalog" class="industry__link">
+                  <div
+                    style="
+                      background-image: url(/src/assets/mockSvgs/indystry3.svg);
+                    "
+                    class="industry__svg"
+                  ></div>
+                  <div class="industry__text" title="Здравоохранение">
+                    Здравоохранение
+                  </div>
+                </a>
+              </li>
+              <!--INDUSTRY ITEM END-->
+              <!--INDUSTRY ITEM START-->
+              <li class="industry__item">
+                <a href="/catalog" class="industry__link">
+                  <div
+                    style="
+                      background-image: url(/src/assets/mockSvgs/indystry1.svg);
+                    "
+                    class="industry__svg"
+                  ></div>
+                  <div class="industry__text" title="Торговля">Торговля</div>
+                </a>
+              </li>
+              <!--INDUSTRY ITEM END-->
+              <!--INDUSTRY ITEM START-->
+              <li class="industry__item">
+                <a href="/catalog" class="industry__link">
+                  <div
+                    style="
+                      background-image: url(/src/assets/mockSvgs/indystry2.svg);
+                    "
+                    class="industry__svg"
+                  ></div>
+                  <div class="industry__text" title="Финансы">Финансы</div>
+                </a>
+              </li>
+              <!--INDUSTRY ITEM END-->
+              <!--INDUSTRY ITEM START-->
+              <li class="industry__item">
+                <a href="/catalog" class="industry__link">
+                  <div
+                    style="
+                      background-image: url(/src/assets/mockSvgs/indystry3.svg);
+                    "
+                    class="industry__svg"
+                  ></div>
+                  <div class="industry__text" title="Здравоохранение">
+                    Здравоохранение
+                  </div>
+                </a>
+              </li>
+              <!--INDUSTRY ITEM END-->
+              <!--INDUSTRY ITEM START-->
+              <li class="industry__item">
+                <a href="/catalog" class="industry__link">
+                  <div
+                    style="
+                      background-image: url(/src/assets/mockSvgs/indystry1.svg);
+                    "
+                    class="industry__svg"
+                  ></div>
+                  <div class="industry__text" title="Торговля">Торговля</div>
+                </a>
+              </li>
+              <!--INDUSTRY ITEM END-->
+              <!--INDUSTRY ITEM START-->
+              <li class="industry__item">
+                <a href="/catalog" class="industry__link">
+                  <div
+                    style="
+                      background-image: url(/src/assets/mockSvgs/indystry2.svg);
+                    "
+                    class="industry__svg"
+                  ></div>
+                  <div class="industry__text" title="Финансы">Финансы</div>
+                </a>
+              </li>
+              <!--INDUSTRY ITEM END-->
+              <!--INDUSTRY ITEM START-->
+              <li class="industry__item">
+                <a href="/catalog" class="industry__link">
+                  <div
+                    style="
+                      background-image: url(/src/assets/mockSvgs/indystry3.svg);
+                    "
+                    class="industry__svg"
+                  ></div>
+                  <div class="industry__text" title="Здравоохранение">
+                    Здравоохранение
+                  </div>
+                </a>
+              </li>
+              <!--INDUSTRY ITEM END-->
+              <!--INDUSTRY ITEM START-->
+              <li class="industry__item">
+                <a href="/catalog" class="industry__link">
+                  <div
+                    style="
+                      background-image: url(/src/assets/mockSvgs/indystry1.svg);
+                    "
+                    class="industry__svg"
+                  ></div>
+                  <div class="industry__text" title="Торговля">Торговля</div>
+                </a>
+              </li>
+              <!--INDUSTRY ITEM END-->
+              <!--INDUSTRY ITEM START-->
+              <li class="industry__item">
+                <a href="/catalog" class="industry__link">
+                  <div
+                    style="
+                      background-image: url(/src/assets/mockSvgs/indystry2.svg);
+                    "
+                    class="industry__svg"
+                  ></div>
+                  <div class="industry__text" title="Финансы">Финансы</div>
+                </a>
+              </li>
+              <!--INDUSTRY ITEM END-->
+              <!--INDUSTRY ITEM START-->
+              <li class="industry__item">
+                <a href="/catalog" class="industry__link">
+                  <div
+                    style="
+                      background-image: url(/src/assets/mockSvgs/indystry3.svg);
+                    "
+                    class="industry__svg"
+                  ></div>
+                  <div class="industry__text" title="Здравоохранение">
+                    Здравоохранение
+                  </div>
+                </a>
+              </li>
+              <!--INDUSTRY ITEM END-->
+            </ul>
+          </section>
+          <!--INDUSTRY END-->
+
+          <!--TECHNOLOGY START-->
+          <section class="section section--technology">
+            <h2 class="section__title">Технологии</h2>
+            <ul class="technology">
+              <!--TECHNOLOGY ITEM START-->
+              <li class="technology__item technology-item">
+                <a href="/catalog" class="technology-item__link">
+                  <div class="technology-item__main">
+                    <div
+                      style="
+                        background-image: url(/src/assets/mockSvgs/technology1.svg);
+                      "
+                      class="technology-item__svg"
+                    ></div>
+
+                    <div class="technology-item__text">Машинное обучение</div>
+                  </div>
+                </a>
+              </li>
+              <!--TECHNOLOGY ITEM END-->
+              <!--TECHNOLOGY ITEM START-->
+              <li class="technology__item technology-item">
+                <a href="/catalog" class="technology-item__link">
+                  <div class="technology-item__main">
+                    <div
+                      style="
+                        background-image: url(/src/assets/mockSvgs/technology1.svg);
+                      "
+                      class="technology-item__svg"
+                    ></div>
+
+                    <div class="technology-item__text">Машинное обучение</div>
+                  </div>
+                </a>
+              </li>
+              <!--TECHNOLOGY ITEM END-->
+              <!--TECHNOLOGY ITEM START-->
+              <li class="technology__item technology-item">
+                <a href="/catalog" class="technology-item__link">
+                  <div class="technology-item__main">
+                    <div
+                      style="
+                        background-image: url(/src/assets/mockSvgs/technology1.svg);
+                      "
+                      class="technology-item__svg"
+                    ></div>
+
+                    <div class="technology-item__text">Машинное обучение</div>
+                  </div>
+                </a>
+              </li>
+              <!--TECHNOLOGY ITEM END-->
+              <!--TECHNOLOGY ITEM START-->
+              <li class="technology__item technology-item">
+                <a href="/catalog" class="technology-item__link">
+                  <div class="technology-item__main">
+                    <div
+                      style="
+                        background-image: url(/src/assets/mockSvgs/technology1.svg);
+                      "
+                      class="technology-item__svg"
+                    ></div>
+
+                    <div class="technology-item__text">Машинное обучение</div>
+                  </div>
+                </a>
+              </li>
+              <!--TECHNOLOGY ITEM END-->
+              <!--TECHNOLOGY ITEM START-->
+              <li class="technology__item technology-item">
+                <a href="/catalog" class="technology-item__link">
+                  <div class="technology-item__main">
+                    <div
+                      style="
+                        background-image: url(/src/assets/mockSvgs/technology1.svg);
+                      "
+                      class="technology-item__svg"
+                    ></div>
+
+                    <div class="technology-item__text">Машинное обучение</div>
+                  </div>
+                </a>
+              </li>
+              <!--TECHNOLOGY ITEM END-->
+              <!--TECHNOLOGY ITEM START-->
+              <li class="technology__item technology-item">
+                <a href="/catalog" class="technology-item__link">
+                  <div class="technology-item__main">
+                    <div
+                      style="
+                        background-image: url(/src/assets/mockSvgs/technology1.svg);
+                      "
+                      class="technology-item__svg"
+                    ></div>
+
+                    <div class="technology-item__text">Машинное обучение</div>
+                  </div>
+                </a>
+              </li>
+              <!--TECHNOLOGY ITEM END-->
+            </ul>
+          </section>
+          <!--TECHNOLOGY END-->
+
+          <!--CATALOG-PROMO START-->
+          <section
+            class="catalog-promo"
+            style="
+              background-image: url(&quot;src/assets/about-us-bg.jpg&quot;);
+            "
+          >
+            <div class="catalog-promo__text">
+              Каталог лидеров технологических отраслей на стыке экспертизы,
+              инфраструктуры и партнёрств в одной ИИ-карте
+            </div>
+            <a href="/catalog" class="btn btn--accent btn--large">
+              Смотреть ИИ-решения
+            </a>
+          </section>
+          <!--CATALOG-PROMO END-->
+        </div>
+
+        <!--FOOTER START-->
+        <footer class="footer">
+          <div class="footer__main">
+            <a href="#"><img src="src/assets/logo.svg" class="logo" /></a>
+            <ul class="footer__menu">
+              <li class="footer__menu__item">
+                <a href="#" class="footer__menu__link">Решения</a>
+              </li>
+              <li class="footer__menu__item">
+                <a href="#" class="footer__menu__link">Компании</a>
+              </li>
+              <li class="footer__menu__item">
+                <a href="#" class="footer__menu__link">Связаться с нами</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__info">
+            <div class="footer__copy">© 2026 ИИ-Карта. Все права защищены.</div>
+            <ul class="footer__docs">
+              <li class="footer__doc">
+                <a href="#" target="_blank" class="footer__link"
+                  >Политика конфиденциальности</a
+                >
+              </li>
+              <li class="footer__doc">
+                <a href="#" target="_blank" class="footer__link">
+                  Условия обработки персональных данных</a
+                >
+              </li>
+            </ul>
+          </div>
+        </footer>
+        <!--FOOTER END-->
+      </div>
+      <!--CONTACT US START-->
+      <div
+        class="contact-us js-contact-us-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contact-us-title"
+      >
+        <div class="contact-us__backdrop js-contact-us-close"></div>
+
+        <div class="contact-us__modal">
+          <button
+            class="contact-us__close js-contact-us-close"
+            aria-label="Закрыть модальное окно"
+          >
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M14.4112 16.0003L3.20312 4.79229L4.78704 3.20837L15.9951 14.4164L27.2031 3.20837L28.787 4.79229L17.579 16.0003L28.787 27.2084L27.2031 28.7923L15.9951 17.5843L4.78704 28.7923L3.20312 27.2084L14.4112 16.0003Z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+          <h3 id="contact-us-title" class="contact-us__title">
+            Связаться с нами
+          </h3>
+          <form class="contact-us__form">
+            <div class="inputs-group">
+              <div class="input-field">
+                <input
+                  class="input-field__input"
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder=""
+                />
+                <label class="input-field__label" for="name">
+                  Имя и фамилия
+                </label>
+              </div>
+              <div class="input-field">
+                <input
+                  class="input-field__input"
+                  type="phone"
+                  name="phone"
+                  id="phone"
+                  placeholder=""
+                />
+                <label class="input-field__label" for="phone">Телефон</label>
+              </div>
+              <div class="input-field">
+                <input
+                  class="input-field__input hasError"
+                  type="mail"
+                  name="mail"
+                  id="mail"
+                  placeholder=""
+                />
+                <label class="input-field__label" for="mail">
+                  *Электронная почта
+                </label>
+                <span class="input-field__error-text">
+                  Проверьте правильность заполнения
+                </span>
+              </div>
+              <div class="input-field">
+                <input
+                  class="input-field__input"
+                  type="question"
+                  name="question"
+                  id="question"
+                  placeholder=""
+                />
+                <label class="input-field__label" for="question">
+                  *Ваш вопрос
+                </label>
+              </div>
+            </div>
+            <div class="checkboxs-group">
+              <label class="checkbox">
+                <input type="checkbox" />
+                <span class="checkbox__text">
+                  Я даю согласие на обработку
+                  <a href="#" target="_blank" class="link">
+                    Персональных данных
+                  </a>
+                </span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" />
+                <span class="checkbox__text">
+                  Я подтверждаю ознакомление с
+                  <a href="#" target="_blank" class="link">
+                    Пользовательским соглашением
+                  </a>
+                </span>
+              </label>
+            </div>
+            <div class="contact-us__actions">
+              <button class="btn btn--accent btn--large">Отправить</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!--CONTACT US END-->
+    </div>
+    <script type="module" src="src/js/main.js"></script>
+  </body>
+</html>

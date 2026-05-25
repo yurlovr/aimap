@@ -1,0 +1,194 @@
+@import "./_vars.scss";
+@import "./_mixins.scss";
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 96px;
+  margin-top: 24px;
+  margin-top: clampHelper(0px, 24px, $tablet, $desktop);
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  border-radius: 24px 64px 64px 24px;
+  z-index: 3;
+  @media (max-width: $tablet) {
+    margin-top: 0px;
+  }
+  &__logo {
+    width: 140px;
+    width: clampHelper(109px, 140px, $tablet, $desktop);
+    @media (max-width: $tablet) {
+      width: 109px;
+    }
+  }
+  &__action {
+    margin-left: auto;
+    @media (max-width: 1000px) {
+      display: none;
+    }
+  }
+  &__mobile-menu-trigger {
+    display: none;
+    margin-left: auto;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    width: 48px;
+    border-radius: 12px;
+    background-color: var(--black);
+    border: none;
+    cursor: pointer;
+    @media (max-width: 1000px) {
+      display: flex;
+      &:hover .header-mobile-menu {
+        display: flex;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.header-menu {
+  margin-left: 106px;
+  margin-left: clampHelper(57px, 106px, $tablet, $desktop);
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+  @media (max-width: $tablet) {
+    margin-left: 57px;
+  }
+
+  @media (max-width: 1000px) {
+    display: none;
+    position: absolute;
+    right: 16px;
+    top: 78px;
+    height: auto;
+    background-color: #fff;
+    padding: 24px 0;
+    border-radius: 24px;
+    flex-flow: column nowrap;
+  }
+  &__item {
+    height: 48px;
+    height: clampHelper(40px, 48px, $tablet, $desktop);
+    @media (max-width: $tablet) {
+      height: 40px;
+    }
+    &.mobile-only {
+      display: none;
+    }
+  }
+  &__link {
+    height: 100%;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    font-family: "Rostelecom Basis";
+    font-size: 22px;
+    font-size: clampHelper(16px, 22px, $tablet, $desktop);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--black);
+    letter-spacing: -0.22px;
+    background-color: #fff;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    @media (max-width: $tablet) {
+      font-size: 16px;
+    }
+    &.is-active {
+      color: var(--Purple-Hovered);
+    }
+  }
+}
+
+.header-mobile-menu {
+  display: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 500px;
+  background-color: #fff;
+  padding: 80px 0 32px;
+  flex-flow: column nowrap;
+  gap: 16px;
+  transition: opacity 0.2s linear;
+  &.isActive {
+    display: flex;
+  }
+  @media (max-width: $mobile) {
+    width: 100%;
+  }
+  &__close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 10px;
+    border-radius: 12px;
+    background-color: var(--black);
+    font-size: 0;
+    cursor: pointer;
+  }
+  &__list {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 12px;
+  }
+  &__item {
+    height: 48px;
+  }
+  &__link {
+    height: 100%;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    font-family: "Rostelecom Basis";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+    color: var(--black, #101828);
+    letter-spacing: -0.22px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      color: var(--Purple-Hovered);
+    }
+    &:active {
+      color: var(--Purple-Pressed);
+    }
+    &.is-active {
+      color: var(--Purple-Hovered);
+    }
+  }
+  &__contact-us-btn {
+    margin-top: 64px;
+    margin-inline: auto;
+  }
+  &__info {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 16px;
+    margin-top: auto;
+    padding: 0 16px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.2px;
+  }
+  &__docs {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 16px;
+  }
+  &__doc-link {
+    color: var(--RT-violet);
+  }
+}

@@ -1,0 +1,10 @@
+@function clampHelper($min, $max, $min-screen, $max-screen) {
+  @return clamp(
+    $min,
+    calc(
+      $min + ($max - $min) *
+        ((100vw - $min-screen) / ($max-screen - $min-screen))
+    ),
+    $max
+  );
+}
