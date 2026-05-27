@@ -26,6 +26,7 @@
     .ts-control {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
+      box-shadow: -4px 12px 24px 0 rgba(42, 0, 90, 0.16);
     }
     .ts-chevron {
       transform: rotate(180deg);
@@ -175,6 +176,7 @@
   }
   &.active {
     background-color: transparent;
+    color: inherit;
   }
   @media (max-width: $tablet) {
     font-size: 16px;
