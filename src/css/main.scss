@@ -1,5 +1,5 @@
-@use "select2/dist/css/select2.css";
 @use "tippy.js/dist/tippy.css";
+@use "tom-select/dist/css/tom-select.css";
 @use "./_reset.scss";
 @use "./_fonts.scss";
 @use "./_header.scss";
@@ -376,14 +376,14 @@ input[type="checkbox"] {
     background-repeat: no-repeat;
     background-position: 50% 50%;
     padding: 2px;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="12" viewBox="0 0 14 12" xml:space="preserve"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.1986 1.0594L4.85478 11.3287L0 7.16747L1.09333 5.89192L4.63855 8.93068L11.8947 0L13.1986 1.0594Z" fill="%2161616"/></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="12" viewBox="0 0 14 12" xml:space="preserve"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.1986 1.0594L4.85478 11.3287L0 7.16747L1.09333 5.89192L4.63855 8.93068L11.8947 0L13.1986 1.0594Z" fill="%237700FF"/></svg>');
   }
 
   &:disabled {
     background-color: #eee;
 
     &:checked {
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="12" viewBox="0 0 14 12" xml:space="preserve"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.1986 1.0594L4.85478 11.3287L0 7.16747L1.09333 5.89192L4.63855 8.93068L11.8947 0L13.1986 1.0594Z" fill="%2161616"/></svg>');
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="12" viewBox="0 0 14 12" xml:space="preserve"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.1986 1.0594L4.85478 11.3287L0 7.16747L1.09333 5.89192L4.63855 8.93068L11.8947 0L13.1986 1.0594Z" fill="%237700FF"/></svg>');
     }
   }
 
@@ -582,7 +582,7 @@ input[type="checkbox"] {
   }
 }
 
-.js-select {
-  visibility: hidden;
-  height: 62px;
-}
+// .js-select {
+//   visibility: hidden;
+//   height: 62px;
+// }

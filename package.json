@@ -15,8 +15,7 @@
     "vite": "^8.0.9"
   },
   "dependencies": {
-    "jquery": "^4.0.0",
-    "select2": "^4.1.0-rc.0",
-    "tippy.js": "^6.3.7"
+    "tippy.js": "^6.3.7",
+    "tom-select": "^2.6.1"
   }
 }

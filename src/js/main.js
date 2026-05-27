@@ -1,11 +1,64 @@
-import { $ } from "jquery";
-import "select2";
 import tippy from "tippy.js";
-import select2 from "select2";
+import TomSelect from "tom-select";
 
-select2();
+const plugin_n_items = function () {
+  const self = this;
+  let div;
 
-document.addEventListener("DOMContentLoaded", () => {
+  const itemCount = function () {
+    if (self.items.length > 0) {
+      div.innerText = `${self.settings.placeholder} (${self.items.length})`;
+    } else {
+      div.innerText = self.settings.placeholder;
+    }
+  };
+
+  self.on("initialize", () => {
+    div = document.createElement("div");
+    div.className = "ts-n-items";
+    const chevron = document.createElement("b");
+    chevron.className = "ts-chevron";
+    self.control.append(chevron);
+    self.control.append(div);
+    itemCount();
+  });
+
+  self.on("item_remove", itemCount);
+  self.on("item_add", itemCount);
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+  // SELECT START
+  const selects = document.querySelectorAll(".js-select");
+  if (selects?.length > 0) {
+    TomSelect.define("n_items", plugin_n_items);
+
+    selects.forEach((select) => {
+      new TomSelect(select, {
+        // Your configuration settings here
+        plugins: [
+          "n_items",
+          "checkbox_options",
+          "no_backspace_delete",
+          "clear_button",
+        ],
+        persist: false,
+        hideSelected: false,
+        controlInput: null,
+        render: {
+          option: function (data, escape) {
+            return `<div class="custom-option">${data.text}</div>`;
+          },
+          item: function (data, escape) {
+            return "<span></span>";
+          },
+        },
+      });
+    });
+  }
+
+  // SELECT END
+
   //TIPPY START
   tippy(".js-tooltip", {
     placement: "bottom",
@@ -79,101 +132,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // CONTACT-US MODAL END
 });
-
-// SELECT START
-
-$.fn.select2.amd.define(
-  "CustomSelectionAdapter",
-  [
-    "select2/utils",
-    "select2/selection/multiple",
-    "select2/selection/placeholder",
-    "select2/selection/eventRelay",
-    "select2/selection/single",
-  ],
-  function (
-    Utils,
-    MultipleSelection,
-    Placeholder,
-    EventRelay,
-    SingleSelection,
-  ) {
-    // Decorates MultipleSelection with Placeholder
-    let adapter = Utils.Decorate(MultipleSelection, Placeholder);
-    // Decorates adapter with EventRelay - ensures events will continue to fire
-    // e.g. selected, changed
-    adapter = Utils.Decorate(adapter, EventRelay);
-
-    adapter.prototype.render = function () {
-      // Use selection-box from SingleSelection adapter
-      // This implementation overrides the default implementation
-      let $selection = SingleSelection.prototype.render.call(this);
-      return $selection;
-    };
-
-    adapter.prototype.update = function (data) {
-      // copy and modify SingleSelection adapter
-      this.clear();
-
-      let $rendered = this.$selection.find(".select2-selection__rendered");
-      let noItemsSelected = data.length === 0;
-      let formatted = "";
-
-      if (noItemsSelected) {
-        formatted = this.options.get("placeholder") || "";
-      } else {
-        let itemsData = {
-          selected: data || [],
-          all: this.$element.find("option") || [],
-          placeholder: this.placeholder?.text || "",
-        };
-        // Pass selected and all items to display method
-        // which calls templateSelection
-        formatted = this.display(itemsData, $rendered);
-      }
-
-      $rendered.empty().append(formatted);
-      $rendered.prop("title", formatted);
-    };
-
-    return adapter;
-  },
-);
-
-$(document).ready(function () {
-  $(".js-select").select2({
-    selectionAdapter: $.fn.select2.amd.require("CustomSelectionAdapter"),
-    templateSelection: (data) => {
-      return $(
-        `<div title="${data.placeholder}" class="select2-custom-selection">${data.placeholder} (${data.selected.length}) <button class="select2-custom-clear-btn" title="Очистить"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M9.00893 10.0002L2.00391 2.99514L2.99386 2.00519L9.99888 9.01021L17.0039 2.00519L17.9939 2.99514L10.9888 10.0002L17.9939 17.0052L17.0039 17.9951L9.99888 10.9901L2.99386 17.9951L2.00391 17.0052L9.00893 10.0002Z" fill="var(--RT-dark-orange)"/>
-</svg></button></div>`,
-      );
-    },
-    templateResult: function (data) {
-      if (!data.id) {
-        return data.text;
-      }
-      // Example: Adding an icon and bold text
-      var $result = $(
-        `<div class="select2-custom-option">${data.text} <div class="select2-custom-option__checkbox"> <div class="select2-custom-option__svg"></div></div></div>`,
-      );
-      return $result;
-    },
-    closeOnSelect: false,
-    allowClear: true,
-    width: "100%",
-  });
-  $(".select2-selection").on(
-    "click",
-    ".select2-custom-clear-btn",
-    function (e) {
-      e.stopPropagation();
-      var $select = $(this).closest(".select2-container").prev("select");
-      $select.val(null).trigger("change");
-      $select.select2("close");
-    },
-  );
-});
-
-// SELECT END
