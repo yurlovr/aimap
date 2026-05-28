@@ -2,38 +2,41 @@
 @import "./_mixins.scss";
 
 .hero {
-  margin-top: 116px;
-  margin-top: clampHelper(92px, 116px, $tablet, $desktop);
+  margin-top: 56px;
+  margin-top: clampHelper(52px, 56px, $tablet, $desktop);
   display: flex;
   flex-flow: column nowrap;
   align-content: flex-start;
   mix-blend-mode: difference;
   @media (max-width: $tablet) {
-    margin-top: 92px;
-    margin-top: clampHelper(80px, 92px, $mobile, $tablet);
+    margin-top: 52px;
+    margin-top: clampHelper(44px, 52px, $mobile, $tablet);
   }
   @media (max-width: $mobile) {
-    margin-top: 80px;
+    margin-top: 44px;
   }
   &__title {
+    max-width: 928px;
     margin-left: -0.06em;
     color: var(--black);
-    font-size: 160px;
-    font-size: clampHelper(120px, 160px, $tablet, $desktop);
+    font-size: 96px;
+    font-size: clampHelper(80px, 96px, $tablet, $desktop);
     font-style: normal;
     font-weight: 700;
-    line-height: 1.125;
-    text-transform: uppercase;
+    line-height: 1.08;
     @media (max-width: $tablet) {
-      font-size: 120px;
+      font-size: 80px;
     }
     @media (max-width: $mobile) {
-      font-size: 16vw;
+      font-size: 64px;
+    }
+    @media (max-width: $extra-small) {
+      font-size: 48px;
     }
   }
   &__subTitle {
-    margin-top: 24px;
-    max-width: 928px;
+    margin-top: 32px;
+    max-width: 1336px;
     color: var(--black);
     font-size: 44px;
     font-size: clampHelper(32px, 44px, $tablet, $desktop);
@@ -41,19 +44,19 @@
     font-weight: 400;
     line-height: 1.27;
     @media (max-width: $tablet) {
-      max-width: 648px;
-      font-size: 32px;
+      max-width: 936px;
     }
     @media (max-width: $mobile) {
-      font-size: 24px;
+      margin-top: 24px;
+      font-size: 32px;
+    }
+    @media (max-width: $extra-small) {
+      margin-top: 16px;
+      font-size: 20px;
     }
   }
   &__btn {
-    margin-top: 64px;
-    margin-top: clampHelper(56px, 64px, $tablet, $desktop);
-    @media (max-width: $tablet) {
-      margin-top: 56px;
-    }
+    margin-top: 48px;
     @media (max-width: $mobile) {
       margin-top: 32px;
       margin-top: clampHelper(32px, 56px, $extra-small, $mobile);
