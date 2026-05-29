@@ -548,16 +548,16 @@
       </div>
       <!--CONTACT US START-->
       <div
-        class="contact-us js-contact-us-modal"
+        class="modal js-contact-us-modal"
         role="dialog"
         aria-modal="true"
         aria-labelledby="contact-us-title"
       >
-        <div class="contact-us__backdrop js-contact-us-close"></div>
+        <div class="modal__backdrop js-contact-us-close"></div>
 
-        <div class="contact-us__modal">
+        <div class="modal__dialog">
           <button
-            class="contact-us__close js-contact-us-close"
+            class="modal__close js-contact-us-close"
             aria-label="Закрыть модальное окно"
           >
             <svg
@@ -575,10 +575,8 @@
               />
             </svg>
           </button>
-          <h3 id="contact-us-title" class="contact-us__title">
-            Связаться с нами
-          </h3>
-          <form class="contact-us__form">
+          <h3 id="contact-us-title" class="modal__title">Связаться с нами</h3>
+          <form class="contact-us-form">
             <div class="inputs-group">
               <div class="input-field">
                 <input
@@ -617,14 +615,15 @@
                   Проверьте правильность заполнения
                 </span>
               </div>
-              <div class="input-field">
-                <input
+              <div class="input-field input-field--textarea">
+                <textarea
                   class="input-field__input"
                   type="question"
                   name="question"
                   id="question"
                   placeholder=""
-                />
+                  rows="1"
+                ></textarea>
                 <label class="input-field__label" for="question">
                   *Ваш вопрос
                 </label>
@@ -650,13 +649,54 @@
                 </span>
               </label>
             </div>
-            <div class="contact-us__actions">
+            <div class="modal__actions">
               <button class="btn btn--accent btn--large">Отправить</button>
             </div>
           </form>
         </div>
       </div>
       <!--CONTACT US END-->
+      <!--SUCCESS START-->
+       <div
+        class="modal js-success-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="success-title"
+        aria-describedby="success-description"
+      >
+        <div class="modal__backdrop js-success-close"></div>
+
+        <div class="modal__dialog">
+          <button
+            class="modal__close js-success-close"
+            aria-label="Закрыть модальное окно"
+          >
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M14.4112 16.0003L3.20312 4.79229L4.78704 3.20837L15.9951 14.4164L27.2031 3.20837L28.787 4.79229L17.579 16.0003L28.787 27.2084L27.2031 28.7923L15.9951 17.5843L4.78704 28.7923L3.20312 27.2084L14.4112 16.0003Z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+          <h3 id="success-title" class="modal__title">Сообщение отправлено</h3>
+          <p id="success-description" class="modal__message">Мы свяжемся с Вами в ближайшее время!</p>
+          <div class="success-img-wrapper">
+            <img src="/src/assets/success-logo.svg" class="success-img"></img>
+          </div>
+          <div class="modal__actions">
+            <button class="btn btn--accent btn--large js-success-close">Спасибо</button>
+          </div>
+        </div>
+      </div>
+       <!--SUCCESS END-->
     </div>
     <script type="module" src="src/js/main.js"></script>
   </body>
