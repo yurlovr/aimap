@@ -114,9 +114,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const contactUsButtons = document.querySelectorAll(".js-contact-us-button");
   const contactUsModal = document.querySelector(".js-contact-us-modal");
 
-  const closeButtons = document.querySelectorAll(".js-contact-us-close");
+  const contactUsCloseButtons = document.querySelectorAll(
+    ".js-contact-us-close",
+  );
 
-  closeButtons.forEach((element) => {
+  contactUsCloseButtons.forEach((element) => {
     element.addEventListener("click", () => {
       contactUsModal?.classList.remove("isVisible");
       document.body.classList.remove("no-scroll");
@@ -131,4 +133,19 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // CONTACT-US MODAL END
+
+  // SUCCESS MODAL START
+
+  const successModal = document.querySelector(".js-success-modal");
+
+  const successCloseButtons = document.querySelectorAll(".js-success-close");
+
+  successCloseButtons.forEach((element) => {
+    element.addEventListener("click", () => {
+      successModal?.classList.remove("isVisible");
+      document.body.classList.remove("no-scroll");
+    });
+  });
+
+  // SUCCESS MODAL END
 });
