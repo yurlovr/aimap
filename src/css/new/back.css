@@ -1,0 +1,31 @@
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-platinum-light);
+  font-family: var(--font-family-medium);
+  font-size: var(--font-body-medium-size);
+  line-height: var(--font-body-medium-line-height);
+  font-weight: 500;
+  transition: color 0.2s;
+  align-self: flex-start;
+  margin-bottom: 24px;
+}
+.back-btn:hover { color: var(--color-purple-muted); }
+.back-btn__icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.back-btn__icon svg {
+  width: 9px;
+  height: 15px;
+  fill: currentColor;
+}
+
+@media (max-width: 767px) {
+  .back-btn { font-size: 14px; }
+}

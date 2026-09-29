@@ -1,0 +1,35 @@
+.tags {
+  width: 100%;
+  max-width: 952px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 32px;
+  background: var(--color-bg);
+  color: rgba(195, 192, 211, 0.50);
+  font-family: 'Rostelecom Basis', 'Inter', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.14px;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+  cursor: default;
+}
+
+/* .tag:hover {
+  background: rgba(88, 93, 105, 0.20);
+  color: var(--color-platinum-light);
+} */
+
+@media (max-width: 767px) {
+  .tag { font-size: 11px; line-height: 14px; padding: 6px 12px; }
+  .tags { gap: 8px; }
+}

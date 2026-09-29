@@ -1,0 +1,111 @@
+.header { padding-top: 16px; padding-bottom: 16px; }
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  min-height: 88px;
+  border-radius: 20px;
+  border: 1px solid var(--color-bg);;
+  background: rgba(88, 93, 105, 0.05);
+  backdrop-filter: blur(12px);
+}
+
+.header__logo { flex-shrink: 0; }
+.header__logo img { display: block; height: 48px; width: auto; }
+
+/* CTA */
+.header__cta {
+  padding: 12px 24px;
+  border-radius: var(--radius-s);
+  background: var(--color-purple-main);
+  color: var(--color-neutral-white);
+  font-family: var(--font-family-medium);
+  font-size: var(--font-button-web-small-size);
+  line-height: var(--font-button-web-small-line-height);
+  font-weight: 500;
+  transition: background 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.header__cta:hover { background: var(--color-purple-hover); }
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.header__nav-link {
+  padding: 10px 20px;
+  border-radius: var(--radius-s);
+  color: var(--color-platinum-light);
+  font-family: var(--font-family-medium);
+  font-size: var(--font-body-medium-size);
+  line-height: var(--font-body-medium-line-height);
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.header__nav-link:hover { background: var(--color-white-transparent-10); }
+.header__nav-link._active {
+  background: var(--color-neutral-white);
+  color: var(--color-neutral-black);
+}
+
+@media (min-width: 768px) {
+  .header__inner {
+    position: relative;
+  }
+  .header__nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 767px) {
+  .header { padding-top: 12px; padding-bottom: 12px; }
+
+  .header__inner {
+    min-height: auto;
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .header__logo img,
+  .header__logo svg {
+    height: 40px;
+    width: auto;
+  }
+
+  .header__cta {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .header__nav {
+    position: static;
+    transform: none;
+    margin-top: 16px;
+    gap: 8px;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  .header__nav-link {
+    flex: 1;
+    text-align: center;
+    padding: 12px 16px;
+    background: rgba(88, 93, 105, 0.05);
+    border: 1px solid var(--color-bg);;
+  }
+  .header__nav-link._active {
+    background: var(--color-neutral-white);
+    color: var(--color-neutral-black);
+    border-color: var(--color-neutral-white);
+  }
+}

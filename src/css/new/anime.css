@@ -1,0 +1,8 @@
+.stage { width: min(1100px, 100vw); padding: 24px; }
+#svgObject {
+  display: block;
+  width: 100%;
+  aspect-ratio: 878 / 547;
+  overflow: visible;
+}
+#svgObject svg { width: 100%; height: 100%; overflow: visible; }

@@ -1,0 +1,15 @@
+.bg-glow {
+  position: fixed;
+  width: 539px; height: 539px;
+  border-radius: 539px;
+  background: var(--color-purple-main);
+  opacity: 0.5;
+  filter: blur(150px);
+  pointer-events: none;
+  z-index: 0;
+  will-change: filter;
+  transform: translateZ(0);
+}
+.bg-glow--top-left { top: 36px; left: -513px; }
+.bg-glow--bottom-right { bottom: -338px; right: -400px; }
+@media (max-width: 767px) { .bg-glow { display: none; } }

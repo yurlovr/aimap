@@ -1,0 +1,67 @@
+:root {
+  --font-family-regular: 'Rostelecom Basis', 'Inter', sans-serif;
+  --font-family-medium:  'Rostelecom Basis', 'Inter', sans-serif;
+
+  --font-h1-web-size: 50px;
+  --font-h1-web-small-size: 44px;
+  --font-h1-tablet-size: 36px;
+  --font-h1-mobile-size: 28px;
+
+  --font-h4-web-size: 22px;
+  --font-h4-web-line-height: 28px;
+  --font-h4-tablet-size: 20px;
+  --font-h4-tablet-line-height: 24px;
+  --font-h4-mobile-size: 18px;
+  --font-h4-mobile-line-height: 24px;
+
+  --font-body-medium-size: 16px;
+  --font-body-medium-line-height: 24px;
+  --font-body-medium-mobile-size: 14px;
+  --font-body-medium-mobile-line-height: 20px;
+  --font-body-small-size: 14px;
+  --font-body-small-line-height: 20px;
+
+  --font-button-web-small-size: 16px;
+  --font-button-web-small-line-height: 24px;
+
+  --color-purple-main: #7700ff;
+  --color-purple-soft: #8254f8;
+  --color-purple-hover: #6500d9;
+  --color-purple-muted: #b0a8fa;
+
+  --color-platinum-light: #f0eeff;
+  --color-neutral-200: #b5b7c0;
+  --color-neutral-400: #797e8b;
+  --color-neutral-500: #585d69;
+  --color-neutral-800: #212938;
+  --color-neutral-black: #101828;
+  --color-neutral-white: #ffffff;
+  --color-orange: #FF4F12;
+
+  --color-bg-hover: rgba(255, 255, 255, 0.08);
+  --color-bg: rgba(88, 93, 105, 0.10);
+
+  --color-white-transparent-10: rgb(255 255 255 / 10%);
+  --color-white-transparent-20: rgb(255 255 255 / 20%);
+
+  --shadow-neutral-medium:
+    0 0 16px rgb(88 93 105 / 10%), 0 4px 8px rgb(88 93 105 / 5%);
+
+  --radius-2xl: 32px;
+  --radius-xl: 20px;
+  --radius-l: 16px;
+  --radius-m: 12px;
+  --radius-s: 8px;
+
+  --spacing-5x: 20px;
+  --spacing-6x: 24px;
+  --spacing-3x: 12px;
+
+  --container-max-xl: 1440px;
+  --container-max-l: 1280px;
+  --container-side-m: 24px;
+  --container-side-s: 16px;
+  --grid-gap-xl: 24px;
+  --grid-gap-m: 20px;
+  --grid-gap-s: 16px;
+}

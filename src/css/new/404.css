@@ -1,0 +1,85 @@
+.error-page {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0 120px;
+  position: relative;
+  z-index: 1;
+}
+
+.error-page__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+  max-width: 560px;
+}
+
+.hero__stat-value {
+  font-family: var(--font-family-medium, 'Rostelecom Basis', 'Inter', sans-serif);
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 0.95;
+  font-feature-settings: 'liga' off, 'clig' off;
+  background: linear-gradient(111deg, #FF9E7E 0%, #FF4F12 89.76%, #B3370D 179.52%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.error-page__code {
+  font-family: 'Rostelecom Basis', 'Inter', sans-serif;
+  font-size: 200px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 100%;
+  font-feature-settings: 'liga' off, 'clig' off;
+  background: linear-gradient(111deg, #FF9E7E 0%, #FF4F12 89.76%, #B3370D 179.52%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.error-page__text {
+  font-family: var(--font-family-regular);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--color-neutral-400);
+  margin-top: -8px;
+}
+
+.error-page__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: var(--radius-s);
+  background: var(--color-purple-main);
+  color: var(--color-neutral-white);
+  font-family: var(--font-family-medium);
+  font-size: var(--font-button-web-small-size);
+  line-height: var(--font-button-web-small-line-height);
+  font-weight: 500;
+  transition: background 0.2s, transform 0.15s;
+  margin-top: 8px;
+}
+.error-page__button:hover { background: var(--color-purple-hover); }
+.error-page__button:active { transform: scale(0.97); }
+
+@media (max-width: 1023px) {
+  .error-page__code { font-size: 160px; }
+}
+@media (max-width: 767px) {
+  .error-page { padding: 48px 0 80px; }
+  .error-page__code { font-size: 120px; }
+  .error-page__text { font-size: 16px; line-height: 22px; }
+  .error-page__inner { gap: 16px; }
+}
+@media (max-width: 480px) {
+  .error-page__code { font-size: 96px; }
+}

@@ -1,0 +1,263 @@
+.hero {
+  position: relative;
+  padding-top: 128px;
+  padding-bottom: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Фон hero: привязан к верху секции, высота по canvas */
+.hero__bg {
+  position: absolute;
+  top: 42px;
+  right: 64px;
+  width: 100%;
+  max-width: 1121px;
+  height: auto;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Canvas ведёт себя как <img>: занимает 100% ширины .hero__bg,
+   высота — по соотношению сторон 878:547 */
+#canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 878 / 547;
+}
+
+.hero__container {
+  position: relative;
+  z-index: 1;
+  max-width: 1440px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.hero__content {
+  max-width: 600px;
+}
+
+.hero__title {
+  margin: 0;
+  font-family: var(--font-family-medium, 'Rostelecom Basis', 'Inter', sans-serif);
+  font-size: 80px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.hero__title-gradient,
+.hero__title-white {
+  display: block;
+}
+
+.hero__title-gradient {
+  background: linear-gradient(90deg, #70F 0%, #8461F5 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.hero__title-white {
+  color: #FFF;
+}
+
+.hero__descr {
+  margin: 32px 0 0;
+  max-width: 580px;
+  color: var(--color-platinum, #C3C0D3);
+  font-family: var(--font-family-medium, 'Rostelecom Basis', 'Inter', sans-serif);
+  font-size: var(--font-h4-web-size, 22px);
+  font-weight: 500;
+  line-height: var(--font-h4-web-line-height, 28px);
+  font-feature-settings: 'liga' off, 'clig' off;
+}
+
+.hero__btn {
+  display: inline-block;
+  margin-top: 64px;
+  padding: 16px 32px;
+  background: var(--color-purple-main, #7700FF);
+  color: #FFF;
+  font-family: var(--font-family-medium, 'Rostelecom Basis', 'Inter', sans-serif);
+  font-size: var(--font-button-web-small-size, 16px);
+  font-weight: 500;
+  line-height: var(--font-button-web-small-line-height, 24px);
+  border-radius: var(--radius-s, 8px);
+  text-decoration: none;
+  transition: background .2s ease;
+}
+
+.hero__btn:hover {
+  background: var(--color-purple-hover, #6500D9);
+}
+
+.hero__stats {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  margin-top: 128px;
+}
+
+.hero__stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__stat-divider {
+  width: 1px;
+  height: 91px;
+  background: var(--color-white-transparent-10, rgba(255, 255, 255, 0.12));
+  flex-shrink: 0;
+}
+
+.hero__stat-value {
+  font-family: var(--font-family-medium, 'Rostelecom Basis', 'Inter', sans-serif);
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 0.95;
+  font-feature-settings: 'liga' off, 'clig' off;
+  background: linear-gradient(111deg, #FF9E7E 0%, #FF4F12 89.76%, #B3370D 179.52%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.hero__stat-label {
+  margin-top: 8px;
+  color: var(--color-platinum, #C3C0D3);
+  font-family: var(--font-family-medium, 'Rostelecom Basis', 'Inter', sans-serif);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 40px;
+  font-feature-settings: 'liga' off, 'clig' off;
+}
+
+
+@media (max-width: 1919px) {
+  .hero__container {
+    max-width: 1280px;
+  }
+
+  .hero__bg {
+    top: 42px;
+    right: 64px;
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .hero {
+    padding-top: 96px;
+  }
+
+  .hero__container {
+    padding: 0 var(--container-side-m, 24px);
+  }
+
+  .hero__title {
+    font-size: var(--font-h1-tablet-size, 36px);
+  }
+
+  .hero__descr {
+    font-size: var(--font-h4-tablet-size, 20px);
+    line-height: var(--font-h4-tablet-line-height, 24px);
+  }
+
+  .hero__stats {
+    gap: 40px;
+    margin-top: 96px;
+  }
+
+  .hero__stat-value {
+    font-size: 72px;
+  }
+
+  .hero__stat-label {
+    font-size: 22px;
+    line-height: 32px;
+  }
+
+  .hero__stat-divider {
+    height: 72px;
+  }
+
+  .hero__bg {
+    top: -100px;
+    right: -80px;
+    max-width: 700px;
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding-top: 64px;
+  }
+
+  .hero__container {
+    padding: 0 var(--container-side-s, 16px);
+  }
+
+  .hero__title {
+    font-size: var(--font-h1-mobile-size, 28px);
+  }
+
+  .hero__descr {
+    font-size: var(--font-h4-mobile-size, 18px);
+    line-height: var(--font-h4-mobile-line-height, 24px);
+    margin-top: 24px;
+  }
+
+  .hero__btn {
+    margin-top: 32px;
+  }
+
+  .hero__stats {
+    margin-top: 64px;
+    gap: 12px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .hero__stat {
+    min-width: 0;
+  }
+
+  .hero__stat-value {
+    font-size: 44px;
+    line-height: 1;
+  }
+
+  .hero__stat-label {
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .hero__stat-divider {
+    height: 48px;
+  }
+
+  .hero__bg {
+    top: -40px;
+    right: -80px;
+    max-width: 450px;
+    opacity: 0.4;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__btn {
+    display: block;
+    margin-top: 32px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}

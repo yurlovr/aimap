@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Автономный ИИ-агент с RPA-функционалом — Каталог ИИ-решений</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="src/css/new/vars.css" />
+  <link rel="stylesheet" type="text/css" href="src/css/new/reset.css" />
+  <link rel="stylesheet" type="text/css" href="src/css/new/header.css" />
+  <link rel="stylesheet" type="text/css" href="src/css/new/glow.css" />
+  <link rel="stylesheet" type="text/css" href="src/css/new/tags.css" />
+  <link rel="stylesheet" type="text/css" href="src/css/new/slider.css" />
+  <link rel="stylesheet" type="text/css" href="src/css/new/taxonomy.css" />
+  <link rel="stylesheet" type="text/css" href="src/css/new/back.css" />
+  <link rel="stylesheet" type="text/css" href="src/css/new/company.css" />
+  <link rel="stylesheet" type="text/css" href="src/css/new/solution.css" />
+  <link rel="stylesheet" type="text/css" href="src/css/new/footer.css" />
+  <link rel="stylesheet" type="text/css" href="src/css/new/modal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<style>
+
+
+</style>
+<body>
+
+  <div class="bg-glow bg-glow--top-left" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--bottom-right" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <a href="/" class="header__logo" aria-label="Каталог ИИ-решений">
+          <img src="src/assets/new/logo.svg" alt="Каталог ИИ-решений" loading="lazy" decoding="async">
+        </a>
+
+        <a href="#" class="header__cta" data-modal-open="contact-modal" aria-haspopup="dialog">Связаться с нами</a>
+      </div>
+
+      <nav class="header__nav" aria-label="Основная навигация">
+        <a href="/solutions-new.html" class="header__nav-link">Решения</a>
+        <div class="header__nav-link _active">Компании</div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <section class="solution">
+      <div class="solution__container">
+
+        <!-- Кнопка назад -->
+        <a href="/companies-new.html" class="back-btn">
+          <span class="back-btn__icon">
+            <svg viewBox="0 0 9 15" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M2.74777 7.5L9 1.35117L7.62611 0L0 7.5L7.62611 15L9 13.6488L2.74777 7.5Z"/>
+            </svg>
+          </span>
+          <span>Назад</span>
+        </a>
+
+        <!-- TAXONOMY -->
+        <div class="taxonomy">
+          <!-- Отраслевые направления -->
+          <div class="taxonomy__col">
+            <span class="taxonomy__title">Отраслевые направления</span>
+            <div class="taxonomy__icons">
+              <div class="taxonomy__icon" title="Строительство">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M10.1246 9.76622L11.9419 7.95053C12.3099 8.0584 12.7227 7.97231 13.0128 7.68225C13.4357 7.25971 13.4357 6.57428 13.0128 6.15175C12.5898 5.72921 11.9036 5.72921 11.4807 6.15175C11.1906 6.44181 11.1044 6.85409 11.2121 7.22153L9.39483 9.03722L3.52074 3.16865C3.41532 3.06333 3.26937 3.00927 3.12111 3.019C2.97234 3.02874 2.83537 3.10254 2.74534 3.22117C0.635889 5.99058 0.29218 9.63144 1.61238 12.6796C1.60315 12.7183 1.59699 12.758 1.59699 12.7995V19.4845C1.59699 19.7694 1.8281 20 2.11307 20H7.19689C7.48186 20 7.71296 19.7694 7.71296 19.4845V17.9742C8.54043 18.2025 9.39432 18.3202 10.2503 18.3202C12.252 18.3202 14.2609 17.6906 15.9466 16.4089C16.0651 16.3187 16.139 16.1819 16.1492 16.0335C16.1592 15.8851 16.1043 15.7396 15.9992 15.6343L10.1246 9.76622Z" fill="#FF4F12"/>
+                  <path d="M18.589 4.65235C18.2211 3.75767 17.6744 2.92434 16.954 2.20859C16.2336 1.48773 15.4008 0.945807 14.5117 0.572596C13.5869 0.189161 12.6059 0 11.6249 0C11.1855 0 10.833 0.35276 10.833 0.792433C10.833 1.22699 11.1907 1.58487 11.6249 1.58487C12.4067 1.58487 13.1833 1.73824 13.9088 2.03476C14.6037 2.32106 15.2628 2.75562 15.835 3.32822C16.4073 3.90082 16.8365 4.56033 17.1277 5.25562C17.4292 5.98159 17.5824 6.75869 17.5824 7.5409C17.5824 7.97546 17.935 8.33333 18.3744 8.33333C18.8087 8.33333 19.1663 7.98057 19.1663 7.5409C19.1663 6.56442 18.9722 5.57771 18.589 4.65235Z" fill="#FF4F12"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="Спорт">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M4.84721 14.8437C6.31077 16.1636 7.86992 17.3663 9.51306 18.4418L10 18.75L10.481 18.4454C12.1268 17.3697 13.6886 16.1654 15.1528 14.8436C18.3691 11.9143 20 9.22121 20 6.83917C20 5.23063 19.3229 3.69927 18.1415 2.63877C16.9592 1.57735 15.3879 1.08796 13.8289 1.29758C12.2699 1.50631 10.8749 2.39274 10 3.72942C9.12499 2.39267 7.72996 1.50625 6.17105 1.29758C4.61201 1.08797 3.04078 1.57738 1.85854 2.63877C0.6771 3.69929 0 5.23045 0 6.83917C0 9.22143 1.63111 11.9144 4.84721 14.8437Z" fill="#FF4F12"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="Образование">
+                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+                  <path d="M4.59993 1.215C6.32828 0.228792 8.22603 -0.135205 10.0516 0.0439866C9.86503 1.13628 9.83319 2.25761 9.96315 3.37008C10.1431 4.90147 10.6309 6.42706 11.4519 7.84754C12.2712 9.26827 13.347 10.4522 14.5845 11.3738C15.4849 12.044 16.471 12.576 17.5069 12.9608C16.7434 14.6417 15.4673 16.1124 13.7277 17.1165C11.9992 18.1045 10.1014 18.4687 8.27566 18.2893C8.44865 17.2774 8.4894 16.2404 8.3905 15.2064L8.36498 14.9655C8.18688 13.4349 7.69675 11.9093 6.87573 10.4889C6.05479 9.06501 4.9797 7.87962 3.74821 6.95991C2.84843 6.28899 1.85954 5.75486 0.820288 5.37068C1.58399 3.6899 2.86188 2.21924 4.59993 1.215ZM0.103917 7.80046C0.86114 8.09691 1.5816 8.49432 2.24164 8.98519C3.21476 9.71007 4.05969 10.6392 4.69836 11.7468C5.33947 12.8592 5.72224 14.0528 5.86269 15.2548C5.95832 16.0722 5.94162 16.8954 5.81985 17.6997C4.67433 17.2512 3.61402 16.5725 2.71648 15.6835C2.43858 15.3408 2.14531 15.006 1.84199 14.6812C1.62238 14.3888 1.4164 14.0763 1.22769 13.7492C0.14862 11.8793 -0.196867 9.78384 0.103917 7.80046ZM12.5106 0.631778C14.3823 1.36401 16.0268 2.70994 17.1064 4.58406C18.1856 6.4542 18.5302 8.55019 18.2292 10.5337C17.4696 10.2373 16.7492 9.83952 16.0906 9.34856C15.1198 8.62394 14.2762 7.69482 13.6334 6.58283L13.5158 6.37349C12.9821 5.39352 12.6476 4.35325 12.4982 3.30518L12.4691 3.08076C12.3733 2.26058 12.389 1.43644 12.5106 0.631778Z" fill="#FF4F12"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="Связь">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M10.8236 10.4087L16.1383 8.9587V16.658C14.411 17.7135 12.2911 18.3346 10.0014 18.3346C7.71175 18.3346 5.5918 17.7135 3.86454 16.658V8.96073L9.1793 10.4108C9.73195 10.5608 10.2709 10.5608 10.8236 10.4087ZM19.6923 4.24379L10.5111 1.74027C10.1616 1.64387 9.83836 1.64387 9.48881 1.74027L0.307582 4.24379C0.123038 4.29448 0 4.45747 0 4.65326C0 4.84707 0.122053 5.01206 0.307582 5.06274L9.48881 8.39959C9.83836 8.49599 10.1616 8.49599 10.5111 8.39959L17.6751 5.61233V9.69106C17.6751 10.1135 18.01 10.4543 18.425 10.4543C18.84 10.4543 19.1749 10.1135 19.1749 9.69106V5.1999L19.6924 5.05977C19.877 5.00908 20 4.84609 20 4.65029C20 4.45748 19.8779 4.29149 19.6923 4.24379Z" fill="#FF4F12"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="Право">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M16.5858 13.9622C15.4564 15.0917 14.1518 15.6171 13.0233 14.4876L19.372 8.13954C20.5006 9.2681 19.9752 10.5737 18.8457 11.7013L16.5858 13.9622Z" fill="#FF4F12"/>
+                  <path d="M5.80509 3.41476L8.06567 1.15374C9.19409 0.0251106 10.4995 -0.500336 11.6279 0.627361L5.27881 6.97675C4.15039 5.84905 4.67668 4.54339 5.80509 3.41476Z" fill="#FF4F12"/>
+                  <path d="M5.27881 6.97675L11.6279 0.627361L19.372 8.13954L13.0233 14.4876L5.27881 6.97675Z" fill="#FF4F12"/>
+                  <path d="M0.627998 16.7358C1.57151 15.7913 7.29048 11.0174 7.29048 11.0174L8.98256 12.7077C8.98256 12.7077 4.20806 18.427 3.2636 19.3715C2.31914 20.3161 1.39549 20.1012 0.647871 19.3526C-0.100696 18.604 -0.316465 17.6803 0.627998 16.7358Z" fill="#FF4F12"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="Транспорт">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M3 1.25C1.34315 1.25 0 2.57916 0 4.21875V13.8021C0 15.4417 1.34315 16.7708 3 16.7708H3.17071C3.58254 17.9239 4.69378 18.75 6 18.75C7.30622 18.75 8.4175 17.9239 8.8293 16.7708H11C11.0567 16.7708 11.1131 16.7692 11.1691 16.7662C11.5796 17.9217 12.692 18.75 14 18.75C15.3062 18.75 16.4175 17.9239 16.8293 16.7708H19C19.5523 16.7708 20 16.3278 20 15.7812V9.66146C20 9.52302 19.9706 9.38606 19.9138 9.25959L17.9138 4.80642C17.7533 4.44906 17.3952 4.21875 17 4.21875H14C14 2.57916 12.6569 1.25 11 1.25H3ZM12.3333 9.84375V6.19792H16.3501L17.239 9.84375H12.3333ZM5 15.7812C5 15.2347 5.44772 14.7917 6 14.7917C6.55228 14.7917 7 15.2347 7 15.7812C7 16.3278 6.55228 16.7708 6 16.7708C5.44772 16.7708 5 16.3278 5 15.7812ZM14 14.7917C13.4477 14.7917 13 15.2347 13 15.7812C13 16.3278 13.4477 16.7708 14 16.7708C14.5523 16.7708 15 16.3278 15 15.7812C15 15.2347 14.5523 14.7917 14 14.7917Z" fill="#FF4F12"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="Промышленность">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M2 17V8L6 10V6L10 8V4L18 9V17H2Z" fill="#FF4F12"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="Энергетика">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M11 2L5 11H10L8 18L15 9H10L11 2Z" fill="#FF4F12"/>
+                </svg>
+              </div>
+                            <div class="taxonomy__icon" title="Связь">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M10.8236 10.4087L16.1383 8.9587V16.658C14.411 17.7135 12.2911 18.3346 10.0014 18.3346C7.71175 18.3346 5.5918 17.7135 3.86454 16.658V8.96073L9.1793 10.4108C9.73195 10.5608 10.2709 10.5608 10.8236 10.4087ZM19.6923 4.24379L10.5111 1.74027C10.1616 1.64387 9.83836 1.64387 9.48881 1.74027L0.307582 4.24379C0.123038 4.29448 0 4.45747 0 4.65326C0 4.84707 0.122053 5.01206 0.307582 5.06274L9.48881 8.39959C9.83836 8.49599 10.1616 8.49599 10.5111 8.39959L17.6751 5.61233V9.69106C17.6751 10.1135 18.01 10.4543 18.425 10.4543C18.84 10.4543 19.1749 10.1135 19.1749 9.69106V5.1999L19.6924 5.05977C19.877 5.00908 20 4.84609 20 4.65029C20 4.45748 19.8779 4.29149 19.6923 4.24379Z" fill="#FF4F12"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="Право">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M16.5858 13.9622C15.4564 15.0917 14.1518 15.6171 13.0233 14.4876L19.372 8.13954C20.5006 9.2681 19.9752 10.5737 18.8457 11.7013L16.5858 13.9622Z" fill="#FF4F12"/>
+                  <path d="M5.80509 3.41476L8.06567 1.15374C9.19409 0.0251106 10.4995 -0.500336 11.6279 0.627361L5.27881 6.97675C4.15039 5.84905 4.67668 4.54339 5.80509 3.41476Z" fill="#FF4F12"/>
+                  <path d="M5.27881 6.97675L11.6279 0.627361L19.372 8.13954L13.0233 14.4876L5.27881 6.97675Z" fill="#FF4F12"/>
+                  <path d="M0.627998 16.7358C1.57151 15.7913 7.29048 11.0174 7.29048 11.0174L8.98256 12.7077C8.98256 12.7077 4.20806 18.427 3.2636 19.3715C2.31914 20.3161 1.39549 20.1012 0.647871 19.3526C-0.100696 18.604 -0.316465 17.6803 0.627998 16.7358Z" fill="#FF4F12"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="Транспорт">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M3 1.25C1.34315 1.25 0 2.57916 0 4.21875V13.8021C0 15.4417 1.34315 16.7708 3 16.7708H3.17071C3.58254 17.9239 4.69378 18.75 6 18.75C7.30622 18.75 8.4175 17.9239 8.8293 16.7708H11C11.0567 16.7708 11.1131 16.7692 11.1691 16.7662C11.5796 17.9217 12.692 18.75 14 18.75C15.3062 18.75 16.4175 17.9239 16.8293 16.7708H19C19.5523 16.7708 20 16.3278 20 15.7812V9.66146C20 9.52302 19.9706 9.38606 19.9138 9.25959L17.9138 4.80642C17.7533 4.44906 17.3952 4.21875 17 4.21875H14C14 2.57916 12.6569 1.25 11 1.25H3ZM12.3333 9.84375V6.19792H16.3501L17.239 9.84375H12.3333ZM5 15.7812C5 15.2347 5.44772 14.7917 6 14.7917C6.55228 14.7917 7 15.2347 7 15.7812C7 16.3278 6.55228 16.7708 6 16.7708C5.44772 16.7708 5 16.3278 5 15.7812ZM14 14.7917C13.4477 14.7917 13 15.2347 13 15.7812C13 16.3278 13.4477 16.7708 14 16.7708C14.5523 16.7708 15 16.3278 15 15.7812C15 15.2347 14.5523 14.7917 14 14.7917Z" fill="#FF4F12"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="Промышленность">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M2 17V8L6 10V6L10 8V4L18 9V17H2Z" fill="#FF4F12"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="Энергетика">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M11 2L5 11H10L8 18L15 9H10L11 2Z" fill="#FF4F12"/>
+                </svg>
+              </div>
+                            <div class="taxonomy__icon" title="Связь">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M10.8236 10.4087L16.1383 8.9587V16.658C14.411 17.7135 12.2911 18.3346 10.0014 18.3346C7.71175 18.3346 5.5918 17.7135 3.86454 16.658V8.96073L9.1793 10.4108C9.73195 10.5608 10.2709 10.5608 10.8236 10.4087ZM19.6923 4.24379L10.5111 1.74027C10.1616 1.64387 9.83836 1.64387 9.48881 1.74027L0.307582 4.24379C0.123038 4.29448 0 4.45747 0 4.65326C0 4.84707 0.122053 5.01206 0.307582 5.06274L9.48881 8.39959C9.83836 8.49599 10.1616 8.49599 10.5111 8.39959L17.6751 5.61233V9.69106C17.6751 10.1135 18.01 10.4543 18.425 10.4543C18.84 10.4543 19.1749 10.1135 19.1749 9.69106V5.1999L19.6924 5.05977C19.877 5.00908 20 4.84609 20 4.65029C20 4.45748 19.8779 4.29149 19.6923 4.24379Z" fill="#FF4F12"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="Право">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M16.5858 13.9622C15.4564 15.0917 14.1518 15.6171 13.0233 14.4876L19.372 8.13954C20.5006 9.2681 19.9752 10.5737 18.8457 11.7013L16.5858 13.9622Z" fill="#FF4F12"/>
+                  <path d="M5.80509 3.41476L8.06567 1.15374C9.19409 0.0251106 10.4995 -0.500336 11.6279 0.627361L5.27881 6.97675C4.15039 5.84905 4.67668 4.54339 5.80509 3.41476Z" fill="#FF4F12"/>
+                  <path d="M5.27881 6.97675L11.6279 0.627361L19.372 8.13954L13.0233 14.4876L5.27881 6.97675Z" fill="#FF4F12"/>
+                  <path d="M0.627998 16.7358C1.57151 15.7913 7.29048 11.0174 7.29048 11.0174L8.98256 12.7077C8.98256 12.7077 4.20806 18.427 3.2636 19.3715C2.31914 20.3161 1.39549 20.1012 0.647871 19.3526C-0.100696 18.604 -0.316465 17.6803 0.627998 16.7358Z" fill="#FF4F12"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="Транспорт">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M3 1.25C1.34315 1.25 0 2.57916 0 4.21875V13.8021C0 15.4417 1.34315 16.7708 3 16.7708H3.17071C3.58254 17.9239 4.69378 18.75 6 18.75C7.30622 18.75 8.4175 17.9239 8.8293 16.7708H11C11.0567 16.7708 11.1131 16.7692 11.1691 16.7662C11.5796 17.9217 12.692 18.75 14 18.75C15.3062 18.75 16.4175 17.9239 16.8293 16.7708H19C19.5523 16.7708 20 16.3278 20 15.7812V9.66146C20 9.52302 19.9706 9.38606 19.9138 9.25959L17.9138 4.80642C17.7533 4.44906 17.3952 4.21875 17 4.21875H14C14 2.57916 12.6569 1.25 11 1.25H3ZM12.3333 9.84375V6.19792H16.3501L17.239 9.84375H12.3333ZM5 15.7812C5 15.2347 5.44772 14.7917 6 14.7917C6.55228 14.7917 7 15.2347 7 15.7812C7 16.3278 6.55228 16.7708 6 16.7708C5.44772 16.7708 5 16.3278 5 15.7812ZM14 14.7917C13.4477 14.7917 13 15.2347 13 15.7812C13 16.3278 13.4477 16.7708 14 16.7708C14.5523 16.7708 15 16.3278 15 15.7812C15 15.2347 14.5523 14.7917 14 14.7917Z" fill="#FF4F12"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="Промышленность">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M2 17V8L6 10V6L10 8V4L18 9V17H2Z" fill="#FF4F12"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="Энергетика">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M11 2L5 11H10L8 18L15 9H10L11 2Z" fill="#FF4F12"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Технологии — по правому краю -->
+          <div class="taxonomy__col taxonomy__col--right">
+            <span class="taxonomy__title">Технологии</span>
+            <div class="taxonomy__icons">
+              <div class="taxonomy__icon" title="ML">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <circle cx="5" cy="5" r="5" fill="#7700FF"/>
+                  <circle cx="16.6667" cy="9.16667" r="3.33333" fill="#7700FF"/>
+                  <circle cx="6.66667" cy="16.6667" r="3.33333" fill="#7700FF"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="NLP">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M19.9979 9.49313C19.9979 8.17237 19.3611 6.95289 18.2791 6.19491C18.2962 6.05374 18.3029 5.91826 18.3029 5.7875C18.3029 3.74286 16.6317 2.08203 14.5745 2.08203C13.7308 2.08203 12.9205 2.36533 12.2599 2.88359C11.8566 2.5804 11.3647 2.41838 10.8461 2.41838C10.2865 2.41838 9.74403 2.61735 9.32074 2.97455C8.47037 2.38806 7.4837 2.08203 6.43972 2.08203C3.63703 2.08203 1.35564 4.34933 1.35564 7.13487C1.35564 7.24288 1.35945 7.35374 1.36613 7.4646C0.508139 8.1013 0 9.0952 0 10.1669C0 12.023 1.52151 13.5362 3.39012 13.5362H5.4474C5.61328 14.6779 6.60283 15.5571 7.79639 15.5571H11.9187C12.2171 15.5571 12.4983 15.685 12.6918 15.9105L14.0074 17.4369C14.2686 17.7401 14.6518 17.9154 15.0551 17.9154H15.5699C16.3288 17.9154 16.9494 17.2986 16.9494 16.5444C16.9494 16.2715 16.8683 16.0053 16.7158 15.7864L15.2105 13.5362H15.9322C18.1763 13.5362 20 11.7237 20 9.49333L19.9979 9.49313Z" fill="#7700FF"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="CV">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M1 7.5V12.5" stroke="#7700FF" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M4 4.5V15.5" stroke="#7700FF" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M7 1V19" stroke="#7700FF" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M10 4V16" stroke="#7700FF" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M13 7V13" stroke="#7700FF" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M16 4V16" stroke="#7700FF" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M19 7V13" stroke="#7700FF" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="Audio">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <rect x="1" y="3" width="18" height="14" rx="2" fill="#7700FF"/>
+                  <circle cx="6" cy="8" r="2" fill="#101828"/>
+                  <circle cx="14" cy="8" r="2" fill="#101828"/>
+                  <rect x="8" y="12" width="4" height="2" fill="#101828"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="Vision">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M10 5C5 5 2 10 2 10C2 10 5 15 10 15C15 15 18 10 18 10C18 10 15 5 10 5Z" fill="none" stroke="#7700FF" stroke-width="2"/>
+                  <circle cx="10" cy="10" r="2.5" fill="#7700FF"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="Robotics">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <rect x="5" y="6" width="10" height="9" rx="2" fill="#7700FF"/>
+                  <circle cx="8" cy="10" r="1.5" fill="#101828"/>
+                  <circle cx="12" cy="10" r="1.5" fill="#101828"/>
+                  <rect x="8" y="2" width="4" height="4" fill="#7700FF"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="Audio">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <rect x="1" y="3" width="18" height="14" rx="2" fill="#7700FF"/>
+                  <circle cx="6" cy="8" r="2" fill="#101828"/>
+                  <circle cx="14" cy="8" r="2" fill="#101828"/>
+                  <rect x="8" y="12" width="4" height="2" fill="#101828"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="Vision">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M10 5C5 5 2 10 2 10C2 10 5 15 10 15C15 15 18 10 18 10C18 10 15 5 10 5Z" fill="none" stroke="#7700FF" stroke-width="2"/>
+                  <circle cx="10" cy="10" r="2.5" fill="#7700FF"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="Robotics">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <rect x="5" y="6" width="10" height="9" rx="2" fill="#7700FF"/>
+                  <circle cx="8" cy="10" r="1.5" fill="#101828"/>
+                  <circle cx="12" cy="10" r="1.5" fill="#101828"/>
+                  <rect x="8" y="2" width="4" height="4" fill="#7700FF"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="Audio">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <rect x="1" y="3" width="18" height="14" rx="2" fill="#7700FF"/>
+                  <circle cx="6" cy="8" r="2" fill="#101828"/>
+                  <circle cx="14" cy="8" r="2" fill="#101828"/>
+                  <rect x="8" y="12" width="4" height="2" fill="#101828"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="Vision">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M10 5C5 5 2 10 2 10C2 10 5 15 10 15C15 15 18 10 18 10C18 10 15 5 10 5Z" fill="none" stroke="#7700FF" stroke-width="2"/>
+                  <circle cx="10" cy="10" r="2.5" fill="#7700FF"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="Robotics">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <rect x="5" y="6" width="10" height="9" rx="2" fill="#7700FF"/>
+                  <circle cx="8" cy="10" r="1.5" fill="#101828"/>
+                  <circle cx="12" cy="10" r="1.5" fill="#101828"/>
+                  <rect x="8" y="2" width="4" height="4" fill="#7700FF"/>
+                </svg>
+              </div>
+                            <div class="taxonomy__icon" title="Vision">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M10 5C5 5 2 10 2 10C2 10 5 15 10 15C15 15 18 10 18 10C18 10 15 5 10 5Z" fill="none" stroke="#7700FF" stroke-width="2"/>
+                  <circle cx="10" cy="10" r="2.5" fill="#7700FF"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="Robotics">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <rect x="5" y="6" width="10" height="9" rx="2" fill="#7700FF"/>
+                  <circle cx="8" cy="10" r="1.5" fill="#101828"/>
+                  <circle cx="12" cy="10" r="1.5" fill="#101828"/>
+                  <rect x="8" y="2" width="4" height="4" fill="#7700FF"/>
+                </svg>
+              </div>
+                            <div class="taxonomy__icon" title="Vision">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M10 5C5 5 2 10 2 10C2 10 5 15 10 15C15 15 18 10 18 10C18 10 15 5 10 5Z" fill="none" stroke="#7700FF" stroke-width="2"/>
+                  <circle cx="10" cy="10" r="2.5" fill="#7700FF"/>
+                </svg>
+              </div>
+              <div class="taxonomy__icon" title="Robotics">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <rect x="5" y="6" width="10" height="9" rx="2" fill="#7700FF"/>
+                  <circle cx="8" cy="10" r="1.5" fill="#101828"/>
+                  <circle cx="12" cy="10" r="1.5" fill="#101828"/>
+                  <rect x="8" y="2" width="4" height="4" fill="#7700FF"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- О КОМПАНИИ -->
+        <section class="company-detail">
+          <div class="company-detail__inner">
+
+            <!-- Логотип -->
+            <div class="company-detail__logo">
+              <img src="src/assets/new/nurax.svg" alt="Nurax" loading="lazy" decoding="async">
+            </div>
+
+            <!-- Заголовок -->
+            <h1 class="company-detail__title">Nurax</h1>
+
+            <!-- Описание -->
+            <div class="company-detail__content">
+              <p class="company-detail__text">Nurax использует передовые технологии искусственного интеллекта, включая большие языковые модели (LLM) для понимания задач и генерации планов, машинное обучение для анализа данных и прогнозирования, а также автономные агенты для выполнения действий в реальной среде. Функционал RPA, встроенный в Nurax, позволяет автоматизировать взаимодействие с любыми приложениями через их графический интерфейс, записывать действия пользователя и генерировать синтетические данные.</p>
+
+              <p class="company-detail__text">Nurax использует передовые технологии искусственного интеллекта, включая большие языковые модели (LLM) для понимания задач и генерации планов, машинное обучение для анализа данных и прогнозирования, а также автономные агенты для выполнения действий в реальной среде. Функционал RPA, встроенный в Nurax, позволяет автоматизировать взаимодействие с любыми приложениями через их графический интерфейс, записывать действия пользователя и генерировать синтетические данные.</p>
+
+              <h2 class="company-detail__subtitle">Заголовок</h2>
+
+              <p class="company-detail__text">Nurax использует комбинацию проприетарных и открытых моделей, адаптированных для конкретных задач. В основе лежат передовые LLM (в зависимости от конфигурации и требований к локализации), а также специализированные модели для анализа данных и автоматизации. RPA-функционал реализован на базе соответствующих технологий.</p>
+            </div>
+
+            <!-- Контакты -->
+            <div class="company-detail__contacts">
+              <h2 class="company-detail__contacts-title">Контакты</h2>
+              <a href="https://nurax.ai" class="company-detail__link" target="_blank" rel="noopener">nurax.ai</a>
+              <p class="company-detail__legal">ИП Шуков Никита Вячеславович</p>
+            </div>
+
+          </div>
+        </section>
+        <!-- ЗАГЛУШКА: Обсудим сотрудничество -->
+        <section class="form-cta" data-placeholder="form-cta"></section>
+
+    </section>
+  </main>
+
+  <!-- ДРУГИЕ РЕШЕНИЯ ОТРАСЛИ — вне main -->
+  <section class="related">
+    <div class="related__inner">
+      <div class="related__head">
+        <h2 class="related__title">Другие решения компании</h2>
+        <div class="related__nav">
+          <button class="related__nav-btn" type="button" aria-label="Назад" data-related-prev>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+          <button class="related__nav-btn" type="button" aria-label="Вперёд" data-related-next>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="swiper related__slider">
+        <div class="swiper-wrapper">
+
+          <a href="/solution-new-details.html" class="related-card swiper-slide">
+            <h3 class="related-card__title">Автономный ИИ-агент с RPA-функционалом</h3>
+            <p class="related-card__text">Мы создаём условия для роста технологического бизнеса в России. X Технологии объединяют опыт корпорации и гибкость стартапов: инвестируем в сильные команды, помогаем масштабироваться и выводим продукты на новые рынки</p>
+            <div class="related-card__image">
+              <img src="src/assets/solution-img.png" alt="Автономный ИИ-агент" loading="lazy" decoding="async">
+            </div>
+          </a>
+
+          <a href="/solution-new-details.html" class="related-card swiper-slide">
+            <h3 class="related-card__title">Автономный ИИ-агент с RPA-функционалом</h3>
+            <p class="related-card__text">Мы создаём условия для роста технологического бизнеса в России. X Технологии объединяют опыт корпорации и гибкость стартапов: инвестируем в сильные команды, помогаем масштабироваться и выводим продукты на новые рынки</p>
+            <div class="related-card__image">
+              <img src="src/assets/solution-img.png" alt="Автономный ИИ-агент" loading="lazy" decoding="async">
+            </div>
+          </a>
+
+          <a href="/solution-new-details.html" class="related-card swiper-slide">
+            <h3 class="related-card__title">Автономный ИИ-агент с RPA-функционалом</h3>
+            <p class="related-card__text">Мы создаём условия для роста технологического бизнеса в России. X Технологии объединяют опыт корпорации и гибкость стартапов: инвестируем в сильные команды, помогаем масштабироваться и выводим продукты на новые рынки</p>
+            <div class="related-card__image">
+              <img src="src/assets/solution-img.png" alt="Автономный ИИ-агент" loading="lazy" decoding="async">
+            </div>
+          </a>
+
+          <a href="/solution-new-details.html" class="related-card swiper-slide">
+            <h3 class="related-card__title">Автономный ИИ-агент с RPA-функционалом</h3>
+            <p class="related-card__text">Мы создаём условия для роста технологического бизнеса в России. X Технологии объединяют опыт корпорации и гибкость стартапов: инвестируем в сильные команды, помогаем масштабироваться и выводим продукты на новые рынки</p>
+            <div class="related-card__image">
+              <img src="src/assets/solution-img.png" alt="Автономный ИИ-агент" loading="lazy" decoding="async">
+            </div>
+          </a>
+
+          <a href="/solution-new-details.html" class="related-card swiper-slide">
+            <h3 class="related-card__title">Автономный ИИ-агент с RPA-функционалом</h3>
+            <p class="related-card__text">Мы создаём условия для роста технологического бизнеса в России. X Технологии объединяют опыт корпорации и гибкость стартапов: инвестируем в сильные команды, помогаем масштабироваться и выводим продукты на новые рынки</p>
+            <div class="related-card__image">
+              <img src="src/assets/solution-img.png" alt="Автономный ИИ-агент" loading="lazy" decoding="async">
+            </div>
+          </a>
+
+          <a href="/solution-new-details.html" class="related-card swiper-slide">
+            <h3 class="related-card__title">Автономный ИИ-агент с RPA-функционалом</h3>
+            <p class="related-card__text">Мы создаём условия для роста технологического бизнеса в России. X Технологии объединяют опыт корпорации и гибкость стартапов: инвестируем в сильные команды, помогаем масштабироваться и выводим продукты на новые рынки</p>
+            <div class="related-card__image">
+              <img src="src/assets/solution-img.png" alt="Автономный ИИ-агент" loading="lazy" decoding="async">
+            </div>
+          </a>
+
+          <a href="/solution-new-details.html" class="related-card swiper-slide">
+            <h3 class="related-card__title">Автономный ИИ-агент с RPA-функционалом</h3>
+            <p class="related-card__text">Мы создаём условия для роста технологического бизнеса в России. X Технологии объединяют опыт корпорации и гибкость стартапов: инвестируем в сильные команды, помогаем масштабироваться и выводим продукты на новые рынки</p>
+            <div class="related-card__image">
+              <img src="src/assets/solution-img.png" alt="Автономный ИИ-агент" loading="lazy" decoding="async">
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__row-top">
+        <a href="/" class="footer__logo" aria-label="Каталог ИИ-решений">
+          <img src="src/assets/new/logo.svg" alt="Каталог ИИ-решений" loading="lazy" decoding="async">
+        </a>
+
+        <nav class="footer__nav" aria-label="Навигация в футере">
+          <a href="/" class="footer__nav-link">Решения</a>
+          <a href="/companies-new" class="footer__nav-link">Компании</a>
+          <a href="#" class="footer__nav-link" data-modal-open="contact-modal" aria-haspopup="dialog">Связаться с нами</a>
+        </nav>
+      </div>
+
+      <div class="footer__row-bottom">
+        <p class="footer__copyright">© 2026 ПАО «Ростелеком». Все права защищены.</p>
+        <div class="footer__legal">
+          <a href="/404" class="footer__legal-link">Политика конфиденциальности</a>
+          <a href="#" class="footer__legal-link">Условия обработки персональных данных</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL: Связаться с нами -->
+  <dialog class="modal" id="contact-modal" aria-labelledby="contact-modal-title">
+    <div class="modal__stage">
+      <!-- <img
+        class="modal__bg"
+        src="src/assets/new/modal-bg.webp"
+        alt=""
+        width="2880"
+        height="1386"
+        loading="lazy"
+        decoding="async"
+      > -->
+
+      <div class="modal__window">
+
+        <button type="button" class="modal__close" data-modal-close aria-label="Закрыть">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+            <path d="M4 4l16 16M20 4L4 20" />
+          </svg>
+        </button>
+
+        <!-- Форма -->
+        <div class="modal__inner">
+          <div class="modal__info">
+            <h2 class="modal__title" id="contact-modal-title">Связаться с нами</h2>
+            <p class="modal__text">
+              Расскажите о своём проекте — мы ищем сильные команды и решения,
+              которые могут изменить рынок. Заполните форму, и мы свяжемся с вами
+              для обсуждения деталей.
+            </p>
+          </div>
+
+          <div class="modal__form-wrap">
+            <form class="modal__form" novalidate>
+
+              <div class="field" data-field>
+                <input class="field__control" id="cf-name" name="name" type="text" autocomplete="name" placeholder=" " required aria-describedby="cf-name-error">
+                <label class="field__label" for="cf-name">Ваше имя*</label>
+                <p class="field__error" id="cf-name-error"></p>
+              </div>
+
+              <div class="field" data-field>
+                <input class="field__control" id="cf-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder=" " required aria-describedby="cf-phone-error">
+                <label class="field__label" for="cf-phone">Телефон*</label>
+                <p class="field__error" id="cf-phone-error"></p>
+              </div>
+
+              <div class="field" data-field>
+                <input class="field__control" id="cf-email" name="email" type="email" autocomplete="email" placeholder=" " required aria-describedby="cf-email-error">
+                <label class="field__label" for="cf-email">Email*</label>
+                <p class="field__error" id="cf-email-error"></p>
+              </div>
+
+              <div class="field" data-field>
+                <input class="field__control" id="cf-company" name="company" type="text" autocomplete="organization" placeholder=" " required aria-describedby="cf-company-error">
+                <label class="field__label" for="cf-company">Компания*</label>
+                <p class="field__error" id="cf-company-error"></p>
+              </div>
+
+              <div class="field field--textarea" data-field>
+                <textarea class="field__control" id="cf-message" name="message" rows="3" placeholder=" "></textarea>
+                <label class="field__label" for="cf-message">Ваш вопрос</label>
+              </div>
+
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="consent" required>
+                <span class="checkbox__box" aria-hidden="true"></span>
+                <span class="checkbox__text">
+                  Я подтверждаю ознакомление с
+                  <a href="#" target="_blank" rel="noopener">Политикой обработки персональных данных</a>
+                  и даю
+                  <a href="#" target="_blank" rel="noopener">Согласие на обработку моих персональных данных</a>
+                </span>
+              </label>
+
+              <p class="modal__form-error" role="alert" hidden>Не удалось отправить форму. Попробуйте ещё раз.</p>
+
+              <button type="submit" class="modal__submit" disabled>Отправить</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Экран «Успешно отправлено» -->
+        <div class="modal__success" role="status" hidden>
+          <h2 class="modal__success-title" id="contact-modal-success-title">Успешно отправлено</h2>
+          <p class="modal__success-text">Мы свяжемся с Вами в ближайшее время!</p>
+
+          <svg class="modal__success-logo" viewBox="0 0 222 188" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M218.689 31.5596C231.842 54.3401 204.707 95.2659 156.767 128.195C169.201 158.568 172.92 181.765 164.599 186.57C156.277 191.374 138.049 176.554 117.963 150.599C65.474 175.653 16.4631 178.689 3.31063 155.909C-9.84187 133.128 17.2923 92.1997 65.2339 59.27C52.8001 28.8981 49.0801 5.7027 57.4013 0.898422C65.7226 -3.90587 83.9521 10.9123 104.038 36.8664C156.526 11.8134 205.537 8.7791 218.689 31.5596Z" fill="url(#modal-star-gradient)"/>
+            <path d="M199.475 40.1972C201.797 39.2246 203.605 42.3565 201.602 43.8808L153.317 80.6242C139.325 91.2713 134.299 110.03 141.092 126.246L151.549 151.208C154.467 158.172 145.072 163.597 140.499 157.588L124.11 136.051C113.463 122.059 94.7046 117.033 78.4882 123.826L22.5249 147.271C20.2033 148.244 18.3951 145.112 20.3982 143.587L68.6833 106.844C82.6748 96.1969 87.701 77.4386 80.9076 61.2223L70.4505 36.2606C67.5328 29.2958 76.9284 23.8712 81.5012 29.8804L97.8902 51.4174C108.537 65.4088 127.295 70.4351 143.512 63.6417L199.475 40.1972Z" fill="white"/>
+            <defs>
+              <linearGradient id="modal-star-gradient" x1="0" y1="93.7341" x2="222" y2="93.7341" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#470099"/>
+                <stop offset="0.495192" stop-color="#7700FF"/>
+                <stop offset="1" stop-color="#8461F5"/>
+              </linearGradient>
+            </defs>
+          </svg>
+
+          <button type="button" class="modal__thanks" data-modal-close>Спасибо</button>
+        </div>
+
+      </div>
+    </div>
+  </dialog>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script type="module" src="src/js/new/modal.js"></script>
+  <script type="module" src="src/js/new/slider.js"></script>
+
+</body>
+</html>

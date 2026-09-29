@@ -1,0 +1,15 @@
+.hero { padding: 48px 0 32px; }
+.hero__title {
+  font-family: var(--font-family-medium);
+  font-weight: 500;
+  font-size: var(--font-h1-web-size);
+  line-height: 100%;
+  color: var(--color-platinum-light);
+  letter-spacing: -0.02em;
+}
+@media (min-width: 1280px) and (max-width: 1599px) { .hero__title { font-size: var(--font-h1-web-small-size); } }
+@media (min-width: 768px) and (max-width: 1279px) { .hero__title { font-size: var(--font-h1-tablet-size); } }
+@media (max-width: 767px) {
+  .hero { padding: 24px 0 20px; }
+  .hero__title { font-size: var(--font-h1-mobile-size); }
+}
