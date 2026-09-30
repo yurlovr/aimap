@@ -246,7 +246,9 @@
   box-shadow: none;
 }
 
-/* === Адаптив === */
+/* === Адаптив ===
+   ВАЖНО: границы media-запросов должны совпадать с breakpoints в slider.js
+   (768 / 1024 / 1280 / 1500 / 1920, min-width). Здесь max-width = граница − 1. */
 
 @media (max-width: 1919px) {
   .carousel-section {
@@ -254,12 +256,12 @@
   }
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1499px) {
   .slider-people__slider .swiper-slide { width: 320px !important; height: 400px; }
   .person-card__title { font-size: 1.25rem; }
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1279px) {
   .slider-people__slider .swiper-slide { width: 280px !important; height: 360px; }
   .person-card__title { font-size: 1.15rem; }
 }
@@ -274,7 +276,7 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .slider-people__slider .swiper-slide { width: 240px !important; height: 320px; }
   .person-card__title { font-size: 1rem; }
   .person-card__bg { padding: 25px; }
