@@ -22,7 +22,6 @@
 .form-cta__frame {
   box-sizing: border-box;
   padding: 80px;
-  overflow: hidden;
   border-radius: var(--radius-2xl, 32px);
   background-color: #0a1120;
   background-image: url('../../assets/new/img_os.jpg');
@@ -373,8 +372,9 @@
   }
 
   .form-cta__frame {
-    padding: 16px;
-    border-radius: 24px;
+    padding: 0;
+    border-radius: 32px;
+    background: none;
   }
 
   .form-cta__card {

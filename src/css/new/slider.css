@@ -22,8 +22,8 @@
 .related__title {
   font-family: var(--font-family-medium);
   font-weight: 500;
-  font-size: var(--font-h3-web-size);
-  line-height: var(--font-h3-web-line-height);
+  font-size: 36px;
+  line-height: 44px;
   color: var(--color-platinum-light);
   letter-spacing: -0.01em;
   margin: 0;
@@ -108,8 +108,8 @@ a.related-card {
 .related-card__title {
   font-family: var(--font-family-medium);
   font-weight: 500;
-  font-size: var(--font-h4-web-size);
-  line-height: var(--font-h4-web-line-height);
+  font-size: 28px;
+  line-height: 36px;
   color: var(--color-platinum-light);
   letter-spacing: -0.01em;
   margin: 0;
@@ -140,20 +140,29 @@ a.related-card {
   .related { padding: 0 48px; }
 }
 @media (max-width: 1279px) {
-  .related-card { padding: 24px; }
-  .related-card__title { font-size: 20px; line-height: 26px; }
-  .related-card__text { font-size: 14px; line-height: 20px; }
+  a.related-card { padding: 32px; }
   .related__title { font-size: 24px; line-height: 32px; }
 }
 @media (max-width: 767px) {
   .related { padding: 0 16px; margin-bottom: 48px; }
   .related__inner { gap: 24px; }
   .related__title {
-    font-size: var(--font-h3-mobile-size);
-    line-height: var(--font-h3-mobile-line-height);
+    font-size: 24px;
+    line-height: 32px;
   }
   .related__nav { display: none; }
-  .related-card { padding: 20px; gap: 12px; }
-  .related-card__title { font-size: 18px; line-height: 24px; }
-  .related-card__image { aspect-ratio: 16 / 9; }
+  a.related-card {
+    border-radius: 16px;
+    padding: 20px;
+    gap: 12px;
+  }
+  .related-card__title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .related-card__text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .related-card__image { aspect-ratio: 7 / 4; }
 }

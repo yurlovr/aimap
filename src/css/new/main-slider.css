@@ -46,7 +46,6 @@
   width: 360px !important;
   height: 440px;
   border-radius: 32px;
-  overflow: hidden;
   backface-visibility: hidden;
   transform-style: preserve-3d;
   cursor: default;
@@ -66,119 +65,119 @@
 .person-card {
   width: 100%;
   height: 100%;
+  padding: 40px;
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
   border-radius: 32px;
   overflow: hidden;
   background: #101828;
-  border: 1px solid rgba(88, 93, 105, 0.5);
-  transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
-}
-
-.slider:not(.tech) .swiper-slide-active .person-card {
-  border-color: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  background:
-    linear-gradient(205deg,
-      rgba(238, 68, 33, 0.55) -1.88%,
-      rgba(238, 68, 33, 0.15) 25%,
-      rgba(238, 68, 33, 0.00) 55%
-    ),
-    rgba(88, 93, 105, 0.12);
+  border-radius: 25.6px;
+  box-shadow: 0  0 20px rgba(0, 0, 0, 0.5);
   transition: all 0.4s ease;
-}
-
-.swiper-slide-active .person-card:hover {
-  background:
-    linear-gradient(205deg,
-      rgba(238, 68, 33, 0.60) -1.88%,
-      rgba(238, 68, 33, 0.25) 30%,
-      rgba(238, 68, 33, 0.00) 65%
-    ),
-    rgba(88, 93, 105, 0.15) !important;
-  border-color: rgba(238, 68, 33, 0.8);
-  box-shadow:
-    0 0 50px rgba(238, 68, 33, 0.45),
-    0 0 100px rgba(238, 68, 33, 0.20),
-    inset 0 0 80px rgba(238, 68, 33, 0.15);
-  transform: scale(1.03);
 }
 
 .person-card__bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
-  overflow: hidden;
+  width: 280px;
+  height: 280px;
 }
 
-.person-card__bg img,
-.person-card__bg svg {
-  filter: drop-shadow(0 0 30px rgba(238, 68, 33, 0.35));
+.swiper-slide:not(.swiper-slide-active) .person-card {
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(88, 93, 105, 0.10);
 }
 
-.slider.tech .swiper-slide-active .person-card {
-  border-color: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  background:
-    linear-gradient(155deg, rgba(119, 0, 255, 0.40) -2.43%, rgba(119, 0, 255, 0.00) 50%),
-    rgba(88, 93, 105, 0.10);
+.slider .swiper-slide:not(.swiper-slide-active) .person-card {
+  opacity: 0.5;
+}
+
+.slider .swiper-slide.swiper-slide-prev .person-card,
+.slider .swiper-slide.swiper-slide-next .person-card {
+  opacity: 0.7;
+}
+
+.slider .swiper-slide-active .person-card {
   transition: all 0.4s ease;
 }
 
-.slider.tech .swiper-slide-active .person-card:hover {
-  background:
-    linear-gradient(155deg,
-      rgba(119, 0, 255, 0.80) -2.43%,
-      rgba(119, 0, 255, 0.35) 40%,
-      rgba(119, 0, 255, 0.00) 70%
-    ),
-    rgba(88, 93, 105, 0.15) !important;
-  border-color: rgba(119, 0, 255, 0.8);
-  box-shadow:
-    0 0 50px rgba(119, 0, 255, 0.45),
-    0 0 100px rgba(119, 0, 255, 0.20),
-    inset 0 0 80px rgba(119, 0, 255, 0.15);
+.slider:not(.tech) .person-card {
+  background: linear-gradient(205deg, rgba(238, 68, 33, 0.20) -1.88%, rgba(238, 68, 33, 0.00) 41.99%), rgba(88, 93, 105, 0.10);
+}
+
+.slider.tech .person-card {
+  background: linear-gradient(205deg, rgba(132, 24, 255, 0.20) -1.88%, rgba(119, 0, 255, 0.00) 41.99%), rgba(88, 93, 105, 0.10);
+}
+
+.slider:not(.tech) .swiper-slide-active .person-card:hover {
+  background: linear-gradient(205deg, rgba(238, 68, 33, 0.40) -1.88%, rgba(238, 68, 33, 0.00) 41.99%), rgba(88, 93, 105, 0.10);
   transform: scale(1.03);
 }
 
-.slider.tech .swiper-slide:not(.swiper-slide-active) .person-card {
-  background: #101828;
-  border-color: rgba(88, 93, 105, 0.3);
+.slider.tech .swiper-slide-active .person-card:hover {
+  background: linear-gradient(205deg, rgba(132, 24, 255, 0.40) -1.88%, rgba(119, 0, 255, 0.00) 41.99%), rgba(88, 93, 105, 0.10);
+  transform: scale(1.03);
 }
 
-.slider.tech .swiper-slide:not(.swiper-slide-active) .person-card:hover {
-  background: #101828;
-  box-shadow: none;
+.slider:not(.tech) .swiper-slide-active .person-card:hover::before {
+  opacity: 1;
 }
 
-.person-card__wrapper {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: 28px 24px 24px;
-  background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.85) 100%);
-  border-radius: 32px;
-  justify-content: flex-end;
+.slider.tech .swiper-slide-active .person-card:hover::before {
+  opacity: 1;
 }
 
-.slider.tech .person-card__bg img,
-.slider.tech .person-card__bg svg {
-  filter: drop-shadow(0 0 30px rgba(119, 0, 255, 0.35));
+.slider:not(.tech) .person-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 0.8px;
+  background: linear-gradient(90deg, #FF4F12 0%, #FF6D43 50%, #FF9A7C 100%);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.1s;
+  z-index: 2;
+}
+
+.slider.tech .person-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 0.8px;
+  background: linear-gradient(90deg, rgba(119, 0, 255, 1) 0%, rgba(132, 97, 245, 1) 50%, rgba(164, 144, 250, 1) 100%);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.1s;
+  z-index: 2;
+}
+
+.slider:not(.tech) .swiper-slide-active .person-card:active {
+  background: linear-gradient(205deg, rgba(238, 68, 33, 0.60) -1.88%, rgba(238, 68, 33, 0.00) 41.99%), rgba(88, 93, 105, 0.10);
+}
+
+.slider.tech .swiper-slide-active .person-card:active {
+  background: linear-gradient(205deg, rgba(132, 24, 255, 0.60) -1.88%, rgba(119, 0, 255, 0.00) 41.99%), rgba(88, 93, 105, 0.10);
 }
 
 .person-card__title {
-  font-size: 1.4rem;
+  font-size: 26px;
   font-weight: 600;
-  line-height: 1.25;
-  color: #ffffff;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  line-height: 36px;
+  text-align: center;
+  font-feature-settings: 'liga' off, 'clig' off;
+  margin-top: auto;
 }
 
 .slider-people__controls {
@@ -241,11 +240,6 @@
   cursor: default;
 }
 
-.swiper-slide:not(.swiper-slide-active) .person-card:hover {
-  background: #101828;
-  box-shadow: none;
-}
-
 /* === Адаптив ===
    ВАЖНО: границы media-запросов должны совпадать с breakpoints в slider.js
    (768 / 1024 / 1280 / 1500 / 1920, min-width). Здесь max-width = граница − 1. */
@@ -256,16 +250,6 @@
   }
 }
 
-@media (max-width: 1499px) {
-  .slider-people__slider .swiper-slide { width: 320px !important; height: 400px; }
-  .person-card__title { font-size: 1.25rem; }
-}
-
-@media (max-width: 1279px) {
-  .slider-people__slider .swiper-slide { width: 280px !important; height: 360px; }
-  .person-card__title { font-size: 1.15rem; }
-}
-
 @media (max-width: 1279px) {
   .carousel-section {
     padding: 0 var(--container-side-m, 24px);
@@ -274,12 +258,25 @@
     font-size: 28px;
     line-height: 36px;
   }
-}
 
-@media (max-width: 1023px) {
-  .slider-people__slider .swiper-slide { width: 240px !important; height: 320px; }
-  .person-card__title { font-size: 1rem; }
-  .person-card__bg { padding: 25px; }
+  .slider-people__slider .swiper-slide {
+    width: 320px !important; 
+    height: 400px;
+  }
+
+  .person-card {
+    padding: 32px;
+  }
+
+  .person-card__bg {
+    width: 260px;
+    height: 260px;
+  }
+
+  .person-card__title {
+    font-size: 24px;
+    line-height: 28px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -287,11 +284,10 @@
     margin: 64px 0;
   }
 
-  /* Peek: слайд чуть уже вьюпорта, чтобы выглядывал соседний */
   .slider-people__slider .swiper-slide {
-    width: calc(100vw - 80px) !important;
+    width: calc(100vw - 160px) !important;
     max-width: 360px !important;
-    height: 340px;
+    height: 352px;
   }
 
   .slider-people__controls {
@@ -302,8 +298,20 @@
     padding: 20px 0;
   }
 
-  .person-card__wrapper { padding: 20px 20px 20px; }
-  .person-card__title { font-size: 1.1rem; }
+  .person-card {
+    padding: 32px;
+  }
+
+  .person-card__bg {
+    width: 224px;
+    height: 224px;
+  }
+
+  .person-card__title {
+    text-align: center;
+    font-size: 22px;
+    line-height: 28px;
+  }
 
   .carousel-section {
     padding: 0 var(--container-side-s, 16px);

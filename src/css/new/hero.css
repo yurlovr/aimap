@@ -11,5 +11,8 @@
 @media (min-width: 768px) and (max-width: 1279px) { .hero__title { font-size: var(--font-h1-tablet-size); } }
 @media (max-width: 767px) {
   .hero { padding: 24px 0 20px; }
-  .hero__title { font-size: var(--font-h1-mobile-size); }
+  .hero__title {
+    font-size: 28px;
+    line-height: 32px;
+  }
 }

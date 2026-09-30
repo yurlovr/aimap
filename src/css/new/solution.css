@@ -32,6 +32,7 @@
   line-height: 110%;
   color: var(--color-platinum-light);
   letter-spacing: -0.02em;
+  text-align: left;
 }
 .solution-hero__description {
   font-family: var(--font-family-regular);
@@ -39,6 +40,7 @@
   line-height: 28px;
   color: var(--color-neutral-400);
   max-width: 820px;
+  text-align: left;
 }
 .solution-hero__image {
   width: 100%;
@@ -139,13 +141,12 @@
   gap: 16px;
 }
 .solution-card {
-  padding: var(--spacing-6x, 24px);
-  border-radius: var(--radius-l);
-  background: var(--color-bg);
+  padding: var(--spacing-6x, 48px);
+  border-radius: var(--radius-2xl);
   background: rgba(88, 93, 105, 0.05);
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-3x, 12px);
+  gap: var(--spacing-3x, 20px);
   min-height: 180px;
   transition: border-color 0.2s, background 0.2s;
 }
@@ -154,8 +155,8 @@
   background: rgba(88, 93, 105, 0.08);
 }
 .solution-card__icon {
-  width: 40px;
-  height: 40px;
+  width: 64px;
+  height: 64px;
   border-radius: 8px;
   background: var(--color-purple-main);
   display: flex;
@@ -164,21 +165,21 @@
   flex-shrink: 0;
 }
 .solution-card__icon svg {
-  width: 20px;
-  height: 20px;
+  width: 52px;
+  height: 52px;
   fill: var(--color-neutral-white);
 }
 .solution-card__title {
   font-family: var(--font-family-medium);
   font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 28px;
+  line-height: 36px;
   color: var(--color-platinum-light);
 }
 .solution-card__text {
   font-family: var(--font-family-regular);
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 16px;
+  line-height: 24px;
   color: var(--color-neutral-400);
 }
 
@@ -273,15 +274,38 @@
   .solution-hero__description { font-size: 16px; line-height: 24px; }
   .solution-content__subtitle { font-size: 24px; line-height: 32px; }
   .solution-cards__title { font-size: 24px; line-height: 32px; }
+  .solution-card {
+    padding: var(--spacing-6x, 24px);
+    gap: var(--spacing-3x, 12px);
+  }
+  .solution-card__icon {
+    width: 48px;
+    height: 48px;
+  }
+  .solution-card__icon svg {
+    width: 40px;
+    height: 40px;
+  }
   .company__title { font-size: 24px; line-height: 32px; }
   .company__name { font-size: 18px; line-height: 24px; }
   .solution-text { font-size: 16px; line-height: 24px; }
 }
 @media (max-width: 767px) {
-  .solution { padding: 16px 0 64px; }
-  .solution__container { padding: 0 16px; gap: 32px; }
-  .solution-hero__title { font-size: var(--font-h1-mobile-size); }
-  .solution-hero__description { font-size: 15px; line-height: 22px; }
+  .solution {
+    padding: 16px 0 64px;
+  }
+  .solution__container {
+    padding: 0 16px;
+    gap: 32px;
+  }
+  .solution-hero__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .solution-hero__description {
+    font-size: 16px;
+    line-height: 22px;
+  }
   .solution-content__subtitle { font-size: var(--font-h3-mobile-size); line-height: var(--font-h3-mobile-line-height); }
   .solution-cards__title { font-size: var(--font-h3-mobile-size); line-height: var(--font-h3-mobile-line-height); }
   .solution-cards__grid { grid-template-columns: 1fr; }
@@ -298,6 +322,22 @@
   .company__logo { min-width: 100px; height: 36px; }
   .company__logo svg, .company__logo img { max-width: 130px; }
   .company__name { font-size: 16px; line-height: 22px; }
-  .solution-text { font-size: 15px; line-height: 22px; }
+  .solution-card__icon {
+    width: 32px;
+    height: 32px;
+  }
+  .solution-card__icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  .solution-card__title {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  .solution-card__text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .solution-text { font-size: 16px; line-height: 24px; }
   .form-cta { margin: 48px 0; }
 }

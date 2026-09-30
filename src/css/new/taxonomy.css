@@ -49,15 +49,14 @@
   }
   .taxonomy__icon svg { width: 20px; height: 20px; }
 
-  /* Текст тултипа */
 .taxonomy__icon::after {
   content: attr(data-tooltip);
   position: absolute;
-  bottom: calc(100% + 8px);   /* над иконкой */
+  bottom: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%) translateY(4px);
-  background: #1f1f1f;        /* тёмный фон */
-  color: #fff;                /* белый текст */
+  background: #171F2F;
+  color: #fff;
   font-size: 12px;
   line-height: 1.2;
   padding: 6px 10px;
@@ -69,7 +68,6 @@
   z-index: 10;
 }
 
-/* Стрелочка внизу тултипа */
 .taxonomy__icon::before {
   content: "";
   position: absolute;
@@ -77,14 +75,13 @@
   left: 50%;
   transform: translateX(-50%) translateY(4px);
   border: 6px solid transparent;
-  border-top-color: #1f1f1f;
+  border-top-color: #171F2F;
   pointer-events: none;
   opacity: 0;
   transition: opacity .15s ease, transform .15s ease;
   z-index: 10;
 }
 
-/* Показ при наведении */
 .taxonomy__icon:hover::after,
 .taxonomy__icon:hover::before {
   opacity: 1;
@@ -92,32 +89,58 @@
 }
 
 @media (max-width: 767px) {
-  .taxonomy {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
   .taxonomy__col--right {
     align-items: flex-start;
-    text-align: left;
   }
+
   .taxonomy__col--right .taxonomy__icons {
     justify-content: flex-start;
   }
+
+  .taxonomy__col--right .taxonomy__title {
+    align-self: flex-end;
+  }
+
   .taxonomy__icons {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    gap: 8px;
-    width: 100%;
-  }
-  .taxonomy__icon {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1;
-  }
-  .taxonomy__icon::after {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+  .taxonomy__icons::-webkit-scrollbar {
     display: none;
   }
+
+  .taxonomy__icon {
+    width: 44px;
+    height: 44px;
+    aspect-ratio: 1;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .taxonomy__icon::after,
   .taxonomy__icon::before {
     display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  .taxonomy {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .taxonomy__col--right .taxonomy__title {
+    align-self: flex-start;
   }
 }
