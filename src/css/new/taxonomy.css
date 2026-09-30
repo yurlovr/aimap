@@ -35,18 +35,61 @@
     height: 32px;
     border-radius: var(--radius-s);
     background: var(--color-bg);
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     transition: background 0.2s, transform 0.2s;
     cursor: pointer;
     flex-shrink: 0;
+    position: relative;
   }
   .taxonomy__icon:hover {
     background: rgba(88, 93, 105, 0.20);
     transform: translateY(-2px);
   }
   .taxonomy__icon svg { width: 20px; height: 20px; }
+
+  /* Текст тултипа */
+.taxonomy__icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);   /* над иконкой */
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: #1f1f1f;        /* тёмный фон */
+  color: #fff;                /* белый текст */
+  font-size: 12px;
+  line-height: 1.2;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .15s ease, transform .15s ease;
+  z-index: 10;
+}
+
+/* Стрелочка внизу тултипа */
+.taxonomy__icon::before {
+  content: "";
+  position: absolute;
+  bottom: calc(100% + 2px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  border: 6px solid transparent;
+  border-top-color: #1f1f1f;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .15s ease, transform .15s ease;
+  z-index: 10;
+}
+
+/* Показ при наведении */
+.taxonomy__icon:hover::after,
+.taxonomy__icon:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
 
 @media (max-width: 767px) {
   .taxonomy {
@@ -70,5 +113,11 @@
     width: 100%;
     height: auto;
     aspect-ratio: 1;
+  }
+  .taxonomy__icon::after {
+    display: none;
+  }
+  .taxonomy__icon::before {
+    display: none;
   }
 }
