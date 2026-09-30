@@ -79,6 +79,13 @@
   pointer-events: none;
   opacity: 0;
   transition: opacity .15s ease, transform .15s ease;
+
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-top-color: #171F2F;
+  border-bottom-width: 0;
+
   z-index: 10;
 }
 
@@ -92,33 +99,30 @@
   .taxonomy__col--right {
     align-items: flex-start;
   }
-
   .taxonomy__col--right .taxonomy__icons {
     justify-content: flex-start;
   }
-
   .taxonomy__col--right .taxonomy__title {
     align-self: flex-end;
   }
 
   .taxonomy__icons {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 8px;
-  width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-  .taxonomy__icons::-webkit-scrollbar {
-    display: none;
+    padding-top: 52px;
+    margin-top: -52px;
   }
+
+  .taxonomy__icons::-webkit-scrollbar { display: none; }
 
   .taxonomy__icon {
     width: 44px;
@@ -126,11 +130,43 @@
     aspect-ratio: 1;
     flex: 0 0 auto;
     scroll-snap-align: start;
+
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .taxonomy__icon::after,
   .taxonomy__icon::before {
     display: none;
+  }
+
+  .taxonomy__icon._tooltip-open::after {
+    display: block;
+    opacity: 1;
+    bottom: calc(100% + 8px);
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: var(--tooltip-shift, 0px);
+    white-space: nowrap;
+    transition: none;
+  }
+
+  .taxonomy__icon._tooltip-open::before {
+    display: block;
+    opacity: 1;
+    bottom: calc(100% + 2px);
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: var(--tooltip-shift, 0px);
+    transition: none;
+
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-top-color: #171F2F;
+    border-bottom-width: 0;
   }
 }
 
