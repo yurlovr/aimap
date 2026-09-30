@@ -19,6 +19,7 @@
   <link rel="stylesheet" type="text/css" href="src/css/new/solution.css" />
   <link rel="stylesheet" type="text/css" href="src/css/new/modal.css" />
   <link rel="stylesheet" type="text/css" href="src/css/new/footer.css" />
+  <link rel="stylesheet" type="text/css" href="src/css/new/form-cta.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
@@ -450,8 +451,93 @@
           <span class="tag">роботизированная автоматизация процессов (RPA)</span>
         </div>
 
-        <!-- ЗАГЛУШКА: Обсудим сотрудничество -->
-        <section class="form-cta" data-placeholder="form-cta"></section>
+        <!-- ФОРМА: Обсудим сотрудничество (заменяет заглушку <section class="form-cta" data-placeholder="form-cta">) -->
+        <section class="form-cta" id="form-cta" aria-labelledby="form-cta-title">
+          <div class="form-cta__frame">
+            <div class="form-cta__card">
+
+              <!-- Форма -->
+              <div class="form-cta__inner">
+                <div class="form-cta__info">
+                  <h2 class="form-cta__title" id="form-cta-title">Обсудим сотрудничество?</h2>
+                  <p class="form-cta__text">
+                    Расскажите о своём проекте — мы ищем сильные команды и решения,
+                    которые могут изменить рынок. Заполните форму, и мы свяжемся с вами
+                    для обсуждения деталей.
+                  </p>
+                </div>
+
+                <form class="form-cta__form" novalidate>
+
+                  <div class="form-cta__field" data-field>
+                    <input class="form-cta__control" id="fc-name" name="name" type="text" autocomplete="name" placeholder=" " required aria-describedby="fc-name-error">
+                    <label class="form-cta__label" for="fc-name">Ваше имя*</label>
+                    <p class="form-cta__error" id="fc-name-error"></p>
+                  </div>
+
+                  <div class="form-cta__field" data-field>
+                    <input class="form-cta__control" id="fc-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder=" " required aria-describedby="fc-phone-error">
+                    <label class="form-cta__label" for="fc-phone">Телефон*</label>
+                    <p class="form-cta__error" id="fc-phone-error"></p>
+                  </div>
+
+                  <div class="form-cta__field" data-field>
+                    <input class="form-cta__control" id="fc-email" name="email" type="email" autocomplete="email" placeholder=" " required aria-describedby="fc-email-error">
+                    <label class="form-cta__label" for="fc-email">Email*</label>
+                    <p class="form-cta__error" id="fc-email-error"></p>
+                  </div>
+
+                  <div class="form-cta__field" data-field>
+                    <input class="form-cta__control" id="fc-company" name="company" type="text" autocomplete="organization" placeholder=" " required aria-describedby="fc-company-error">
+                    <label class="form-cta__label" for="fc-company">Компания*</label>
+                    <p class="form-cta__error" id="fc-company-error"></p>
+                  </div>
+
+                  <div class="form-cta__field form-cta__field--textarea" data-field>
+                    <textarea class="form-cta__control" id="fc-message" name="message" rows="3" placeholder=" "></textarea>
+                    <label class="form-cta__label" for="fc-message">Ваш запрос</label>
+                  </div>
+
+                  <label class="form-cta__checkbox">
+                    <input class="form-cta__checkbox-input" type="checkbox" name="consent" required>
+                    <span class="form-cta__checkbox-box" aria-hidden="true"></span>
+                    <span class="form-cta__checkbox-text">
+                      Я подтверждаю ознакомление с
+                      <a href="#" target="_blank" rel="noopener">Политикой обработки персональных данных</a>
+                      и даю
+                      <a href="#" target="_blank" rel="noopener">Согласие на обработку моих персональных данных</a>
+                    </span>
+                  </label>
+
+                  <p class="form-cta__form-error" role="alert" hidden>Не удалось отправить форму. Попробуйте ещё раз.</p>
+
+                  <button type="submit" class="form-cta__submit" disabled>Отправить</button>
+                </form>
+              </div>
+
+              <!-- Экран «Успешно отправлено» -->
+              <div class="form-cta__success" role="status" hidden>
+                <h2 class="form-cta__success-title">Успешно отправлено</h2>
+                <p class="form-cta__success-text">Мы свяжемся с Вами в ближайшее время!</p>
+
+                <svg class="form-cta__success-logo" viewBox="0 0 222 188" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M218.689 31.5596C231.842 54.3401 204.707 95.2659 156.767 128.195C169.201 158.568 172.92 181.765 164.599 186.57C156.277 191.374 138.049 176.554 117.963 150.599C65.474 175.653 16.4631 178.689 3.31063 155.909C-9.84187 133.128 17.2923 92.1997 65.2339 59.27C52.8001 28.8981 49.0801 5.7027 57.4013 0.898422C65.7226 -3.90587 83.9521 10.9123 104.038 36.8664C156.526 11.8134 205.537 8.7791 218.689 31.5596Z" fill="url(#form-cta-star-gradient)"/>
+                  <path d="M199.475 40.1972C201.797 39.2246 203.605 42.3565 201.602 43.8808L153.317 80.6242C139.325 91.2713 134.299 110.03 141.092 126.246L151.549 151.208C154.467 158.172 145.072 163.597 140.499 157.588L124.11 136.051C113.463 122.059 94.7046 117.033 78.4882 123.826L22.5249 147.271C20.2033 148.244 18.3951 145.112 20.3982 143.587L68.6833 106.844C82.6748 96.1969 87.701 77.4386 80.9076 61.2223L70.4505 36.2606C67.5328 29.2958 76.9284 23.8712 81.5012 29.8804L97.8902 51.4174C108.537 65.4088 127.295 70.4351 143.512 63.6417L199.475 40.1972Z" fill="white"/>
+                  <defs>
+                    <linearGradient id="form-cta-star-gradient" x1="0" y1="93.7341" x2="222" y2="93.7341" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#470099"/>
+                      <stop offset="0.495192" stop-color="#7700FF"/>
+                      <stop offset="1" stop-color="#8461F5"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+
+                <button type="button" class="form-cta__thanks">Спасибо</button>
+              </div>
+
+            </div>
+          </div>
+        </section>
 
       </div>
     </section>
@@ -674,6 +760,7 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script type="module" src="src/js/new/modal.js"></script>
   <script type="module" src="src/js/new/slider.js"></script>
+  <script type="module" src="src/js/new/form-cta.js"></script>
 
 </body>
 </html>
