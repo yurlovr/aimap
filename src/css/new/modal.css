@@ -41,9 +41,8 @@ html.is-modal-open {
 }
 
 .modal::backdrop {
-  background: rgba(16, 24, 40, 0.50);
-  /* -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px); */
+  background: #101828;
+  opacity: 0.7;
 }
 
 .modal[open]::backdrop {
