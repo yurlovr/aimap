@@ -27,17 +27,18 @@
   <header class="header">
     <div class="container">
       <div class="header__inner">
-        <a href="index.html" class="header__logo" aria-label="Каталог ИИ-решений">
-          <img src="src/assets/new/logo.svg" alt="Каталог ИИ-решений" loading="lazy" decoding="async">
+        <a href="index.html" class="header__logo desktop" aria-label="Каталог ИИ-решений">
+          <img src="src/assets/new/logo.svg" class="desktop" alt="Каталог ИИ-решений" loading="lazy" decoding="async">
+          <img src="src/assets/new/mobile-logo.svg" class="mobile" alt="Каталог ИИ-решений" loading="lazy" decoding="async">
         </a>
+
+        <nav class="header__nav" aria-label="Основная навигация">
+          <div class="header__nav-link _active">Решения</div>
+          <a href="companies-new.html" class="header__nav-link">Компании</a>
+        </nav>
 
         <a href="#" class="header__cta" data-modal-open="contact-modal" aria-haspopup="dialog">Связаться с нами</a>
       </div>
-
-      <nav class="header__nav" aria-label="Основная навигация">
-        <div class="header__nav-link _active">Решения</div>
-        <a href="companies-new.html" class="header__nav-link">Компании</a>
-      </nav>
     </div>
   </header>
 
