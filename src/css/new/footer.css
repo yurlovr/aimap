@@ -47,7 +47,6 @@
   font-family: var(--font-family-regular);
   font-size: var(--font-body-small-size);
   line-height: var(--font-body-small-line-height);
-  max-width: 305px;
 }
 
 .footer__legal {
@@ -118,4 +117,8 @@
     width: 160px;
     height: auto;
   }
+}
+
+@media (min-width: 375px) and (max-width: 500px) {
+  .footer__copyright { max-width: 200px; }
 }
