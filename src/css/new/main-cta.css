@@ -47,9 +47,8 @@
 
 .cta__title {
   margin: 0;
-  max-width: 900px;
+  max-width: 985px;
   color: var(--color-neutral-white, #FFF);
-  text-align: center;
   font-family: var(--font-family-medium, 'Rostelecom Basis', 'Inter', sans-serif);
   font-size: 36px;
   font-style: normal;
@@ -98,6 +97,7 @@
   .cta__title {
     font-size: 28px;
     line-height: 36px;
+    max-width: 600px;
   }
 }
 
