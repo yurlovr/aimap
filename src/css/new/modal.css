@@ -265,7 +265,7 @@ html.is-modal-open {
   height: auto;
   min-height: 72px;
   padding-top: 26px;
-  resize: vertical;
+  resize: none;
 }
 
 .field--textarea .field__label {
@@ -472,12 +472,14 @@ html.is-modal-open {
     --stage-px: 0px;
     --stage-py: 0px;
     --field-height: 44px;
+    overflow: hidden;
   }
 
   .modal__stage {
     display: flex;
     width: 100%;
     margin: 0;
+    padding: 0;
   }
 
   .modal__bg {
@@ -492,11 +494,11 @@ html.is-modal-open {
   }
 
   .modal__inner {
-    padding: 64px var(--container-side-s, 16px) 24px;
+    padding: 36px var(--container-side-s, 16px) 24px;
   }
 
   .modal__info {
-    padding: 0 0 20px;
+    padding: 0 0 12px;
   }
 
   .modal__title {
@@ -507,6 +509,7 @@ html.is-modal-open {
   .modal__text {
     font-size: var(--font-body-medium-mobile-size, 14px);
     line-height: var(--font-body-medium-mobile-line-height, 20px);
+    margin-top: 8px;
   }
 
   .modal__close {
