@@ -44,7 +44,6 @@
   color: var(--color-neutral-white);;
   letter-spacing: -0.02em;
   margin: 0;
-  font-feature-settings: 'liga' off, 'clig' off;
 }
 
 .company-detail__content {
@@ -61,7 +60,6 @@
   line-height: 28px;
   color: #c3c0d3;
   margin: 0;
-  font-feature-settings: 'liga' off, 'clig' off;
 }
 
 .company-detail__subtitle {
@@ -73,7 +71,6 @@
   color: var(--color-neutral-white);;
   letter-spacing: -0.01em;
   margin: 0;
-  font-feature-settings: 'liga' off, 'clig' off;
 }
 
 .company-detail__contacts {
@@ -92,7 +89,6 @@
   color: var(--color-neutral-white);;
   letter-spacing: -0.01em;
   margin: 0;
-  font-feature-settings: 'liga' off, 'clig' off;
 }
 
 .company-detail__link {

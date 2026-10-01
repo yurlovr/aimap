@@ -6,7 +6,6 @@
   isolation: isolate;
 }
 
-/* Фон hero: привязан к верху секции, высота по canvas */
 .hero__bg {
   position: absolute;
   top: 42px;
@@ -18,8 +17,6 @@
   z-index: 0;
 }
 
-/* Canvas ведёт себя как <img>: занимает 100% ширины .hero__bg,
-   высота — по соотношению сторон 878:547 */
 #canvas {
   display: block;
   width: 100%;
@@ -73,7 +70,6 @@
   font-size: var(--font-h4-web-size, 22px);
   font-weight: 500;
   line-height: var(--font-h4-web-line-height, 28px);
-  font-feature-settings: 'liga' off, 'clig' off;
 }
 
 .hero__btn {
@@ -119,7 +115,6 @@
   font-size: 96px;
   font-weight: 700;
   line-height: 0.95;
-  font-feature-settings: 'liga' off, 'clig' off;
   background: linear-gradient(111deg, #FF9E7E 0%, #FF4F12 89.76%, #B3370D 179.52%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -134,7 +129,6 @@
   font-size: 28px;
   font-weight: 500;
   line-height: 40px;
-  font-feature-settings: 'liga' off, 'clig' off;
 }
 
 

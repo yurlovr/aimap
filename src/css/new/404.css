@@ -22,7 +22,6 @@
   font-size: 96px;
   font-weight: 700;
   line-height: 0.95;
-  font-feature-settings: 'liga' off, 'clig' off;
   background: linear-gradient(111deg, #FF9E7E 0%, #FF4F12 89.76%, #B3370D 179.52%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -36,7 +35,6 @@
   font-weight: 700;
   font-style: normal;
   line-height: 100%;
-  font-feature-settings: 'liga' off, 'clig' off;
   background: linear-gradient(111deg, #FF9E7E 0%, #FF4F12 89.76%, #B3370D 179.52%);
   background-clip: text;
   -webkit-background-clip: text;

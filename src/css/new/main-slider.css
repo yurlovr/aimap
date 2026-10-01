@@ -172,10 +172,9 @@
 
 .person-card__title {
   font-size: 26px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 36px;
   text-align: center;
-  font-feature-settings: 'liga' off, 'clig' off;
   margin-top: auto;
 }
 
