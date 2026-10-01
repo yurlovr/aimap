@@ -16,37 +16,27 @@ const FILTER_DATA = {
       { id: 'construction-2', label: 'Коммерческая недвижимость' },
       { id: 'construction-3', label: 'Проектирование' },
     ]},
-    { id: 'transport', label: 'Транспорт и логистика', children: [] },
-    { id: 'finance', label: 'Финансы и страхование', children: [] },
-    { id: 'retail', label: 'Ритейл и e-commerce', children: [] },
-    { id: 'gov', label: 'Государственный сектор', children: [] },
-    { id: 'telecom', label: 'Телеком', children: [] },
-    { id: 'education', label: 'Образование', children: [] },
-    { id: 'healthcare', label: 'Здравоохранение', children: [] },
-    { id: 'agriculture', label: 'Сельское и лесное хозяйство', children: [] },
-    { id: 'legal', label: 'Право и юридические услуги', children: [] },
-    { id: 'hr', label: 'HR и управление персоналом', children: [] },
-    { id: 'marketing', label: 'Маркетинг и реклама', children: [] },
-    { id: 'media', label: 'Медиа и развлечения', children: [] },
-    { id: 'tourism', label: 'Туризм и гостеприимство', children: [] },
+    { id: 'transport', label: 'Транспорт и логистика' },
+    { id: 'finance', label: 'Финансы и страхование'},
+    { id: 'retail', label: 'Ритейл и e-commerce' },
+    { id: 'gov', label: 'Государственный сектор' },
+    { id: 'telecom', label: 'Телеком' },
+    { id: 'education', label: 'Образование' },
+    { id: 'healthcare', label: 'Здравоохранение' },
+    { id: 'agriculture', label: 'Сельское и лесное хозяйство' },
+    { id: 'legal', label: 'Право и юридические услуги' },
+    { id: 'hr', label: 'HR и управление персоналом' },
+    { id: 'marketing', label: 'Маркетинг и реклама' },
+    { id: 'media', label: 'Медиа и развлечения' },
+    { id: 'tourism', label: 'Туризм и гостеприимство' },
   ],
   technology: [
-    { id: 'ml', label: 'Машинное обучение', children: [
-      { id: 'ml-1', label: 'Компьютерное зрение' },
-      { id: 'ml-2', label: 'Обработка естественного языка' },
-      { id: 'ml-3', label: 'Рекомендательные системы' },
-    ]},
-    { id: 'nlp', label: 'Обработка языка', children: [
-      { id: 'nlp-1', label: 'Чат-боты' },
-      { id: 'nlp-2', label: 'Анализ текста' },
-    ]},
-    { id: 'cv', label: 'Компьютерное зрение', children: [
-      { id: 'cv-1', label: 'Распознавание лиц' },
-      { id: 'cv-2', label: 'Детекция объектов' },
-    ]},
-    { id: 'rpa', label: 'RPA', children: [] },
-    { id: 'llm', label: 'Большие языковые модели', children: [] },
-    { id: 'data', label: 'Data Science', children: [] },
+    { id: 'ml', label: 'Машинное обучение'},
+    { id: 'nlp', label: 'Обработка языка'},
+    { id: 'cv', label: 'Компьютерное зрение'},
+    { id: 'rpa', label: 'RPA'},
+    { id: 'llm', label: 'Большие языковые модели'},
+    { id: 'data', label: 'Data Science'},
   ]
 };
 
@@ -55,14 +45,76 @@ const state = {
   technology: new Set(),
 };
 
-function initFilter(filterEl, filterKey) {
-  const button    = filterEl.querySelector('.filter__button');
-  const valueEl   = filterEl.querySelector('.filter__value');
-  const clearBtn  = filterEl.querySelector('.filter__clear');
-  const listWrap  = filterEl.querySelector('[data-list]');
-  const data      = FILTER_DATA[filterKey];
+function isParentSelected(parent, selectedSet) {
+  if (parent.children && parent.children.length) {
+    if (selectedSet.has(parent.id)) return true;
+    return parent.children.some(c => selectedSet.has(c.id));
+  }
+  return selectedSet.has(parent.id);
+}
 
-  renderList(listWrap, data);
+function hasSelectedChild(parentEl, selectedSet) {
+  const ids = JSON.parse(parentEl.dataset.children || '[]');
+  return ids.some(cid => selectedSet.has(cid));
+}
+
+function sortBySelection(items, isSelected) {
+  return [...items].sort((a, b) => {
+    const aSel = isSelected(a) ? 0 : 1;
+    const bSel = isSelected(b) ? 0 : 1;
+    return aSel - bSel;
+  });
+}
+
+function resetScroll(listWrap) {
+  if (!listWrap) return;
+
+  const candidates = [
+    listWrap,
+    listWrap.closest('.filter__list-wrapper'),
+    listWrap.closest('.filter__list'),
+    listWrap.closest('.filter__dropdown'),
+    listWrap.closest('.filter__body'),
+  ].filter(Boolean);
+
+  candidates.forEach(el => { el.scrollTop = 0; });
+
+  requestAnimationFrame(() => {
+    candidates.forEach(el => { el.scrollTop = 0; });
+  });
+}
+
+function restoreExpanded(listWrap, expandedIds, selectedSet) {
+  if (!expandedIds || expandedIds.size === 0) return;
+  listWrap.querySelectorAll('.filter__option').forEach(el => {
+    const id = el.dataset.id;
+    if (!expandedIds.has(id)) return;
+    if (hasSelectedChild(el, selectedSet)) {
+      el.classList.add('_expanded');
+    }
+  });
+}
+
+/** Закрывает все открытые фильтры (со сбросом скролла) */
+function closeAllFilters() {
+  document.querySelectorAll('.filter._open').forEach(f => {
+    f.classList.remove('_open');
+    f.querySelector('.filter__button').setAttribute('aria-expanded', 'false');
+
+    const lw = f.querySelector('[data-list]');
+    if (lw) resetScroll(lw);
+  });
+}
+
+function initFilter(filterEl, filterKey) {
+  const button   = filterEl.querySelector('.filter__button');
+  const valueEl  = filterEl.querySelector('.filter__value');
+  const clearBtn = filterEl.querySelector('.filter__clear');
+  const listWrap = filterEl.querySelector('[data-list]');
+  const data     = FILTER_DATA[filterKey];
+
+  renderList(listWrap, data, state[filterKey]);
+  refresh();
 
   button.addEventListener('click', (e) => {
     if (e.target.closest('.filter__clear')) return;
@@ -73,29 +125,52 @@ function initFilter(filterEl, filterKey) {
     document.querySelectorAll('.filter._open').forEach(f => {
       f.classList.remove('_open');
       f.querySelector('.filter__button').setAttribute('aria-expanded', 'false');
+
+      const lw = f.querySelector('[data-list]');
+      if (lw) resetScroll(lw);
     });
 
     if (willOpen) {
+      const expandedIds = new Set(
+        [...listWrap.querySelectorAll('.filter__option._expanded')]
+          .map(el => el.dataset.id)
+      );
+
+      renderList(listWrap, data, state[filterKey]);
+      restoreExpanded(listWrap, expandedIds, state[filterKey]);
+      refresh();
+
       filterEl.classList.add('_open');
       button.setAttribute('aria-expanded', 'true');
+
+      resetScroll(listWrap);
     }
   });
 
   clearBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     state[filterKey].clear();
+
+    listWrap.querySelectorAll('.filter__option._expanded')
+      .forEach(el => el.classList.remove('_expanded'));
+
     refresh();
   });
 
   listWrap.addEventListener('click', (e) => {
-    const toggleEl = e.target.closest('.filter__option-toggle');
     const optionEl = e.target.closest('.filter__option');
     if (!optionEl) return;
+
+    const toggleEl   = e.target.closest('.filter__option-toggle');
+    const checkboxEl = e.target.closest('.filter__checkbox');
+    const labelEl    = e.target.closest('.filter__option-label');
 
     if (toggleEl && optionEl.contains(toggleEl)) {
       optionEl.classList.toggle('_expanded');
       return;
     }
+
+    if (!checkboxEl && !labelEl) return;
 
     const id = optionEl.dataset.id;
     const isParent = optionEl.dataset.isParent === 'true';
@@ -116,11 +191,12 @@ function initFilter(filterEl, filterKey) {
       } else {
         state[filterKey].add(id);
       }
+
       const parentEl = optionEl.closest('.filter__children')?.previousElementSibling;
       if (parentEl && parentEl.classList.contains('filter__option')) {
         const parentId = parentEl.dataset.id;
         const allChildIds = JSON.parse(parentEl.dataset.children || '[]');
-        if (allChildIds.every(cid => state[filterKey].has(cid))) {
+        if (allChildIds.length && allChildIds.every(cid => state[filterKey].has(cid))) {
           state[filterKey].add(parentId);
         } else {
           state[filterKey].delete(parentId);
@@ -146,6 +222,12 @@ function initFilter(filterEl, filterKey) {
         const picked = childrenIds.filter(cid => selected.has(cid));
         if (picked.length === childrenIds.length) selectedState = true;
         else if (picked.length > 0) indeterminate = true;
+
+        if (picked.length > 0) {
+          optEl.classList.add('_expanded');
+        } else {
+          optEl.classList.remove('_expanded');
+        }
       } else {
         selectedState = selected.has(id);
       }
@@ -182,22 +264,30 @@ function initFilter(filterEl, filterKey) {
       filterEl.classList.add('_has-selection');
     }
   }
-
-  refresh();
 }
 
-function renderList(container, data) {
+function renderList(container, data, selectedSet) {
   container.innerHTML = '';
 
-  data.forEach(parent => {
+  const sortedParents = sortBySelection(
+    data,
+    (parent) => isParentSelected(parent, selectedSet)
+  );
+
+  sortedParents.forEach(parent => {
     const hasChildren = parent.children && parent.children.length > 0;
 
-    // Родительская опция
     const parentEl = document.createElement('div');
     parentEl.className = 'filter__option';
     parentEl.dataset.id = parent.id;
     parentEl.dataset.isParent = hasChildren ? 'true' : 'false';
-    if (hasChildren) parentEl.dataset.children = JSON.stringify(parent.children.map(c => c.id));
+    if (hasChildren) {
+      parentEl.dataset.children = JSON.stringify(parent.children.map(c => c.id));
+    }
+
+    if (hasChildren && parent.children.some(c => selectedSet.has(c.id))) {
+      parentEl.classList.add('_expanded');
+    }
 
     parentEl.innerHTML = `
       <span class="filter__checkbox"></span>
@@ -211,12 +301,17 @@ function renderList(container, data) {
     container.appendChild(parentEl);
 
     if (hasChildren) {
+      const sortedChildren = sortBySelection(
+        parent.children,
+        (child) => selectedSet.has(child.id)
+      );
+
       const childrenWrap = document.createElement('div');
       childrenWrap.className = 'filter__children';
       childrenWrap.innerHTML = '<div class="filter__children-inner"></div>';
       const inner = childrenWrap.querySelector('.filter__children-inner');
 
-      parent.children.forEach(child => {
+      sortedChildren.forEach(child => {
         const childEl = document.createElement('div');
         childEl.className = 'filter__option filter__option--child';
         childEl.dataset.id = child.id;
@@ -235,19 +330,13 @@ function renderList(container, data) {
 
 document.addEventListener('click', (e) => {
   if (!e.target.closest('.filter')) {
-    document.querySelectorAll('.filter._open').forEach(f => {
-      f.classList.remove('_open');
-      f.querySelector('.filter__button').setAttribute('aria-expanded', 'false');
-    });
+    closeAllFilters();
   }
 });
 
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
-    document.querySelectorAll('.filter._open').forEach(f => {
-      f.classList.remove('_open');
-      f.querySelector('.filter__button').setAttribute('aria-expanded', 'false');
-    });
+    closeAllFilters();
   }
 });
 
