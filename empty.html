@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Каталог ИИ-решений — ИИ-решения России</title>
+  <title>Компании-разработчики ИИ-решений — Каталог</title>
 
   <link rel="icon" type="image/svg+xml" href="./public/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,13 +13,13 @@
   <link rel="stylesheet" type="text/css" href="src/css/new/reset.css" />
   <link rel="stylesheet" type="text/css" href="src/css/new/filters.css" />
   <link rel="stylesheet" type="text/css" href="src/css/new/footer.css" />
-  <link rel="stylesheet" type="text/css" href="src/css/new/solutions.css" />
   <link rel="stylesheet" type="text/css" href="src/css/new/pagination.css" />
   <link rel="stylesheet" type="text/css" href="src/css/new/header.css" />
   <link rel="stylesheet" type="text/css" href="src/css/new/hero.css" />
   <link rel="stylesheet" type="text/css" href="src/css/new/glow.css" />
   <link rel="stylesheet" type="text/css" href="src/css/new/modal.css" />
-  <link rel="stylesheet" type="text/css" href="src/css/new/taxonomy.css" />
+  <link rel="stylesheet" type="text/css" href="src/css/new/empty.css" />
+</head>
 <body>
 
   <div class="bg-glow bg-glow--top-left" aria-hidden="true"></div>
@@ -34,8 +34,8 @@
         </a>
 
         <nav class="header__nav" aria-label="Основная навигация">
-          <div class="header__nav-link _active">Решения</div>
-          <a href="companies-new.html" class="header__nav-link">Компании</a>
+          <a href="solutions-new.html" class="header__nav-link">Решения</a>
+          <div class="header__nav-link _active">Компании</div>
         </nav>
 
         <a href="#" class="header__cta" data-modal-open="contact-modal" aria-haspopup="dialog">Связаться с нами</a>
@@ -46,7 +46,7 @@
   <main class="container">
 
     <section class="hero">
-      <h1 class="hero__title">ИИ-решения России</h1>
+      <h1 class="hero__title">Компании-разработчики ИИ-решений России</h1>
     </section>
 
     <!-- ФИЛЬТРЫ -->
@@ -86,73 +86,12 @@
 
     </section>
 
-    <!-- CATALOG -->
-    <section class="catalog" aria-label="Каталог решений">
+  <!--EMPTY -->
 
-      <div class="card-wrap">
-        <a href="solution-new-details.html" class="card">
-          <h3 class="card__title">Автономный ИИ-агент с RPA-функционалом</h3>
-          <p class="card__text">Комплексное отечественное решение для автономной автоматизации, интеллектуального анализа данных</p>
-          <div class="card__image">
-            <img src="src/assets/solution-img.png" alt="Автономный ИИ-агент с RPA-функционалом" loading="lazy" decoding="async">
-            <div class="card__badge">
-              <img src="src/assets/new/badge-win.svg" alt="Победитель акселератора" loading="lazy" decoding="async">
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="card-wrap">
-        <a href="solution-new-details.html" class="card">
-          <h3 class="card__title">Автономный ИИ-агент с RPA-функционалом</h3>
-          <p class="card__text">Комплексное отечественное решение для автономной автоматизации, интеллектуального анализа данных</p>
-          <div class="card__image">
-            <img src="src/assets/solution-img.png" alt="Автономный ИИ-агент с RPA-функционалом" loading="lazy" decoding="async">
-            <div class="card__badge">
-              <img src="src/assets/new/badge-final.svg" alt="Финалист акселератора" loading="lazy" decoding="async">
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="card-wrap">
-        <a href="solution-new-details.html" class="card">
-          <h3 class="card__title">Автономный ИИ-агент с RPA-функционалом</h3>
-          <p class="card__text">Комплексное отечественное решение для автономной автоматизации, интеллектуального анализа данных</p>
-          <div class="card__image">
-            <img src="src/assets/solution-img.png" alt="Автономный ИИ-агент с RPA-функционалом" loading="lazy" decoding="async">
-          </div>
-        </a>
-      </div>
-
-      <div class="card-wrap">
-        <a href="solution-new-details.html" class="card">
-          <h3 class="card__title">Автономный ИИ-агент с RPA-функционалом</h3>
-          <p class="card__text">Комплексное отечественное решение для автономной автоматизации, интеллектуального анализа данных</p>
-          <div class="card__image">
-            <img src="src/assets/solution-img.png" alt="Автономный ИИ-агент с RPA-функционалом" loading="lazy" decoding="async">
-          </div>
-        </a>
-      </div>
-
-    </section>
-
-    <!-- PAGINATION -->
-    <nav class="pagination" aria-label="Постраничная навигация">
-      <button class="pagination__item" type="button" aria-label="Предыдущая страница">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
-      </button>
-      <button class="pagination__item" type="button">1</button>
-      <button class="pagination__item _active" type="button">2</button>
-      <button class="pagination__item" type="button">3</button>
-      <span class="pagination__dots">…</span>
-      <button class="pagination__item" type="button">8</button>
-      <button class="pagination__item" type="button">9</button>
-      <button class="pagination__item" type="button">10</button>
-      <button class="pagination__item" disabled type="button" aria-label="Следующая страница">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
-      </button>
-    </nav>
+    <div class="empty">
+      <div class="empty_header">Ничего не найдено</div>
+      <div class="empty_description">Сбросьте фильтры и повторите поиск</div>
+    </div>
 
   </main>
 
@@ -165,8 +104,8 @@
         </a>
 
         <nav class="footer__nav" aria-label="Навигация в футере">
-          <div class="footer__nav-link">Решения</div>
-          <a href="companies-new.html" class="footer__nav-link">Компании</a>
+          <a href="solutions-new.html" class="footer__nav-link">Решения</a>
+          <div class="footer__nav-link">Компании</div>
           <a href="#" class="footer__nav-link" data-modal-open="contact-modal" aria-haspopup="dialog">Связаться с нами</a>
         </nav>
       </div>
@@ -175,15 +114,15 @@
         <p class="footer__copyright">© 2026 ПАО «Ростелеком». Все права защищены.</p>
         <div class="footer__legal">
           <a href="404.html" class="footer__legal-link">Политика конфиденциальности</a>
-          <a href="empty.html" class="footer__legal-link">Условия обработки персональных данных</a>
+          <a href="#" class="footer__legal-link">Условия обработки персональных данных</a>
         </div>
       </div>
     </div>
   </footer>
-
   <!-- MODAL: Связаться с нами -->
   <dialog class="modal" id="contact-modal" aria-labelledby="contact-modal-title">
     <div class="modal__stage">
+
       <div class="modal__window">
 
         <button type="button" class="modal__close" data-modal-close aria-label="Закрыть">
@@ -277,8 +216,8 @@
     </div>
   </dialog>
 
-  <script type="module" src="src/js/new/filters.js"></script>
   <script type="module" src="src/js/new/modal.js"></script>
+  <script type="module" src="src/js/new/filters.js"></script>
 
 </body>
 </html>
