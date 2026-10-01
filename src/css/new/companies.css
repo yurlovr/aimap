@@ -32,10 +32,9 @@
   min-width: 0;
 }
 .company-card:hover {
-  background: var(--color-bg-hover);
-  border-color: var(--color-white-transparent-20);
-  box-shadow: var(--shadow-neutral-medium);
-  transform: translateY(-2px);
+  border: 1px solid var(--Purple-Purple-Soft, #8254F8);
+  background: var(--neutral-transparent-5-white, rgba(255, 255, 255, 0.05));
+  box-shadow: 0 12px 20px 0 rgba(130, 84, 248, 0.10), 0 0 20px 0 rgba(130, 84, 248, 0.05);
 }
 
 .company-card__logo {
