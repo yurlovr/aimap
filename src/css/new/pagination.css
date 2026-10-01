@@ -25,7 +25,7 @@
 
 .pagination__item:disabled,
 .pagination__item._disabled {
-  background: var(--neutral-transparent-10-white, rgba(255, 255, 255, 0.10));
+  opacity: 0.4;
   cursor: default;
   pointer-events: none;
 }
