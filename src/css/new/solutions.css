@@ -76,6 +76,7 @@
 .card__image {
   height: 220px;
   position: relative;
+  margin-top: auto;
 }
 
 .card__image > img {
