@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     clearTimeout(icon._tooltipTimer);
-    icon._tooltipTimer = setTimeout(() => closeTooltip(icon), 5000);
+    icon._tooltipTimer = setTimeout(() => closeTooltip(icon), 2000);
   }
 
   function closeTooltip(icon) {
