@@ -115,9 +115,12 @@
   font-size: 96px;
   font-weight: 700;
   line-height: 0.95;
-  background: linear-gradient(111deg, #FF9E7E 0%, #FF4F12 89.76%, #B3370D 179.52%);
-  background-clip: text;
+  background:
+    radial-gradient(140% 80% at 50% 110%, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 60%),
+    radial-gradient(140% 60% at 50% -10%, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 55%),
+    linear-gradient(111deg, #FF9E7E 0%, #FF4F12 89.76%, #B3370D 179.52%);
   -webkit-background-clip: text;
+          background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
