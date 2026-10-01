@@ -8,7 +8,7 @@
   line-height: var(--font-body-medium-line-height);
   font-weight: 500;
   transition: color 0.2s;
-  align-self: flex-start;
+  margin-top: 24px;
   margin-bottom: 24px;
 }
 .back-btn:hover { color: var(--color-purple-muted); }
@@ -29,6 +29,7 @@
 @media (max-width: 767px) {
   .back-btn {
     font-size: 14px;
+    margin-top: 16px;
     margin-bottom: 0;
   }
 }

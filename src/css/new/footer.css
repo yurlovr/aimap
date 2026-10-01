@@ -66,13 +66,18 @@
 }
 .footer__legal-link:hover { color: var(--color-platinum-light); }
 
-@media (min-width: 1280px) and (max-width: 1599px) {
-  .footer__row-top,
-  .footer__row-bottom {
+@media (min-width: 1280px) {
+  .footer__row-top {
     grid-template-columns: 420px 1fr;
   }
+
+  .footer__row-bottom {
+    display: flex;
+    gap: 32px;
+  }
   .footer__nav { gap: 32px; }
-  .footer__legal { gap: 32px; }
+  .footer__legal { gap: 32px; order: 2 }
+  .footer__copyright { order: 1; width: 387px; }
 }
 
 @media (min-width: 768px) and (max-width: 1279px) {
@@ -105,7 +110,7 @@
   }
   .footer__row-bottom {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 16px;
   }
   .footer__nav,
   .footer__legal {

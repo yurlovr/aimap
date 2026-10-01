@@ -39,7 +39,7 @@
 }
 
 .header__nav-link {
-  padding: 8px 32px;
+  padding: 12px 32px;
   border-radius: var(--radius-s);
   color: var(--color-platinum-light);
   font-family: var(--font-family-medium);
@@ -90,6 +90,7 @@
     flex: 1;
     text-align: center;
     font-size: 14px;
+    padding: 10px 16px;
   }
   .header__nav-link._active {
     background: var(--color-neutral-white);

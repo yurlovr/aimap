@@ -247,7 +247,8 @@
 
 @media (max-width: 1919px) {
   .carousel-section {
-    max-width: 1280px;
+    max-width: 1328px;
+    padding: 0 var(--container-side-m, 24px);
   }
 }
 

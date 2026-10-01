@@ -137,7 +137,8 @@
 
 @media (max-width: 1919px) {
   .hero__container {
-    max-width: 1280px;
+    max-width: 1328px;
+    padding: 0 var(--container-side-m, 24px);
   }
 
   .hero__bg {
@@ -207,8 +208,8 @@
   }
 
   .hero__descr {
-    font-size: var(--font-h4-mobile-size, 18px);
-    line-height: var(--font-h4-mobile-line-height, 24px);
+    font-size: 16px;
+    line-height: 20px;
     margin-top: 24px;
     max-width: 450px;
   }

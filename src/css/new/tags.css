@@ -24,10 +24,6 @@
   cursor: default;
 }
 
-/* .tag:hover {
-  background: rgba(88, 93, 105, 0.20);
-  color: var(--color-platinum-light);
-} */
 
 @media (max-width: 767px) {
   .tag { font-size: 11px; line-height: 14px; padding: 6px 12px; }
