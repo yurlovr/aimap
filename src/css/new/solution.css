@@ -29,23 +29,24 @@
 .solution-hero__title {
   font-family: var(--font-family-medium);
   font-weight: 500;
-  font-size: var(--font-h1-web-size);
-  line-height: 110%;
+  font-size: 36px;
+  line-height: 44px;
   color: var(--color-platinum-light);
   letter-spacing: -0.02em;
   text-align: left;
+  max-width: 952px;
 }
 .solution-hero__description {
   font-family: var(--font-family-regular);
   font-size: 18px;
   line-height: 28px;
   color: var(--color-neutral-400);
-  max-width: 820px;
+  max-width: 952px;
   text-align: left;
 }
 .solution-hero__image {
   width: 100%;
-  max-width: 820px;
+  max-width: 952px;
   aspect-ratio: 41/16;
   border-radius: var(--radius-l);
   overflow: hidden;
@@ -60,7 +61,7 @@
 
 .solution-content {
   width: 100%;
-  max-width: 820px;
+  max-width: 952px;
   display: flex;
   flex-direction: column;
   gap: 48px;
@@ -173,8 +174,8 @@
 .solution-card__title {
   font-family: var(--font-family-medium);
   font-weight: 500;
-  font-size: 28px;
-  line-height: 36px;
+  font-size: 24px;
+  line-height: 32px;
   color: var(--color-platinum-light);
 }
 .solution-card__text {
@@ -295,10 +296,13 @@
   .solution {
     padding: 16px 0 48px;
   }
+  .solution-hero {
+    gap: 16px;
+  }
   .solution__container {
     padding: 0 16px;
     margin-bottom: 0;
-    gap: 32px;
+    gap: 24px;
   }
   .solution-hero__title {
     font-size: 24px;
@@ -342,4 +346,7 @@
   }
   .solution-text { font-size: 16px; line-height: 24px; }
   .form-cta { margin: 0; }
+  .solution-hero__image {
+    margin-top: 8px;
+  }
 }

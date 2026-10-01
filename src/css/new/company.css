@@ -135,7 +135,7 @@
     padding: 16px 40px;
   }
   .company-detail__title { font-size: 24px; line-height: 32px; }
-  .company-detail__content { gap: 24px; }
+  .company-detail__content { gap: 16px; margin-top: -8px; }
   .company-detail__subtitle,
   .company-detail__contacts-title { font-size: 22px; line-height: 28px; }
   .company-detail__text,

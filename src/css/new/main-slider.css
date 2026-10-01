@@ -286,7 +286,7 @@
   }
 
   .slider-people__slider .swiper-slide {
-    width: calc(100vw - 160px) !important;
+    width: calc(100vw - 130px) !important;
     max-width: 360px !important;
     height: 352px;
   }
@@ -300,18 +300,18 @@
   }
 
   .person-card {
-    padding: 32px;
+    padding: 24px;
   }
 
   .person-card__bg {
-    width: 224px;
-    height: 224px;
+    width: 200px;
+    height: 200px;
   }
 
   .person-card__title {
     text-align: center;
-    font-size: 22px;
-    line-height: 28px;
+    font-size: 16px;
+    line-height: 20px;
   }
 
   .carousel-section {
