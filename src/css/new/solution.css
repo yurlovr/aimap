@@ -17,14 +17,26 @@
   margin-bottom: 48px;
 }
 
+.solution-detail {
+  width: 100%;
+  max-width: 952px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.solution-detail__inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* HERO */
 .solution-hero {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
   gap: 24px;
   width: 100%;
-  max-width: 952px;
 }
 .solution-hero__title {
   font-family: var(--font-family-medium);
@@ -33,21 +45,18 @@
   line-height: 44px;
   color: var(--color-platinum-light);
   letter-spacing: -0.02em;
-  text-align: left;
-  max-width: 952px;
+  margin: 0;
 }
 .solution-hero__description {
   font-family: var(--font-family-regular);
   font-size: 18px;
   line-height: 28px;
   color: var(--color-neutral-400);
-  max-width: 952px;
-  text-align: left;
+  margin: 0;
 }
 .solution-hero__image {
   width: 100%;
-  max-width: 952px;
-  aspect-ratio: 41/16;
+  aspect-ratio: 3/1;
   border-radius: var(--radius-l);
   overflow: hidden;
   background: linear-gradient(135deg, #7700ff 0%, #ff4d12 100%);
@@ -59,9 +68,9 @@
   object-fit: cover;
 }
 
+/* CONTENT */
 .solution-content {
   width: 100%;
-  max-width: 952px;
   display: flex;
   flex-direction: column;
   gap: 48px;
@@ -76,6 +85,7 @@
   font-size: 16px;
   line-height: 24px;
   color: var(--color-neutral-400);
+  margin: 0;
 }
 .solution-content__subtitle {
   font-family: var(--font-family-medium);
@@ -84,6 +94,7 @@
   line-height: var(--font-h3-web-line-height);
   color: var(--color-platinum-light);
   letter-spacing: -0.01em;
+  margin: 0;
 }
 .solution-content__list {
   display: flex;
@@ -107,6 +118,7 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  min-width: 0;
 }
 .solution-content__list-title {
   font-family: var(--font-family-medium);
@@ -122,9 +134,9 @@
   color: var(--color-neutral-400);
 }
 
+/* CARDS */
 .solution-cards {
   width: 100%;
-  max-width: 952px;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -136,6 +148,7 @@
   line-height: var(--font-h3-web-line-height);
   color: var(--color-platinum-light);
   letter-spacing: -0.01em;
+  margin: 0;
 }
 .solution-cards__grid {
   display: grid;
@@ -150,6 +163,7 @@
   flex-direction: column;
   gap: var(--spacing-3x, 20px);
   min-height: 180px;
+  box-sizing: border-box;
   transition: border-color 0.2s, background 0.2s;
 }
 .solution-card:hover {
@@ -193,9 +207,9 @@
   margin: 0;
 }
 
+/* COMPANY */
 .company {
   width: 100%;
-  max-width: 952px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -257,96 +271,75 @@
   letter-spacing: -0.01em;
 }
 
+/* TAGS и FORM внутри flex-контейнера с align-items:center */
+.tags { width: 100%; }
+
 .form-cta {
   width: 100%;
-  max-width: 1440px;
   margin: 80px 0;
   min-height: 0;
 }
 
+/* ===== Адаптив ===== */
 @media (min-width: 1280px) and (max-width: 1599px) {
   .solution__container { padding: 0 160px; }
   .solution-hero__title { font-size: var(--font-h1-web-small-size); }
   .company__name { font-size: 20px; line-height: 26px; }
   .solution-text { font-size: 17px; line-height: 26px; }
 }
+
 @media (min-width: 768px) and (max-width: 1279px) {
   .solution__container { padding: 0 48px; gap: 40px; }
   .solution-hero__title { font-size: var(--font-h1-tablet-size); }
   .solution-hero__description { font-size: 16px; line-height: 24px; }
-  .solution-content__subtitle { font-size: 24px; line-height: 32px; }
-  .solution-cards__title { font-size: 24px; line-height: 32px; }
+  .solution-content__subtitle,
+  .solution-cards__title,
+  .company__title { font-size: 24px; line-height: 32px; }
   .solution-card {
     padding: var(--spacing-6x, 24px);
     gap: var(--spacing-3x, 12px);
   }
-  .solution-card__icon {
-    width: 48px;
-    height: 48px;
-  }
-  .solution-card__icon svg {
-    width: 40px;
-    height: 40px;
-  }
-  .company__title { font-size: 24px; line-height: 32px; }
+  .solution-card__icon { width: 48px; height: 48px; }
+  .solution-card__icon svg { width: 40px; height: 40px; }
   .company__name { font-size: 18px; line-height: 24px; }
   .solution-text { font-size: 16px; line-height: 24px; }
 }
+
 @media (max-width: 767px) {
-  .solution {
-    padding: 16px 0 48px;
-  }
-  .solution-hero {
-    gap: 16px;
-  }
+  .solution { padding: 16px 0 48px; }
   .solution__container {
     padding: 0 16px;
     margin-bottom: 0;
     gap: 24px;
   }
-  .solution-hero__title {
-    font-size: 24px;
-    line-height: 32px;
-  }
-  .solution-hero__description {
-    font-size: 16px;
-    line-height: 22px;
-  }
-  .solution-content__subtitle { font-size: var(--font-h3-mobile-size); line-height: var(--font-h3-mobile-line-height); }
-  .solution-cards__title { font-size: var(--font-h3-mobile-size); line-height: var(--font-h3-mobile-line-height); }
-  .solution-cards__grid { grid-template-columns: 1fr; }
+  .solution-detail__inner { gap: 24px; }
+  .solution-hero { gap: 16px; }
+  .solution-hero__title { font-size: 24px; line-height: 32px; }
+  .solution-hero__description { font-size: 16px; line-height: 22px; }
+  .solution-hero__image { margin-top: 8px; }
   .solution-content { gap: 32px; }
+  .solution-content__subtitle,
+  .solution-cards__title,
+  .company__title {
+    font-size: var(--font-h3-mobile-size);
+    line-height: var(--font-h3-mobile-line-height);
+  }
+  .solution-cards__grid { grid-template-columns: 1fr; }
+  .solution-card__icon { width: 32px; height: 32px; }
+  .solution-card__icon svg { width: 24px; height: 24px; }
+  .solution-card__title { font-size: 22px; line-height: 28px; }
+  .solution-card__text { font-size: 14px; line-height: 20px; }
+  .solution-text { font-size: 16px; line-height: 24px; }
   .company__head {
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: flex-start;
     gap: 12px;
   }
-  .company__title { font-size: var(--font-h3-mobile-size); line-height: var(--font-h3-mobile-line-height); }
   .company__link { font-size: 14px; line-height: 20px; flex-shrink: 0; }
-  .company__card { gap: 16px; }
   .company__logo { min-width: 100px; height: 36px; }
-  .company__logo svg, .company__logo img { max-width: 130px; }
+  .company__logo svg,
+  .company__logo img { max-width: 130px; }
   .company__name { font-size: 16px; line-height: 22px; }
-  .solution-card__icon {
-    width: 32px;
-    height: 32px;
-  }
-  .solution-card__icon svg {
-    width: 24px;
-    height: 24px;
-  }
-  .solution-card__title {
-    font-size: 22px;
-    line-height: 28px;
-  }
-  .solution-card__text {
-    font-size: 14px;
-    line-height: 20px;
-  }
-  .solution-text { font-size: 16px; line-height: 24px; }
   .form-cta { margin: 0; }
-  .solution-hero__image {
-    margin-top: 8px;
-  }
 }
