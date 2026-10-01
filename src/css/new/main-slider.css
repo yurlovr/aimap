@@ -287,8 +287,10 @@
 
   .slider-people__slider .swiper-slide {
     width: calc(100vw - 130px) !important;
-    max-width: 360px !important;
-    height: 352px;
+    max-width: 320px !important;
+    height: 300px;
+    /* max-width: 360px !important;
+    height: 352px; */
   }
 
   .slider-people__controls {
@@ -304,6 +306,9 @@
   }
 
   .person-card__bg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 200px;
     height: 200px;
   }
@@ -321,5 +326,10 @@
   .carousel-title {
     font-size: 22px;
     line-height: 28px;
+  }
+
+  .slider .swiper-slide.swiper-slide-prev .person-card,
+  .slider .swiper-slide.swiper-slide-next .person-card {
+    opacity: 0.5;
   }
 }
