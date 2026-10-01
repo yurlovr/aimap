@@ -31,7 +31,8 @@
 .carousel-viewport {
   position: relative;
   width: 100%;
-  overflow: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
   padding: 48px 0;
   margin: 0 auto;
   box-sizing: border-box;
@@ -75,7 +76,7 @@
   flex-direction: column;
   align-items: center;
   border-radius: 32px;
-  overflow: hidden;
+  isolation: isolate;
   background: #101828;
   border-radius: 25.6px;
 }
@@ -103,10 +104,10 @@
   transition: all 0.4s ease;
 }
 
-.slider:not(.tech) .swiper-slide-active .person-card::after {
+.slider:not(.tech) .swiper-slide-active::after {
   content: '';
   position: absolute;
-  top: 35%;
+  top: 22%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 270px;
@@ -117,10 +118,10 @@
   height: 280px;
 }
 
-.slider.tech .swiper-slide-active .person-card::after {
+.slider.tech .swiper-slide-active::after {
   content: '';
   position: absolute;
-  top: 35%;
+  top: 22%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 270px;
