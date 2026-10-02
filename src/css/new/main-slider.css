@@ -333,7 +333,11 @@
   }
 }
 
+/* ============================================================
+   MOBILE / TOUCH: active (во время касания) + is-tapped (после тапа)
+   ============================================================ */
 @media (hover: none) {
+  /* --- во время касания --- */
   .slider:not(.tech) .swiper-slide-active:active {
     background: linear-gradient(205deg, rgba(238, 68, 33, 0.60) -1.88%, rgba(238, 68, 33, 0.00) 41.99%), rgba(88, 93, 105, 0.10);
   }
@@ -343,13 +347,32 @@
   }
 
   .slider:not(.tech) .swiper-slide-active:active::before,
-  .slider.tech .swiper-slide-active:active::before {
+  .slider:not(.tech) .swiper-slide-active.is-tapped::before {
+    opacity: 1;
+  }
+
+  .slider.tech .swiper-slide-active:active::before,
+  .slider.tech .swiper-slide-active.is-tapped::before {
     opacity: 1;
   }
 
   .slider:not(.tech) .swiper-slide-active:active::after,
-  .slider.tech .swiper-slide-active:active::after {
+  .slider:not(.tech) .swiper-slide-active.is-tapped::after {
     opacity: 0.23;
+  }
+
+  .slider.tech .swiper-slide-active:active::after,
+  .slider.tech .swiper-slide-active.is-tapped::after {
+    opacity: 0.23;
+  }
+
+  /* --- залипание после тапа (класс вешает JS) --- */
+  .slider:not(.tech) .swiper-slide-active.is-tapped {
+    background: linear-gradient(205deg, rgba(238, 68, 33, 0.60) -1.88%, rgba(238, 68, 33, 0.00) 41.99%), rgba(88, 93, 105, 0.10);
+  }
+
+  .slider.tech .swiper-slide-active.is-tapped {
+    background: linear-gradient(205deg, rgba(132, 24, 255, 0.60) -1.88%, rgba(119, 0, 255, 0.00) 41.99%), rgba(88, 93, 105, 0.10);
   }
 }
 

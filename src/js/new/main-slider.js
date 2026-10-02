@@ -60,3 +60,37 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.slider').forEach(initSlider);
 
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const sliderEl = document.querySelector('.slider-people__slider');
+  if (!sliderEl) return;
+
+  const isTouch = window.matchMedia('(hover: none)').matches;
+  if (!isTouch) return; // на десктопе не вмешиваемся
+
+  const clearTapped = () => {
+    sliderEl.querySelectorAll('.swiper-slide.is-tapped')
+      .forEach(el => el.classList.remove('is-tapped'));
+  };
+
+  sliderEl.addEventListener('touchstart', (e) => {
+    const slide = e.target.closest('.swiper-slide');
+    if (!slide) return;
+
+    // реагируем только на активный слайд
+    if (!slide.classList.contains('swiper-slide-active')) return;
+
+    clearTapped();
+    slide.classList.add('is-tapped');
+  }, { passive: true });
+
+  // снимаем подсветку при свайпе / смене слайда
+  if (window.Swiper && sliderEl.swiper) {
+    sliderEl.swiper.on('slideChangeTransitionStart', clearTapped);
+  }
+
+  // снимаем при тапе вне слайдера
+  document.addEventListener('touchstart', (e) => {
+    if (!e.target.closest('.slider-people__slider')) clearTapped();
+  }, { passive: true });
+});
