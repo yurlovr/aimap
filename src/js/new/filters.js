@@ -204,13 +204,22 @@ function initFilter(filterEl, filterKey) {
 
       if (isParent && childrenIds.length) {
         const picked = childrenIds.filter(cid => selected.has(cid));
-        if (picked.length === childrenIds.length) selectedState = true;
-        else if (picked.length > 0) indeterminate = true;
-        // _expanded тут НЕ трогаем
+        if (picked.length === childrenIds.length && childrenIds.length > 0) {
+          selectedState = true;
+          indeterminate = false;
+        } else if (picked.length > 0) {
+          selectedState = false; // ← явно снимаем выделение
+          indeterminate = true;
+        } else {
+          selectedState = false;
+          indeterminate = false;
+        }
       } else {
         selectedState = selected.has(id);
+        indeterminate = false;
       }
 
+      // Явно управляем обоими классами, чтобы не оставалось «залипшего» выделения
       optEl.classList.toggle('_selected', selectedState);
       optEl.classList.toggle('_indeterminate', indeterminate);
     });

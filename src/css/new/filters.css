@@ -167,9 +167,7 @@
   transition: border-color 0.15s, background 0.15s;
   position: relative;
 }
-.filter__option:hover .filter__checkbox {
-  border-color: var(--color-purple-soft);
-}
+
 .filter__option._selected .filter__checkbox {
   border-color: var(--color-purple-soft);
 }
