@@ -4,7 +4,7 @@
   font-weight: 500;
   font-size: var(--font-h1-web-size);
   line-height: 100%;
-  color: var(--color-platinum-light);
+  color: #ffffff;
   letter-spacing: -0.02em;
 }
 @media (min-width: 1280px) and (max-width: 1599px) { .hero__title { font-size: var(--font-h1-web-small-size); } }
