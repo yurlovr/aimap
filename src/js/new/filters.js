@@ -53,11 +53,6 @@ function isParentSelected(parent, selectedSet) {
   return selectedSet.has(parent.id);
 }
 
-function hasSelectedChild(parentEl, selectedSet) {
-  const ids = JSON.parse(parentEl.dataset.children || '[]');
-  return ids.some(cid => selectedSet.has(cid));
-}
-
 function sortBySelection(items, isSelected) {
   return [...items].sort((a, b) => {
     const aSel = isSelected(a) ? 0 : 1;
@@ -84,26 +79,28 @@ function resetScroll(listWrap) {
   });
 }
 
-function restoreExpanded(listWrap, expandedIds, selectedSet) {
-  if (!expandedIds || expandedIds.size === 0) return;
-  listWrap.querySelectorAll('.filter__option').forEach(el => {
-    const id = el.dataset.id;
-    if (!expandedIds.has(id)) return;
-    if (hasSelectedChild(el, selectedSet)) {
-      el.classList.add('_expanded');
-    }
-  });
+/** Снимает раскрытие у всех подсписков внутри listWrap */
+function collapseAll(listWrap) {
+  if (!listWrap) return;
+  listWrap.querySelectorAll('.filter__option._expanded')
+    .forEach(el => el.classList.remove('_expanded'));
 }
 
-/** Закрывает все открытые фильтры (со сбросом скролла) */
-function closeAllFilters() {
-  document.querySelectorAll('.filter._open').forEach(f => {
-    f.classList.remove('_open');
-    f.querySelector('.filter__button').setAttribute('aria-expanded', 'false');
+/** Закрывает фильтр: убирает _open, снимает раскрытие, сбрасывает скролл */
+function closeFilter(filterEl) {
+  filterEl.classList.remove('_open');
+  const btn = filterEl.querySelector('.filter__button');
+  if (btn) btn.setAttribute('aria-expanded', 'false');
 
-    const lw = f.querySelector('[data-list]');
-    if (lw) resetScroll(lw);
-  });
+  const lw = filterEl.querySelector('[data-list]');
+  if (lw) {
+    collapseAll(lw);
+    resetScroll(lw);
+  }
+}
+
+function closeAllFilters() {
+  document.querySelectorAll('.filter._open').forEach(closeFilter);
 }
 
 function initFilter(filterEl, filterKey) {
@@ -122,22 +119,12 @@ function initFilter(filterEl, filterKey) {
 
     const willOpen = !filterEl.classList.contains('_open');
 
-    document.querySelectorAll('.filter._open').forEach(f => {
-      f.classList.remove('_open');
-      f.querySelector('.filter__button').setAttribute('aria-expanded', 'false');
-
-      const lw = f.querySelector('[data-list]');
-      if (lw) resetScroll(lw);
-    });
+    // Закрываем все остальные фильтры (со сбросом раскрытия и скролла)
+    document.querySelectorAll('.filter._open').forEach(closeFilter);
 
     if (willOpen) {
-      const expandedIds = new Set(
-        [...listWrap.querySelectorAll('.filter__option._expanded')]
-          .map(el => el.dataset.id)
-      );
-
+      // Просто пересобираем — раскрытие всегда сбрасывается
       renderList(listWrap, data, state[filterKey]);
-      restoreExpanded(listWrap, expandedIds, state[filterKey]);
       refresh();
 
       filterEl.classList.add('_open');
@@ -150,10 +137,7 @@ function initFilter(filterEl, filterKey) {
   clearBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     state[filterKey].clear();
-
-    listWrap.querySelectorAll('.filter__option._expanded')
-      .forEach(el => el.classList.remove('_expanded'));
-
+    collapseAll(listWrap);
     refresh();
   });
 
@@ -222,12 +206,7 @@ function initFilter(filterEl, filterKey) {
         const picked = childrenIds.filter(cid => selected.has(cid));
         if (picked.length === childrenIds.length) selectedState = true;
         else if (picked.length > 0) indeterminate = true;
-
-        if (picked.length > 0) {
-          optEl.classList.add('_expanded');
-        } else {
-          optEl.classList.remove('_expanded');
-        }
+        // _expanded тут НЕ трогаем
       } else {
         selectedState = selected.has(id);
       }
@@ -283,10 +262,6 @@ function renderList(container, data, selectedSet) {
     parentEl.dataset.isParent = hasChildren ? 'true' : 'false';
     if (hasChildren) {
       parentEl.dataset.children = JSON.stringify(parent.children.map(c => c.id));
-    }
-
-    if (hasChildren && parent.children.some(c => selectedSet.has(c.id))) {
-      parentEl.classList.add('_expanded');
     }
 
     parentEl.innerHTML = `
