@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const sliders = document.querySelectorAll('.slider-people__slider');
   if (!sliders.length) return;
 
-  const TAP_DURATION = 400;
+  const TAP_DURATION = 300;
 
   const clearMap = new WeakMap();
 
