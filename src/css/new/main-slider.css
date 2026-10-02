@@ -85,6 +85,7 @@
   -webkit-touch-callout: none;
   user-select: none;
   -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
 .person-card__bg {
@@ -328,6 +329,26 @@
 
   .slider.tech .swiper-slide-active:active {
     background: linear-gradient(205deg, rgba(132, 24, 255, 0.60) -1.88%, rgba(119, 0, 255, 0.00) 41.99%), rgba(88, 93, 105, 0.10);
+  }
+}
+
+@media (hover: none) {
+  .slider:not(.tech) .swiper-slide-active:active {
+    background: linear-gradient(205deg, rgba(238, 68, 33, 0.60) -1.88%, rgba(238, 68, 33, 0.00) 41.99%), rgba(88, 93, 105, 0.10);
+  }
+
+  .slider.tech .swiper-slide-active:active {
+    background: linear-gradient(205deg, rgba(132, 24, 255, 0.60) -1.88%, rgba(119, 0, 255, 0.00) 41.99%), rgba(88, 93, 105, 0.10);
+  }
+
+  .slider:not(.tech) .swiper-slide-active:active::before,
+  .slider.tech .swiper-slide-active:active::before {
+    opacity: 1;
+  }
+
+  .slider:not(.tech) .swiper-slide-active:active::after,
+  .slider.tech .swiper-slide-active:active::after {
+    opacity: 0.23;
   }
 }
 
