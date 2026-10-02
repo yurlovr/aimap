@@ -35,7 +35,10 @@
   font-weight: 700;
   font-style: normal;
   line-height: 100%;
-  background: linear-gradient(111deg, #FF9E7E 0%, #FF4F12 89.76%, #B3370D 179.52%);
+  background:
+  radial-gradient(140% 80% at 50% 110%, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 60%),
+  radial-gradient(140% 60% at 50% -10%, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 55%),
+  linear-gradient(111deg, #FF9E7E 0%, #FF4F12 89.76%, #B3370D 179.52%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -43,11 +46,11 @@
 }
 
 .error-page__text {
-  font-family: var(--font-family-regular);
+  font-family: 'Rostelecom Basis', 'Inter', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
-  color: var(--color-neutral-400);
+  color: var(--color-neutral-200, #b5b7c0);
   margin-top: -8px;
 }
 
