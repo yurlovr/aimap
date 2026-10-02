@@ -80,6 +80,11 @@
   background: #101828;
   border-radius: 25.6px;
   z-index: 3;
+
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .person-card__bg {
@@ -143,7 +148,7 @@
   background: linear-gradient(205deg, rgba(132, 24, 255, 0.20) -1.88%, rgba(119, 0, 255, 0.00) 41.99%), rgba(88, 93, 105, 0.10);
 }
 
-.slider .swiper-slide-active:hover::after {
+/* .slider .swiper-slide-active:hover::after {
   opacity: 0.23;
   transition: all 0.3s ease;
 }
@@ -151,15 +156,15 @@
 .slider.tech .swiper-slide-active:hover::after {
   opacity: 0.23;
   transition: all 0.3s ease;
-}
+} */
 
-.slider:not(.tech) .swiper-slide-active:hover::before {
+/* .slider:not(.tech) .swiper-slide-active:hover::before {
   opacity: 1;
 }
 
 .slider.tech .swiper-slide-active:hover::before {
   opacity: 1;
-}
+} */
 
 .slider:not(.tech) .swiper-slide-active::before {
   content: "";
@@ -197,13 +202,13 @@
   z-index: 2;
 }
 
-.slider:not(.tech) .swiper-slide-active:active {
+/* .slider:not(.tech) .swiper-slide-active:active {
   background: linear-gradient(205deg, rgba(238, 68, 33, 0.60) -1.88%, rgba(238, 68, 33, 0.00) 41.99%), rgba(88, 93, 105, 0.10);
 }
 
 .slider.tech .swiper-slide-active:active {
   background: linear-gradient(205deg, rgba(132, 24, 255, 0.60) -1.88%, rgba(119, 0, 255, 0.00) 41.99%), rgba(88, 93, 105, 0.10);
-}
+} */
 
 .person-card__title {
   font-size: 26px;
@@ -287,9 +292,44 @@
   cursor: default;
 }
 
+.slider-people__slider .swiper-slide {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 /* === Адаптив ===
    ВАЖНО: границы media-запросов должны совпадать с breakpoints в slider.js
    (768 / 1024 / 1280 / 1500 / 1920, min-width). Здесь max-width = граница − 1. */
+
+@media (hover: hover) and (pointer: fine) {
+  .slider .swiper-slide-active:hover::after {
+    opacity: 0.23;
+    transition: all 0.3s ease;
+  }
+
+  .slider.tech .swiper-slide-active:hover::after {
+    opacity: 0.23;
+    transition: all 0.3s ease;
+  }
+
+  .slider:not(.tech) .swiper-slide-active:hover::before {
+    opacity: 1;
+  }
+
+  .slider.tech .swiper-slide-active:hover::before {
+    opacity: 1;
+  }
+
+  .slider:not(.tech) .swiper-slide-active:active {
+    background: linear-gradient(205deg, rgba(238, 68, 33, 0.60) -1.88%, rgba(238, 68, 33, 0.00) 41.99%), rgba(88, 93, 105, 0.10);
+  }
+
+  .slider.tech .swiper-slide-active:active {
+    background: linear-gradient(205deg, rgba(132, 24, 255, 0.60) -1.88%, rgba(119, 0, 255, 0.00) 41.99%), rgba(88, 93, 105, 0.10);
+  }
+}
 
 @media (max-width: 1919px) {
   .carousel-section {
