@@ -147,11 +147,11 @@
 }
 
 .slider .swiper-slide-active:hover::after {
-  opacity: 0.42;
+  opacity: 0.23;
 }
 
 .slider.tech .swiper-slide-active:hover::after {
-  opacity: 0.42;
+  opacity: 0.23;
 }
 
 .slider.tech .swiper-slide-active:hover {
@@ -180,7 +180,7 @@
           mask-composite: exclude;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.1s;
+  transition: opacity 0.4s;
   z-index: 2;
 }
 
@@ -198,7 +198,7 @@
           mask-composite: exclude;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.1s;
+  transition: opacity 0.4s;
   z-index: 2;
 }
 

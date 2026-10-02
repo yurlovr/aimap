@@ -874,10 +874,10 @@ const config = {
 
 // Настройки появления контента
 const contentConfig = {
-  duration: 0.9,
+  duration: 1.9,
   ease: 'power2.out',
-  stagger: 0.18,
-  delayAfterPoints: 0.15, // пауза после завершения точек
+  stagger: 0.28,
+  delayAfterPoints: 0.5, // пауза после завершения точек
   yOffset: 20,            // насколько «поднимать» блоки
 };
 
@@ -947,7 +947,7 @@ function init({ animate = true, staticFinal = false } = {}) {
         targetX: point.x,
         targetY: point.y,
         targetR: point.r,
-        opacity: staticFinal ? 0.5 : 1,
+        opacity: staticFinal ? 0.5 : 0,
       });
     });
   });
@@ -1007,7 +1007,7 @@ function init({ animate = true, staticFinal = false } = {}) {
   // === Запуск анимации точек ===
   if (animate) {
     // Скрываем контейнер (если не скрыт через CSS)
-    if (heroContainer) heroContainer.style.opacity = '0';
+    // if (heroContainer) heroContainer.style.opacity = '0';
 
     // Скрываем контентные блоки до момента появления
     contentEls.forEach(el => {
@@ -1020,36 +1020,30 @@ function init({ animate = true, staticFinal = false } = {}) {
       x: (_, point) => point.targetX,
       y: (_, point) => point.targetY,
       r: (_, point) => point.targetR,
-      opacity: 0.5,
+      opacity: 1,
       duration: config.duration,
       ease: config.ease,
       stagger: config.stagger,
       onUpdate: drawFrame,
-      onComplete: () => {
-        // Показываем контейнер
-        if (heroContainer) heroContainer.style.opacity = '1';
-
-        // Поочерёдное появление блоков
-        if (contentEls.length) {
-          gsap.to(contentEls, {
-            opacity: 1,
-            y: 0,
-            duration: contentConfig.duration,
-            ease: contentConfig.ease,
-            stagger: contentConfig.stagger,
-            delay: contentConfig.delayAfterPoints,
-            onComplete: () => {
-              contentEls.forEach(el => {
-                el.style.willChange = '';
-              });
-            },
-          });
-        }
-      },
     });
+    // Поочерёдное появление блоков
+    if (contentEls.length) {
+      gsap.to(contentEls, {
+        opacity: 1,
+        y: 0,
+        duration: contentConfig.duration,
+        ease: contentConfig.ease,
+        stagger: contentConfig.stagger,
+        delay: contentConfig.delayAfterPoints,
+        onComplete: () => {
+          contentEls.forEach(el => {
+            el.style.willChange = '';
+          });
+        },
+      });
+    }
   } else {
     // Мобилка — показываем всё сразу
-    if (heroContainer) heroContainer.style.opacity = '1';
     contentEls.forEach(el => {
       el.style.opacity = '1';
       el.style.transform = 'none';
