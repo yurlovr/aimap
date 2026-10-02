@@ -79,6 +79,7 @@
   isolation: isolate;
   background: #101828;
   border-radius: 25.6px;
+  z-index: 3;
 }
 
 .person-card__bg {
@@ -174,7 +175,7 @@
           mask-composite: exclude;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.4s;
+  transition: all 0.3s ease;
   z-index: 2;
 }
 
@@ -192,7 +193,7 @@
           mask-composite: exclude;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.4s;
+  transition: all 0.3s ease;
   z-index: 2;
 }
 

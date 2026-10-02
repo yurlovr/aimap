@@ -188,8 +188,8 @@
 .solution-card__title {
   font-family: var(--font-family-medium);
   font-weight: 500;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 22px;
+  line-height: 28px;
   color: var(--color-neutral-white, #ffffff);
 }
 .solution-card__text {
@@ -283,7 +283,9 @@
 /* ===== Адаптив ===== */
 @media (min-width: 1280px) and (max-width: 1599px) {
   .solution__container { padding: 0 160px; }
-  .solution-hero__title { font-size: var(--font-h1-web-small-size); }
+  .solution-hero__title {
+    font-size: var(--font-h1-web-small-size);
+  }
   .company__name { font-size: 20px; line-height: 26px; }
   .solution-text { font-size: 17px; line-height: 26px; }
 }
@@ -294,7 +296,7 @@
   .solution-hero__description { font-size: 16px; line-height: 24px; }
   .solution-content__subtitle,
   .solution-cards__title,
-  .company__title { font-size: 24px; line-height: 32px; }
+  .company__title { font-size: 22px; line-height: 28px; }
   .solution-card {
     padding: var(--spacing-6x, 24px);
     gap: var(--spacing-3x, 12px);

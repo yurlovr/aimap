@@ -60,9 +60,9 @@
 
 .form-cta__title {
   margin: 0;
-  font-size: 32px;
+  font-size: 22px;
   font-weight: 500;
-  line-height: 40px;
+  line-height: 28px;
   color: var(--fc-text);
 }
 
@@ -356,8 +356,8 @@
 
   .form-cta__title,
   .form-cta__success-title {
-    font-size: var(--font-h1-tablet-size, 36px);
-    line-height: 44px;
+    font-size: 22px;
+    line-height: 48px;
   }
 
   .form-cta__text {
@@ -393,8 +393,8 @@
 
   .form-cta__title,
   .form-cta__success-title {
-    font-size: var(--font-h1-mobile-size, 28px);
-    line-height: 36px;
+    font-size: 22px;
+    line-height: 28px;
   }
 
   .form-cta__text {
