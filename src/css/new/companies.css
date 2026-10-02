@@ -26,7 +26,7 @@
   padding: 32px;
   border-radius: var(--radius-2xl);
   border: 1px solid var(--color-white-transparent-10);
-  background: var(--color-white-transparent-5);
+  background: rgba(88, 93, 105, 0.05);
   transition: background 0.3s, border-color 0.3s, box-shadow 0.3s, transform 0.3s;
   cursor: pointer;
   min-width: 0;
