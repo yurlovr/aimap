@@ -68,7 +68,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const isTouch = window.matchMedia('(hover: none)').matches;
   if (!isTouch) return; // на десктопе не вмешиваемся
 
+  let tapTimer;
+
   const clearTapped = () => {
+    clearTimeout(tapTimer);
     sliderEl.querySelectorAll('.swiper-slide.is-tapped')
       .forEach(el => el.classList.remove('is-tapped'));
   };
@@ -82,6 +85,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     clearTapped();
     slide.classList.add('is-tapped');
+
+    // снимаем подсветку через 300 мс
+    tapTimer = setTimeout(clearTapped, 300);
   }, { passive: true });
 
   // снимаем подсветку при свайпе / смене слайда
