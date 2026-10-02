@@ -298,6 +298,7 @@
   -webkit-touch-callout: none;
   user-select: none;
   -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
 /* === Адаптив ===
