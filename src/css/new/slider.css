@@ -129,7 +129,7 @@ a.related-card {
 }
 .related-card__image {
   width: 100%;
-  aspect-ratio: 2 / 1;            /* по макету ~400×200 */
+  aspect-ratio: 2 / 1;
   border-radius: 16px;
   overflow: hidden;
   background: linear-gradient(135deg, #7700ff 0%, #ff4d12 100%);
