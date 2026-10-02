@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
     slide.classList.add('is-tapped');
 
     // снимаем подсветку через 300 мс
-    tapTimer = setTimeout(clearTapped, 300);
+    tapTimer = setTimeout(clearTapped, 500);
   }, { passive: true });
 
   // снимаем подсветку при свайпе / смене слайда
@@ -98,5 +98,5 @@ document.addEventListener('DOMContentLoaded', function () {
   // снимаем при тапе вне слайдера
   document.addEventListener('touchstart', (e) => {
     if (!e.target.closest('.slider-people__slider')) clearTapped();
-  }, { passive: true });
+  }, { passive: true, capture: true });
 });
