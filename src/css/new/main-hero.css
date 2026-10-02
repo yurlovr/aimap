@@ -247,8 +247,11 @@
 
   .hero__bg {
     top: -40px;
-    right: -80px;
-    max-width: 450px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: none;
+    height: auto;
     opacity: 0.4;
   }
 }

@@ -855,7 +855,6 @@ const pattern = {
 };
 
 // === КОНФИГ АНИМАЦИИ ===
-// ТУТ МОЖНО МЕНЯТЬ ЗНАЧЕНИЯ START
 const config = {
   getDistance: () => gsap.utils.random(5, 10),
   deepFront: 20,
@@ -869,15 +868,13 @@ const config = {
     from: "random",
   },
 };
-// ТУТ МОЖНО МЕНЯТЬ ЗНАЧЕНИЯ END
 
 
-function init() {
+function init({ animate = true, staticFinal = false } = {}) {
   const canvas = document.getElementById("canvas");
   if (!canvas) return;
   const ctx = canvas.getContext("2d");
 
-  // Базовая система координат = pattern (878×547)
   const baseW = pattern.width;
   const baseH = pattern.height;
 
@@ -914,18 +911,20 @@ function init() {
       }
 
       points.push({
-        x: point.x + offsetX * distance,
-        y: point.y + offsetY * distance,
-        r: point.r * (zDirection ? radiusFront : radiusBack),
+        // На мобилке (staticFinal) — сразу ставим точки в финальные координаты,
+        // без «разбросанного» начального состояния
+        x: staticFinal ? point.x : point.x + offsetX * distance,
+        y: staticFinal ? point.y : point.y + offsetY * distance,
+        r: staticFinal ? point.r : point.r * (zDirection ? radiusFront : radiusBack),
         targetX: point.x,
         targetY: point.y,
         targetR: point.r,
-        opacity: 1,
+        opacity: staticFinal ? 0.5 : 1,
       });
     });
   });
 
-  // === Отрисовка кадра в системе координат pattern ===
+  // === Отрисовка кадра ===
   function drawFrame() {
     ctx.clearRect(0, 0, baseW, baseH);
 
@@ -951,7 +950,7 @@ function init() {
     ctx.globalAlpha = 1;
   }
 
-  // === Пересчёт физического размера canvas под CSS-размер ===
+  // === Пересчёт размера canvas ===
   function resizeCanvas() {
     const rect = canvas.getBoundingClientRect();
     const logicalW = rect.width;
@@ -963,37 +962,33 @@ function init() {
     const physW = Math.round(logicalW * dpr);
     const physH = Math.round(logicalH * dpr);
 
-    // Защита от лишних ре-рендеров
     if (canvas.width === physW && canvas.height === physH) return;
 
     canvas.width = physW;
     canvas.height = physH;
 
-    // Масштаб: pattern (878×547) → физический размер canvas
     const scaleX = physW / baseW;
     const scaleY = physH / baseH;
 
-    // Сброс трансформаций и установка нового масштаба
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.scale(scaleX, scaleY);
 
     drawFrame();
   }
 
-  // === Анимация ===
-  gsap.to(points, {
-    x: (_, point) => point.targetX,
-    y: (_, point) => point.targetY,
-    r: (_, point) => point.targetR,
-    opacity: 0.5,
-
-    duration: config.duration,
-    ease: config.ease,
-    stagger: config.stagger,
-    // repeat: -1,
-
-    onUpdate: drawFrame,
-  });
+  // === Анимация (только на десктопе) ===
+  if (animate) {
+    gsap.to(points, {
+      x: (_, point) => point.targetX,
+      y: (_, point) => point.targetY,
+      r: (_, point) => point.targetR,
+      opacity: 0.5,
+      duration: config.duration,
+      ease: config.ease,
+      stagger: config.stagger,
+      onUpdate: drawFrame,
+    });
+  }
 
   // Первичная установка
   resizeCanvas();
@@ -1025,5 +1020,11 @@ document.addEventListener("DOMContentLoaded", function () {
   if (canvas.dataset.animated === "true") return;
   canvas.dataset.animated = "true";
 
-  init();
+  // На мобилке — без анимации (просто статичный фон)
+  const isMobile = window.matchMedia("(max-width: 767px)").matches;
+
+  init({
+    animate: !isMobile,
+    staticFinal: isMobile,
+  });
 });
