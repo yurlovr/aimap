@@ -62,41 +62,46 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-  const sliderEl = document.querySelector('.slider-people__slider');
-  if (!sliderEl) return;
-
   const isTouch = window.matchMedia('(hover: none)').matches;
-  if (!isTouch) return; // на десктопе не вмешиваемся
+  if (!isTouch) return;
 
-  let tapTimer;
+  const sliders = document.querySelectorAll('.slider-people__slider');
+  if (!sliders.length) return;
 
-  const clearTapped = () => {
-    clearTimeout(tapTimer);
-    sliderEl.querySelectorAll('.swiper-slide.is-tapped')
-      .forEach(el => el.classList.remove('is-tapped'));
-  };
+  const TAP_DURATION = 600;
 
-  sliderEl.addEventListener('touchstart', (e) => {
-    const slide = e.target.closest('.swiper-slide');
-    if (!slide) return;
+  const clearMap = new WeakMap();
 
-    // реагируем только на активный слайд
-    if (!slide.classList.contains('swiper-slide-active')) return;
+  sliders.forEach((sliderEl) => {
+    let tapTimer;
 
-    clearTapped();
-    slide.classList.add('is-tapped');
+    const clearTapped = () => {
+      clearTimeout(tapTimer);
+      sliderEl.querySelectorAll('.swiper-slide.is-tapped')
+        .forEach(el => el.classList.remove('is-tapped'));
+    };
 
-    // снимаем подсветку через 300 мс
-    tapTimer = setTimeout(clearTapped, 500);
-  }, { passive: true });
+    clearMap.set(sliderEl, clearTapped);
 
-  // снимаем подсветку при свайпе / смене слайда
-  if (window.Swiper && sliderEl.swiper) {
-    sliderEl.swiper.on('slideChangeTransitionStart', clearTapped);
-  }
+    sliderEl.addEventListener('touchstart', (e) => {
+      const slide = e.target.closest('.swiper-slide');
+      if (!slide) return;
 
-  // снимаем при тапе вне слайдера
+      if (!slide.classList.contains('swiper-slide-active')) return;
+
+      clearTapped();
+      slide.classList.add('is-tapped');
+
+      tapTimer = setTimeout(clearTapped, TAP_DURATION);
+    }, { passive: true });
+
+    if (window.Swiper && sliderEl.swiper) {
+      sliderEl.swiper.on('slideChangeTransitionStart', clearTapped);
+    }
+  });
+
   document.addEventListener('touchstart', (e) => {
-    if (!e.target.closest('.slider-people__slider')) clearTapped();
+    if (e.target.closest('.slider-people__slider')) return;
+    clearMap.forEach((clearTapped) => clearTapped());
   }, { passive: true, capture: true });
 });
