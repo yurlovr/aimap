@@ -20,6 +20,10 @@
   }
 }
 
+.card_wrapper {
+  position: relative;
+}
+
 .company-card {
   display: flex;
   flex-direction: column;
