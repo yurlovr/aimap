@@ -65,7 +65,7 @@
   line-height: 36px;
   color: var(--color-neutral-white);
   letter-spacing: -0.01em;
-  margin-bottom: 48px;
+  margin-bottom: 16px;
 }
 
 .company-card__description {
@@ -80,18 +80,18 @@
 @media (min-width: 1280px) and (max-width: 1599px) {
   .company-card { padding: 28px; }
   .company-card__logo { height: 112px; padding: 20px; margin-bottom: 28px; }
-  .company-card__name { font-size: 24px; line-height: 32px; margin-bottom: 40px; }
+  .company-card__name { font-size: 24px; line-height: 32px; }
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   .company-card { padding: 24px; }
   .company-card__logo { height: 100px; padding: 18px; margin-bottom: 24px; }
-  .company-card__name { font-size: 22px; line-height: 28px; margin-bottom: 32px; }
+  .company-card__name { font-size: 22px; line-height: 28px; }
   .company-card__description { font-size: 14px; line-height: 20px; }
 }
 @media (max-width: 767px) {
   .company-card { padding: 20px; }
   .company-card__logo { height: 90px; padding: 16px; margin-bottom: 20px; }
-  .company-card__name { font-size: 20px; line-height: 26px; margin-bottom: 24px; }
+  .company-card__name { font-size: 20px; line-height: 26px; }
   .company-card__description { font-size: 14px; line-height: 20px; }
 }
 
