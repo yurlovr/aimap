@@ -116,7 +116,7 @@ color: inherit;
 
   .card__text {
     font-size: 14px;
-    list-style: 20px;
+    line-height: 20px;
   }
 
   .card__image {
