@@ -98,7 +98,13 @@ a.related-card {
   text-decoration: none;
   color: inherit;
   transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
+
 .related-card:hover {
   background: var(--color-bg-hover);
   border-color: var(--color-white-transparent-20);
