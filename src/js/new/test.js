@@ -855,54 +855,24 @@ const pattern = {
 };
 
 // === КОНФИГ АНИМАЦИИ ===
-// Точки — более плавные, растянутые во времени
 const config = {
   getDistance: () => gsap.utils.random(5, 10),
   deepFront: 20,
   getDeepBack: () => gsap.utils.random(-10, 10),
   radiusBack: 0.5,
   radiusFront: 3,
-  // Увеличили duration — анимация мягче
-  duration: 1.8,
-  // Более плавная кривая
-  ease: 'power3.out',
+  duration: 1,
+  ease: 'power2.out',
   stagger: {
-    each: 0.0018,
-    from: 'random',
+    each: 0.001,
+    from: "random",
   },
 };
 
-// Настройки появления контента
-const contentConfig = {
-  duration: 0.9,
-  ease: 'power2.out',
-  stagger: 0.18,
-  delayAfterPoints: 0.15, // пауза после завершения точек
-  yOffset: 20,            // насколько «поднимать» блоки
-};
 
 function init({ animate = true, staticFinal = false } = {}) {
   const canvas = document.getElementById("canvas");
-  const heroContainer = document.querySelector('.hero__container');
-  const contentEls = [
-    '.hero__title',
-    '.hero__descr',
-    '.hero__btn',
-    '.hero__stats',
-  ]
-    .map(sel => document.querySelector(sel))
-    .filter(Boolean);
-
-  // На случай, если canvas нет — показываем контент сразу
-  if (!canvas) {
-    if (heroContainer) heroContainer.style.opacity = '1';
-    contentEls.forEach(el => {
-      el.style.opacity = '1';
-      el.style.transform = 'none';
-    });
-    return;
-  }
-
+  if (!canvas) return;
   const ctx = canvas.getContext("2d");
 
   const baseW = pattern.width;
@@ -941,6 +911,8 @@ function init({ animate = true, staticFinal = false } = {}) {
       }
 
       points.push({
+        // На мобилке (staticFinal) — сразу ставим точки в финальные координаты,
+        // без «разбросанного» начального состояния
         x: staticFinal ? point.x : point.x + offsetX * distance,
         y: staticFinal ? point.y : point.y + offsetY * distance,
         r: staticFinal ? point.r : point.r * (zDirection ? radiusFront : radiusBack),
@@ -1004,59 +976,39 @@ function init({ animate = true, staticFinal = false } = {}) {
     drawFrame();
   }
 
-  // === Запуск анимации точек ===
-  if (animate) {
-    // Скрываем контейнер (если не скрыт через CSS)
-    if (heroContainer) heroContainer.style.opacity = '0';
+  const heroContainer = document.querySelector('.hero__container');
 
-    // Скрываем контентные блоки до момента появления
-    contentEls.forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = `translateY(${contentConfig.yOffset}px)`;
-      el.style.willChange = 'opacity, transform';
-    });
+  // === Анимация (только на десктопе) ===
+if (animate) {
+  const heroContainer = document.querySelector('.hero__container');
 
-    gsap.to(points, {
-      x: (_, point) => point.targetX,
-      y: (_, point) => point.targetY,
-      r: (_, point) => point.targetR,
-      opacity: 0.5,
-      duration: config.duration,
-      ease: config.ease,
-      stagger: config.stagger,
-      onUpdate: drawFrame,
-      onComplete: () => {
-        // Показываем контейнер
-        if (heroContainer) heroContainer.style.opacity = '1';
+  gsap.to(points, {
+    x: (_, point) => point.targetX,
+    y: (_, point) => point.targetY,
+    r: (_, point) => point.targetR,
+    opacity: 0.5,
+    duration: config.duration,
+    ease: config.ease,
+    stagger: config.stagger,
+    onUpdate: drawFrame,
+    onComplete: () => {
+      if (heroContainer) {
+        gsap.to(heroContainer, {
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power2.out',
+          delay: 0.1,
+        });
+      }
+    },
+  });
+} else {
+  // На мобилке — показываем контейнер сразу
+  const heroContainer = document.querySelector('.hero__container');
+  if (heroContainer) heroContainer.style.opacity = '1';
+}
 
-        // Поочерёдное появление блоков
-        if (contentEls.length) {
-          gsap.to(contentEls, {
-            opacity: 1,
-            y: 0,
-            duration: contentConfig.duration,
-            ease: contentConfig.ease,
-            stagger: contentConfig.stagger,
-            delay: contentConfig.delayAfterPoints,
-            onComplete: () => {
-              contentEls.forEach(el => {
-                el.style.willChange = '';
-              });
-            },
-          });
-        }
-      },
-    });
-  } else {
-    // Мобилка — показываем всё сразу
-    if (heroContainer) heroContainer.style.opacity = '1';
-    contentEls.forEach(el => {
-      el.style.opacity = '1';
-      el.style.transform = 'none';
-    });
-  }
-
-  // Первичная установка canvas
+  // Первичная установка
   resizeCanvas();
 
   // === Реакция на изменение размера ===
@@ -1080,40 +1032,13 @@ function init({ animate = true, staticFinal = false } = {}) {
 
 document.addEventListener("DOMContentLoaded", function () {
   const canvas = document.getElementById("canvas");
-  const heroContainer = document.querySelector('.hero__container');
-  const contentEls = [
-    '.hero__title',
-    '.hero__descr',
-    '.hero__btn',
-    '.hero__stats',
-  ]
-    .map(sel => document.querySelector(sel))
-    .filter(Boolean);
-
-  // Если GSAP не подключён — сразу показываем всё
-  if (typeof gsap === 'undefined') {
-    if (heroContainer) heroContainer.style.opacity = '1';
-    contentEls.forEach(el => {
-      el.style.opacity = '1';
-      el.style.transform = 'none';
-    });
-    return;
-  }
-
-  // Если canvas нет — показываем контент
-  if (!canvas) {
-    if (heroContainer) heroContainer.style.opacity = '1';
-    contentEls.forEach(el => {
-      el.style.opacity = '1';
-      el.style.transform = 'none';
-    });
-    return;
-  }
+  if (!canvas) return;
 
   // Запускаем только один раз
   if (canvas.dataset.animated === "true") return;
   canvas.dataset.animated = "true";
 
+  // На мобилке — без анимации (просто статичный фон)
   const isMobile = window.matchMedia("(max-width: 767px)").matches;
 
   init({
