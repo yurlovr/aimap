@@ -30,7 +30,28 @@
   pointer-events: none;
 }
 
+.pagination__current {
+  display: none;
+  min-width: 60px;
+  height: 40px;
+  padding: 0 4px;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-neutral-200, #b5b7c0);
+  font-family: var(--font-family-medium, 'Rostelecom Basis', 'Inter', sans-serif);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
 @media (max-width: 767px) {
   .pagination { padding-bottom: 48px; gap: 4px; }
-  .pagination__item { width: 36px; height: 36px; font-size: 13px; }
+  .pagination__item { width: 48px; height: 48px; font-size: 13px; }
+  .pagination__item:not(.next):not(.prev),
+  .pagination__dots {
+    display: none;
+  }
+  .pagination__current {
+    display: flex;
+  }
 }

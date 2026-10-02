@@ -95,7 +95,7 @@
 .hero__descr {
   margin: 32px 0 0;
   max-width: 570px;
-  color: var(--color-platinum, #C3C0D3);
+  color: var(--color-neutral-200, #b5b7c0);
   font-family: var(--font-family-medium, 'Rostelecom Basis', 'Inter', sans-serif);
   font-size: var(--font-h4-web-size, 22px);
   font-weight: 500;

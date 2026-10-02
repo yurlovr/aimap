@@ -159,7 +159,7 @@
 
     <!-- PAGINATION -->
     <nav class="pagination" aria-label="Постраничная навигация">
-      <button class="pagination__item" type="button" aria-label="Предыдущая страница">
+      <button class="pagination__item prev" type="button" aria-label="Предыдущая страница">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
       </button>
       <button class="pagination__item" type="button">1</button>
@@ -169,7 +169,8 @@
       <button class="pagination__item" type="button">8</button>
       <button class="pagination__item" type="button">9</button>
       <button class="pagination__item" type="button">10</button>
-      <button class="pagination__item" disabled type="button" aria-label="Следующая страница">
+      <span class="pagination__current" aria-live="polite">1</span>
+      <button class="pagination__item next" disabled type="button" aria-label="Следующая страница">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
       </button>
     </nav>
