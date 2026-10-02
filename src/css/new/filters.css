@@ -19,7 +19,7 @@
   width: 100%;
   min-width: 0;
   padding: 8px 22px 8px 16px;
-  border-radius: 16px;
+  border-radius: 8px;
   background: rgba(88, 93, 105, 0.05);
   background: var(--color-bg);
   backdrop-filter: blur(12px);
