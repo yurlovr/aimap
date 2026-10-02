@@ -13,8 +13,9 @@
   box-sizing: border-box;
   color: var(--fc-text);
   font-family: var(--font-family-regular, 'Rostelecom Basis', 'Inter', sans-serif);
-  margin-top: 80px;
-  margin-bottom: 128px;
+  max-width: 1440px;
+  margin: 80px auto 128px;
+  padding: 0 48px;
 }
 
 .form-cta [hidden] {
