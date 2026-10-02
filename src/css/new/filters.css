@@ -209,7 +209,18 @@
   justify-content: center;
   transition: transform 0.25s ease;
   cursor: pointer;
+  position: relative;
 }
+.filter__option-toggle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 38px;
+  transform: translate(-50%, -50%);
+}
+
 .filter__option-toggle svg {
   width: 20px;
   height: 20px;
