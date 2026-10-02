@@ -140,17 +140,6 @@
 }
 .filter__list-wrapper::-webkit-scrollbar-track { background: transparent; }
 
-.filter__list-wrapper::after {
-  content: '';
-  position: sticky;
-  bottom: 0;
-  display: block;
-  height: 40px;
-  background: linear-gradient(180deg, transparent 0%, #171c28 100%);
-  pointer-events: none;
-  margin-top: -40px;
-}
-
 .filter__option {
   display: flex;
   align-items: center;
