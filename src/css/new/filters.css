@@ -1,7 +1,7 @@
 .filters {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--grid-gap-xl);
+  gap: 20px;
   padding-bottom: 32px;
   position: relative;
   z-index: 20;
@@ -105,7 +105,7 @@
   left: 0;
   right: 0;
   border-radius: var(--radius-xl);
-  background: #171c28;
+  background: #212938;
   border: 1px solid rgba(88, 93, 105, 0.15);
   backdrop-filter: blur(20px);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);

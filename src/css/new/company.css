@@ -76,17 +76,17 @@
   font-weight: 400;
   font-style: normal;
   line-height: 28px;
-  color: #c3c0d3;
+  color: var(--color-neutral-200, #b5b7c0);
   margin: 0;
 }
 
 .company-detail__subtitle {
   font-family: 'Rostelecom Basis', 'Inter', sans-serif;
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 500;
   font-style: normal;
-  line-height: 36px;
-  color: var(--color-neutral-white);;
+  line-height: 28px;
+  color: var(--color-neutral-white);
   letter-spacing: -0.01em;
   margin: 0;
 }
@@ -100,10 +100,10 @@
 
 .company-detail__contacts-title {
   font-family: 'Rostelecom Basis', 'Inter', sans-serif;
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 500;
   font-style: normal;
-  line-height: 36px;
+  line-height: 28px;
   color: var(--color-neutral-white);;
   letter-spacing: -0.01em;
   margin: 0;
@@ -130,7 +130,7 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
-  color: #c3c0d3;
+  color: var(--color-neutral-200, #b5b7c0);
   margin: 0;
 }
 
@@ -163,7 +163,6 @@
   .company-detail__inner { gap: 24px; }
   .company-detail__logo {
     width: 100%;
-    max-width: 280px;
     height: 96px;
     padding: 16px 40px;
   }
