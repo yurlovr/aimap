@@ -7,6 +7,10 @@
 }
 
 .hero__bg {
+  --fade-left: 30%;
+  --fade-right: 12%;
+  --fade-y: 12%;
+
   position: absolute;
   top: 42px;
   right: 64px;
@@ -15,11 +19,32 @@
   height: auto;
   pointer-events: none;
   z-index: 0;
+
   -webkit-mask-image:
-    linear-gradient(to right,  transparent 0%, #000 12%, #000 88%, transparent 100%),
-    linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
+    linear-gradient(to right,
+      transparent 0%,
+      #000 var(--fade-left),
+      #000 calc(100% - var(--fade-right)),
+      transparent 100%),
+    linear-gradient(to bottom,
+      transparent 0%,
+      #000 var(--fade-y),
+      #000 calc(100% - var(--fade-y)),
+      transparent 100%);
   -webkit-mask-composite: source-in;
-          mask-composite: intersect;
+
+  mask-image:
+    linear-gradient(to right,
+      transparent 0%,
+      #000 var(--fade-left),
+      #000 calc(100% - var(--fade-right)),
+      transparent 100%),
+    linear-gradient(to bottom,
+      transparent 0%,
+      #000 var(--fade-y),
+      #000 calc(100% - var(--fade-y)),
+      transparent 100%);
+  mask-composite: intersect;
 }
 
 #canvas {
@@ -235,7 +260,7 @@
     margin-top: 64px;
     gap: 12px;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
   }
 
@@ -276,5 +301,9 @@
     width: 100%;
     text-align: center;
     box-sizing: border-box;
+  }
+
+  .hero__stats {
+    justify-content: space-between;
   }
 }

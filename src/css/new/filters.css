@@ -242,6 +242,12 @@
   overflow: hidden;
 }
 
+@media (max-width: 1279px) {
+  .filter__dropdown {
+    max-height: 400px;
+  }
+}
+
 @media (max-width: 767px) {
   .filter__dropdown {
     max-height: 300px;
